@@ -114,15 +114,7 @@ Log in as a buyer.
 Browse services and submit reviews for the services you have purchased.
 Contributing
 
-License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
-Contact
-If you have any questions or need further assistance, feel free to contact us at:
 
 Acknowledgements
-Django
-Bootstrap
-FontAwesome
+
 
