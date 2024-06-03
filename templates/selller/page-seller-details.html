@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+{% load static %}
+{% block menutype %}nav-innerpage-style main-menu{% endblock menutype %}
+{% block content %}
+
+    <section class="categories_list_section overflow-hidden">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="listings_category_nav_list_menu">
+              <ul class="mb0 d-flex ps-0">
+                <li><a href="#">All Categories</a></li>
+                <li><a href="#">Graphics & Design</a></li>
+                <li><a class="active" href="#">Digital Marketing</a></li>
+                <li><a href="#">Writing & Translation</a></li>
+                <li><a href="#">Video & Animation</a></li>
+                <li><a href="#">Music & Audio</a></li>
+                <li><a href="#">Programming & Tech</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Trending</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcumb Sections -->
+    <section class="breadcumb-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-lg-10">
+            <div class="breadcumb-style1 mb10-xs">
+              <div class="breadcumb-list">
+                <a href="">Home</a>
+                <a href="">Services</a>
+                <a href="">Design & Creative</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-lg-2">
+            <div class="d-flex align-items-center justify-content-sm-end">
+              <div class="share-save-widget d-flex align-items-center">
+                <span class="icon flaticon-share dark-color fz12 mr10"></span>
+                <div class="h6 mb-0">Share</div>
+              </div>
+              <div class="share-save-widget d-flex align-items-center ml15">
+                <span class="icon flaticon-like dark-color fz12 mr10"></span>
+                <div class="h6 mb-0">Save</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcumb Sections -->
+    <section class="breadcumb-section pt-0">
+      <div class="cta-service-v1 freelancer-single-style mx-auto maxw1700 pt120 pt60-sm pb120 pb60-sm bdrs16 position-relative overflow-hidden d-flex align-items-center mx20-lg px30-lg">
+        <img class="left-top-img wow zoomIn" src="{% static 'assets/images/vector-img/left-top.png' %}%" alt="">
+        <img class="right-bottom-img wow zoomIn" src="{% static 'assets/images/vector-img/right-bottom.png' %}" alt="">
+        <div class="container">
+          <div class="row wow fadeInUp">
+            <div class="col-xl-7">
+              <div class="position-relative">
+                <h2>{{sellerprofile.profession}}</h2>
+                <div class="list-meta d-sm-flex align-items-center mt30">
+                  <a class="position-relative freelancer-single-style" href="{% url 'marketplace:seller-details' sellerprofile.pk %}">
+                    <span class="online"></span>
+                    <img class="rounded-circle w-100 wa-sm mb15-sm" src="{% if sellerprofile.user_profile.user.profile_image %} {{sellerprofile.user_profile.user.profile_image.url}} {% else %} {% static 'assets/images/team/fl-1.png'%} {% endif %}" alt="Freelancer Photo">
+                  </a>
+                  <div class="ml20 ml0-xs">
+                    <h5 class="title mb-1">{{sellerprofile.user_profile.user.username}}</h5>
+                    <p class="mb-0">{{sellerprofile.proffession}}</p>
+                    <p class="mb-0 dark-color fz15 fw500 list-inline-item mb5-sm"><i class="fas fa-star vam fz10 review-color me-2"></i> {{total_reviews}} reviews</p>
+                    <p class="mb-0 dark-color fz15 fw500 list-inline-item ml15 mb5-sm ml0-xs"><i class="flaticon-place vam fz20 me-2"></i>{{sellerprofile.user_profile.location}}</p>
+                    <p class="mb-0 dark-color fz15 fw500 list-inline-item ml15 mb5-sm ml0-xs"><i class="flaticon-30-days vam fz20 me-2"></i> Member since {{sellerprofile.user_profile.user.created_at|date:"d F Y"}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="pt10 pb90 pb30-md">
+      <div class="container">
+        <div class="row wow fadeInUp">
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-sm-6 col-xl-3">
+                <div class="iconbox-style1 contact-style d-flex align-items-start mb30">
+                  <div class="icon flex-shrink-0"><span class="flaticon-target"></span></div>
+                  <div class="details">
+                    <h5 class="title">Job Success</h5>
+                    <p class="mb-0 text">98%</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-3">
+                <div class="iconbox-style1 contact-style d-flex align-items-start mb30">
+                  <div class="icon flex-shrink-0"><span class="flaticon-goal"></span></div>
+                  <div class="details">
+                    <h5 class="title">Total Jobs</h5>
+                    <p class="mb-0 text">0</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-3">
+                <div class="iconbox-style1 contact-style d-flex align-items-start mb30">
+                  <div class="icon flex-shrink-0"><span class="flaticon-fifteen"></span></div>
+                  <div class="details">
+                    <h5 class="title">Total Hours</h5>
+                    <p class="mb-0 text">9</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-3">
+                <div class="iconbox-style1 contact-style d-flex align-items-start mb30">
+                  <div class="icon flex-shrink-0"><span class="flaticon-file-1"></span></div>
+                  <div class="details">
+                    <h5 class="title">In Queue Service</h5>
+                    <p class="mb-0 text">2</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="service-about">
+              <h4>Bio</h4>
+              <p class="text mb30">{{ sellerprofile.bio}} </p>
+              <hr class="opacity-100 mb60 mt60">
+              <h2 class="mb30">CV</h2>
+              <h4 class="mb30">Education</h4>
+             
+              
+            <div class="educational-quality">
+             {% for education in user_education %}
+                <div class="m-circle text-thm">M</div>
+                   <div class="wrapper mb40">
+                    <span class="tag">{{ education.start_year}} - {{ education.end_year}}</span>
+                    <h5 class="mt15">{{ education.title }}</h5>
+                    <h6 class="text-thm">{{ education.school_name }}</h6>
+                    <p>{{education.description}}</p>
+                </div>
+             {% endfor %}
+                </div>
+        
+              <hr class="opacity-100 mb60">
+              <h4 class="mb30">Work & Experience</h4>
+              <div class="educational-quality">
+              {% if work_experiences %}             
+              {% for work_experience in work_experiences %}
+                <div class="m-circle text-thm">M</div>
+                <div class="wrapper mb40">
+                  <span class="tag">{{work_experience.start_date}} - {{work_experience.end_date}}</span>
+                  <h5 class="mt15">{{ work_experience.job_title}}</h5>
+                  <h6 class="text-thm">{{ work_experience.company_name }}</h6>
+                  <p>{{work_experience.description }}</p>
+                </div>
+              {% endfor %}
+              {% else %}
+              <div class="educational-quality">
+                    <div class="wrapper mb40 position-relative">
+                        <h5 class="mt15">No Work experience yet!</h5>
+                    </div>
+               </div>
+              {% endif %}
+              </div>
+              <hr class="opacity-100 mb60">
+              <h4 class="mb30">Awards adn Certificates</h4>
+              {% if user_awards %}
+              {% for user_award in user_awards %}
+              <div class="educational-quality ps-0">
+                    <div class="wrapper mb40">
+                    <span class="tag">{{user_award.date_awarded}}</span>
+                    <h5 class="mt15">{{user_award.title}}</h5>
+                    <h6 class="text-thm">{{user_award.issuer}}</h6>
+                    <p>{{user_award.description }}</p>
+                    </div>
+              </div>
+              {% endfor %}
+              {% else %}
+                <div class="educational-quality">
+                    <div class="wrapper mb40 position-relative">
+                        <h5 class="mt15">No awards yet!</h5>
+                    </div>
+                </div>
+              {% endif %}
+
+              <hr class="opacity-100 mb60">
+              <h4 class="mb30">My Services</h4>
+              <div class="row mb35">
+              {% for service in services %}
+                <div class="col-sm-6 col-xl-4">
+                  <div class="listing-style1">
+                    <div class="list-thumb">
+                      <img class="w-100" src="{% if service.image %}{{service.image.url }}{% else %}{% static 'assets/images/listings/g-1.jpg' %}{% endif %}" alt="">
+                      <a href="" class="listing-fav fz12"><span class="far fa-heart"></span></a>
+                    </div>
+                    <div class="list-content">
+                      <p class="list-text body-color fz14 mb-1">{{service.title}}</p>
+                      <h6 class="list-title"><a href="{% url 'marketplace:service-details' service.pk %}">{{service.description}}</a></h6>
+                      <div class="review-meta d-flex align-items-center">
+                        <i class="fas fa-star fz10 review-color me-2"></i>
+                        <p class="mb-0 body-color fz14"><span class="dark-color me-2">4.82</span>{{total_reviews}} reviews</p>
+                      </div>
+                      <hr class="my-2">
+                      <div class="list-meta mt15">
+                        <div class="budget">
+                          <p class="mb-0 body-color">Starting at<span class="fz17 fw500 dark-color ms-1">{{service.price}}</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              {% endfor %}  
+                
+              </div>
+              <hr class="opacity-100 mb60">
+              
+            
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="blog-sidebar ms-lg-auto">
+              <div class="price-widget pt25 widget-mt-minus bdrs8">
+                <h3 class="widget-title">Tsh 29 <small class="fz15 fw500">/per hour</small></h3>
+                <div class="category-list mt20">
+                  <a class="d-flex align-items-center justify-content-between bdrb1 pb-2" href="">
+                    <span class="text"><i class="flaticon-place text-thm2 pe-2 vam"></i>Location</span> <span class="">{{sellerprofile.user_profile.location}}</span>
+                  </a>
+                  <a class="d-flex align-items-center justify-content-between bdrb1 pb-2" href="">
+                    <span class="text"><i class="flaticon-30-days text-thm2 pe-2 vam"></i>Member since</span> <span class="">{{sellerprofile.user_profile.user.created_at|date:"d F Y"}}</span>
+                  </a>
+                  <a class="d-flex align-items-center justify-content-between bdrb1 pb-2" href="">
+                    <span class="text"><i class="flaticon-calendar text-thm2 pe-2 vam"></i>Last Delivery</span> <span class="">5 days</span>
+                  </a>
+                  <a class="d-flex align-items-center justify-content-between bdrb1 pb-2" href="">
+                    <span class="text"><i class="flaticon-mars text-thm2 pe-2 vam"></i>Gender</span> <span class="">{{sellerprofile.user_profile.user.gender}}</span>
+                  </a>
+                  <a class="d-flex align-items-center justify-content-between bdrb1 pb-2" href="">
+                    <span class="text"><i class="flaticon-translator text-thm2 pe-2 vam"></i>Languages</span> <span class="">{{sellerprofile.user_profile.language}}</span>
+                  </a>
+                  <a class="d-flex align-items-center justify-content-between mb-3" href="">
+                    <span class="text"><i class="flaticon-sliders text-thm2 pe-2 vam"></i>English Level</span> <span class="">{{sellerprofile.user_profile.language_level}}</span>
+                  </a>
+                </div>
+                <div class="d-grid">
+                  <a href="tel:{{sellerprofile.user_profile.user.phone_number}}" class="ud-btn btn-thm">Contact Me<i class="fal fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+              <div class="sidebar-widget mb30 pb20 bdrs8">
+                <h4 class="widget-title">My Skills</h4>
+                <div class="tag-list mt30">
+                  <a href="">Figma</a>
+                  <a href="">Sketch</a>
+                  <a href="">HTML5</a>
+                  <a href="">Software Design</a>
+                  <a href="">Prototyping</a>
+                  <a href="">SaaS</a>
+                  <a href="">Design Writing</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock content %}

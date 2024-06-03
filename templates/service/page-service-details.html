@@ -1,0 +1,392 @@
+{% extends "base.html" %}
+{% load static %}
+{% block menutype %}nav-innerpage-style main-menu{% endblock menutype %}
+{% block content %}
+    <section class="categories_list_section overflow-hidden">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="listings_category_nav_list_menu">
+              <ul class="mb0 d-flex ps-0">
+                <li><a href="#">All Categories</a></li>
+                <li><a href="#">Graphics & Design</a></li>
+                <li><a class="active" href="#">Digital Marketing</a></li>
+                <li><a href="#">Writing & Translation</a></li>
+                <li><a href="#">Video & Animation</a></li>
+                <li><a href="#">Music & Audio</a></li>
+                <li><a href="#">Programming & Tech</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Trending</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcumb Sections -->
+    <section class="breadcumb-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-lg-10">
+            <div class="breadcumb-style1 mb10-xs">
+              <div class="breadcumb-list">
+                <a href="">Home</a>
+                <a href="">Services</a>
+                <a href="">Design & Creative</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-lg-2">
+            <div class="d-flex align-items-center justify-content-sm-end">
+              <div class="share-save-widget d-flex align-items-center">
+                <span class="icon flaticon-share dark-color fz12 mr10"></span>
+                <div class="h6 mb-0">Share</div>
+              </div>
+              <div class="share-save-widget d-flex align-items-center ml15">
+                <span class="icon flaticon-like dark-color fz12 mr10"></span>
+                <div class="h6 mb-0">Save</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcumb Sections -->
+    <section class="breadcumb-section pt-0">
+      <div class="cta-service-single cta-banner mx-auto maxw1700 pt120 pt60-sm pb120 pb60-sm bdrs16 position-relative overflow-hidden d-flex align-items-center mx20-lg px30-lg">
+        <img class="left-top-img wow zoomIn" src="{% static 'assets/images/vector-img/left-top.png' %}" alt="">
+        <img class="right-bottom-img wow zoomIn" src="{% static 'assets/images/vector-img/right-bottom.png' %}" alt="">
+        <img class="service-v1-vector bounce-y d-none d-xl-block" src="{% static 'assets/images/vector-img/vector-service-v1.png' %}" alt="">
+        <div class="container">
+          <div class="row wow fadeInUp">
+            <div class="col-xl-7">
+              <div class="position-relative">
+                <h2>{{service.description}}</h2>
+                <div class="list-meta mt30">
+                  <a class="list-inline-item mb5-sm" href="{% url 'marketplace:seller-details' service.pk %}">
+                    <span class="position-relative mr10">
+                      <img class="rounded-circle" src="{{service.seller_profile.user_profile.user.profile_image.url}}" alt="Freelancer Photo">
+                      <span class="online-badge"></span>
+                    </span>
+                    <span class="fz14">{% if service.seller_profile.user_profile.user.first_name and service.seller_profile.user_profile.user.first_name %}{{service.seller_profile.user_profile.user.first_name}} {{service.seller_profile.user_profile.user.last_name}}{% else %}{{service.seller_profile.user_profile.user.username}}{% endif %}</span>
+                  </a>
+                  <p class="mb-0 dark-color fz14 list-inline-item ml25 ml15-sm mb5-sm ml0-xs"><i class="fas fa-star vam fz10 review-color me-2"></i> {{total_reviews}} reviews</p>
+                  <p class="mb-0 dark-color fz14 list-inline-item ml25 ml15-sm mb5-sm ml0-xs"><i class="flaticon-file-1 vam fz20 me-2"></i> 2 Order in Queue</p>
+                  <p class="mb-0 dark-color fz14 list-inline-item ml25 ml15-sm mb5-sm ml0-xs"><i class="flaticon-website vam fz20 me-2"></i> 902 Views</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="pt10 pb90 pb30-md">
+      <div class="container">
+        <div class="row wrap">
+          <div class="col-lg-8">
+            <div class="column">
+              <div class="row">
+                <div class="col-sm-6 col-md-4">
+                  <div class="iconbox-style1 contact-style d-flex align-items-start mb30">
+                    <div class="icon flex-shrink-0"><span class="flaticon-calendar"></span></div>
+                    <div class="details">
+                      <h5 class="title">Delivery Time</h5>
+                      <p class="mb-0 text">1-3 Days</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <div class="iconbox-style1 contact-style d-flex align-items-start mb30">
+                    <div class="icon flex-shrink-0"><span class="flaticon-goal"></span></div>
+                    <div class="details">
+                      <h5 class="title">{{service.seller_profile.user_profile.language}} Level</h5>
+                      <p class="mb-0 text">{{service.seller_profile.user_profile.language_level}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <div class="iconbox-style1 contact-style d-flex align-items-start mb30">
+                    <div class="icon flex-shrink-0"><span class="flaticon-tracking"></span></div>
+                    <div class="details">
+                      <h5 class="title">Location</h5>
+                      <p class="mb-0 text">{{service.seller_profile.user_profile.location}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service-single-sldier vam_nav_style slider-1-grid owl-carousel owl-theme mb60">
+                <div class="item">
+                  <div class="thumb p50 p30-sm"><img src="{% static 'assets/images/listings/service-details-1.jpg' %}" alt="" class="w-100"></div>
+                </div>
+                <div class="item">
+                  <div class="thumb p50 p30-sm"><img src="{% static 'assets/images/listings/service-details-1.jpg' %}" alt="" class="w-100"></div>
+                </div>
+                <div class="item">
+                  <div class="thumb p50 p30-sm"><img src="{% static 'assets/images/listings/service-details-1.jpg' %}" alt="" class="w-100"></div>
+                </div>
+              </div>
+              <div class="service-about">
+                <h4>About</h4>
+                <p class="text mb30">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                <p class="text mb-0">Services I provide:</p>
+                <p class="text mb-0">1) Website Design</p>
+                <p class="text mb-0">2) Mobile App Design</p>
+                <p class="text mb-0">3) Brochure Design</p>
+                <p class="text mb-0">4) Business Card Design</p>
+                <p class="text mb30">5) Flyer Design</p>
+                <p class="text mb30">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                <div class="d-flex align-items-start mb50">
+                  <div class="list1">
+                    <h6>App type</h6>
+                    <p class="text mb-0">Business, Food & drink,</p>
+                    <p class="text">Graphics & design</p>
+                  </div>
+                  <div class="list1 ml80">
+                    <h6>Design tool</h6>
+                    <p class="text mb-0">Adobe XD, Figma,</p>
+                    <p class="text">Adobe Photoshop</p>
+                  </div>
+                  <div class="list1 ml80">
+                    <h6>Device</h6>
+                    <p class="text">Mobile, Desktop</p>
+                  </div>
+                </div>
+                
+                <hr class="opacity-100 mb60">
+                
+                <hr class="opacity-100 mb15">
+                <div class="product_single_content mb50">
+                  <div class="mbp_pagination_comments">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="total_review mb30 mt45">
+                          <h4>{{ total_reviews }} Reviews</h4>
+                        </div>
+                        <div class="d-md-flex align-items-center mb30">
+                          <div class="total-review-box d-flex align-items-center text-center mb30-sm">
+                            <div class="wrapper mx-auto">
+                              <div class="t-review mb15">4.96</div>
+                              <h5>Exceptional</h5>
+                              <p class="text mb-0">{{ total_reviews }} reviews</p>
+                            </div>
+                          </div>
+                          <div class="wrapper ml60 ml0-sm">
+                            <div class="review-list d-flex align-items-center mb10">
+                              <div class="list-number">5 Star</div>
+                                <div class="progress">
+                                  <div class="progress-bar" style="width: 90%;" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              <div class="value text-end">8</div>
+                            </div>
+                            <div class="review-list d-flex align-items-center mb10">
+                              <div class="list-number">4 Star</div>
+                                <div class="progress">
+                                  <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              <div class="value text-end">20</div>
+                            </div>
+                            <div class="review-list d-flex align-items-center mb10">
+                              <div class="list-number">3 Star</div>
+                                <div class="progress">
+                                  <div class="progress-bar w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              <div class="value text-end">15</div>
+                            </div>
+                            <div class="review-list d-flex align-items-center mb10">
+                              <div class="list-number">2 Star</div>
+                                <div class="progress">
+                                  <div class="progress-bar" style="width: 30%;" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              <div class="value text-end">2</div>
+                            </div>
+                            <div class="review-list d-flex align-items-center mb10">
+                              <div class="list-number">1 Star</div>     
+                                <div class="progress">
+                                  <div class="progress-bar" style="width: 20%;" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              <div class="value text-end">1</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {% for review in reviews  %}
+                      <div class="col-md-12">
+                        <div class="mbp_first position-relative d-flex align-items-center justify-content-start mb30-sm">
+                          <img src="{{ review.buyer.user.profile_image.url }}" class="mr-3" alt="comments-2.png">
+                          <div class="ml20">
+                            <h6 class="mt-0 mb-0">{{review.buyer.user.username}}</h6>
+                            <div><span class="fz14">{{review.created_at}}</span></div>
+                          </div>
+                        </div>
+                        <p class="text mt20 mb20">{{ review.comment}}</p>
+                        <div class="review_cansel_btns d-flex">
+                          <a href="#"><i class="fas fa-thumbs-up"></i>Helpful</a>
+                          <a href="#"><i class="fas fa-thumbs-down"></i>Not helpful</a>
+                        </div>
+                      </div>
+                      {% endfor %}
+        
+                      <!-- <div class="col-md-12">
+                        <div class="position-relative bdrb1 pb50">
+                          <a href="page-service-single.html" class="ud-btn btn-light-thm">See More<i class="fal fa-arrow-right-long"></i></a>
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="bsp_reveiw_wrt">
+                  <h6 class="fz17">Add a Review</h6>
+                  <p class="text">Your email address will not be published. Required fields are marked *</p>
+                  <h6>Your rating of this product</h6>
+                  <div class="d-flex">
+                    <i class="fas fa-star review-color"></i>
+                    <i class="far fa-star review-color ms-2"></i>
+                    <i class="far fa-star review-color ms-2"></i>
+                    <i class="far fa-star review-color ms-2"></i>
+                    <i class="far fa-star review-color ms-2"></i>
+                  </div>
+                  <form method='post' class="comments_form mt30 mb30-md">
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="mb-4">
+                          <label class="fw500 fz16 ff-heading dark-color mb-2">Comment</label>
+                          <textarea name="comment" class="pt15" rows="6" placeholder="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text."></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb20">
+                          <label class="fw500 ff-heading dark-color mb-2">Rate</label>
+                          <input type="text" name="rating" class="form-control" placeholder="rate from 1-5 eg 2">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <!-- <div class="checkbox-style1 d-block d-sm-flex align-items-center justify-content-between mb20">
+                          <label class="custom_checkbox fz15 ff-heading">Save my name, email, and website in this browser for the next time I comment.
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                        </div> -->
+                        <button type="submit" class="ud-btn btn-thm">Send<i class="fal fa-arrow-right-long"></i></button>
+                        <!-- <a href="" class="ud-btn btn-thm">Send<i class="fal fa-arrow-right-long"></i></a> -->
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="column">
+              <div class="blog-sidebar ms-lg-auto">
+                <!-- <div class="price-widget">
+                  <div class="navtab-style1">
+                    <nav>
+                      <div class="nav nav-tabs mb20" id="nav-tab2p" role="tablist">
+                        <button class="nav-link fw500" id="nav-item1p-tab" data-bs-toggle="tab" data-bs-target="#nav-item1p" type="button" role="tab" aria-controls="nav-item1p" aria-selected="true">Basic</button>
+                        <button class="nav-link active fw500" id="nav-item2p-tab" data-bs-toggle="tab" data-bs-target="#nav-item2p" type="button" role="tab" aria-controls="nav-item2p" aria-selected="false">Standart</button>
+                        <button class="nav-link fw500" id="nav-item3-tab" data-bs-toggle="tab" data-bs-target="#nav-item3p" type="button" role="tab" aria-controls="nav-item3p" aria-selected="false">Premium</button>
+                      </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade" id="nav-item1p" role="tabpanel" aria-labelledby="nav-item1p-tab">
+                        <div class="price-content">
+                          <div class="price">Tsh 50</div>
+                          <div class="h5 mb-2">High-converting Landing Pages</div>
+                          <p class="text fz14">I will redesign your current landing page or create one for you (upto 4 sections)</p>
+                          <hr class="opacity-100 mb20">
+                          <ul class="p-0 mb15 d-sm-flex align-items-center">
+                            <li class="fz14 fw500 dark-color"><i class="flaticon-sandclock fz20 text-thm2 me-2 vam"></i>3 Days Delivery</li>
+                            <li class="fz14 fw500 dark-color ml20 ml0-xs"><i class="flaticon-recycle fz20 text-thm2 me-2 vam"></i>2 Revisions</li>
+                          </ul>
+                          <div class="list-style1">
+                            <ul class="">
+                              <li class="mb15"><i class="far fa-check text-thm3 bgc-thm3-light"></i>2 Page / Screen</li>
+                              <li><i class="far fa-check text-thm3 bgc-thm3-light"></i>Source file</li>
+                            </ul>
+                          </div>
+                          <div class="d-grid">
+                            <a href="" class="ud-btn btn-thm">Continue Tsh 50<i class="fal fa-arrow-right-long"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade show active" id="nav-item2p" role="tabpanel" aria-labelledby="nav-item2p-tab">
+                        <div class="price-content">
+                          <div class="price">Tsh 29</div>
+                          <div class="h5 mb-2">High-converting Landing Pages</div>
+                          <p class="text fz14">I will redesign your current landing page or create one for you (upto 4 sections)</p>
+                          <hr class="opacity-100 mb20">
+                          <ul class="p-0 mb15 d-sm-flex align-items-center">
+                            <li class="fz14 fw500 dark-color"><i class="flaticon-sandclock fz20 text-thm2 me-2 vam"></i>3 Days Delivery</li>
+                            <li class="fz14 fw500 dark-color ml20 ml0-xs"><i class="flaticon-recycle fz20 text-thm2 me-2 vam"></i>2 Revisions</li>
+                          </ul>
+                          <div class="list-style1">
+                            <ul class="">
+                              <li class="mb15"><i class="far fa-check text-thm3 bgc-thm3-light"></i>2 Page / Screen</li>
+                              <li><i class="far fa-check text-thm3 bgc-thm3-light"></i>Source file</li>
+                            </ul>
+                          </div>
+                          <div class="d-grid">
+                            <a href="" class="ud-btn btn-thm">Continue Tsh 29<i class="fal fa-arrow-right-long"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="nav-item3p" role="tabpanel" aria-labelledby="nav-item3p-tab">
+                        <div class="price-content">
+                          <div class="price">Tsh 250</div>
+                          <div class="h5 mb-2">High-converting Landing Pages</div>
+                          <p class="text fz14">I will redesign your current landing page or create one for you (upto 4 sections)</p>
+                          <hr class="opacity-100 mb20">
+                          <ul class="p-0 mb15 d-sm-flex align-items-center">
+                            <li class="fz14 fw500 dark-color"><i class="flaticon-sandclock fz20 text-thm2 me-2 vam"></i>3 Days Delivery</li>
+                            <li class="fz14 fw500 dark-color ml20 ml0-xs"><i class="flaticon-recycle fz20 text-thm2 me-2 vam"></i>2 Revisions</li>
+                          </ul>
+                          <div class="list-style1">
+                            <ul class="">
+                              <li class="mb15"><i class="far fa-check text-thm3 bgc-thm3-light"></i>2 Page / Screen</li>
+                              <li><i class="far fa-check text-thm3 bgc-thm3-light"></i>Source file</li>
+                            </ul>
+                          </div>
+                          <div class="d-grid">
+                            <a href="" class="ud-btn btn-thm">Continue Tsh 250<i class="fal fa-arrow-right-long"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>              
+                </div> -->
+                <div class="freelancer-style1 service-single mb-0">
+                  <div class="wrapper d-flex align-items-center">
+                    <div class="thumb position-relative mb25">
+                      <img class="rounded-circle mx-auto" src="{% if service.seller_profile.user_profile.user.profile_image %}{{service.seller_profile.user_profile.user.profile_image.url}}{% else %}{% static 'assets/images/team/fl-1.png' %}{% endif %}" alt="">
+                      <span class="online"></span>
+                    </div>
+                    <div class="ml20">
+                      <h5 class="title mb-1">{{service.seller_profile.user_profile.user.first_name}} {{service.seller_profile.user_profile.user.last_name}}</h5>
+                      <p class="mb-0">{{service.seller_profile.profession}}</p>
+                      <div class="review"><p><i class="fas fa-star fz10 review-color pr10"></i><span class="dark-color">4.9</span> ({{total_reviews}} reviews)</p></div>
+                    </div>
+                  </div>
+                  <hr class="opacity-100">
+                  <div class="details">
+                    <div class="fl-meta d-flex align-items-center justify-content-between">
+                      <a class="meta fw500 text-start">Location<br><span class="fz14 fw400">{{service.seller_profile.user_profile.location}}</span></a>
+                      <a class="meta fw500 text-start">Rate<br><span class="fz14 fw400">Tsh 90 / hr</span></a>
+                      <a class="meta fw500 text-start">Job Success<br><span class="fz14 fw400">%98</span></a>
+                    </div>
+                  </div>
+                  <div class="d-grid mt30">
+                    <a href="tel:{{service.seller_profile.user_profile.user.phone_number}}" class="ud-btn btn-thm-border">Contact Me<i class="fal fa-arrow-right-long"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}

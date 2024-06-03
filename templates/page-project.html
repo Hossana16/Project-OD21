@@ -1,0 +1,784 @@
+{% extends "base.html" %}
+{% load static %}
+{% block menutype %}nav-innerpage-style main-menu{% endblock menutype %}
+{% block content %}
+<div class="body_content">
+    <section class="categories_list_section overflow-hidden">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="listings_category_nav_list_menu">
+              <ul class="mb0 d-flex ps-0">
+                <li><a href="#">All Categories</a></li>
+                <li><a href="#">Graphics & Design</a></li>
+                <li><a class="active" href="#">Digital Marketing</a></li>
+                <li><a href="#">Writing & Translation</a></li>
+                <li><a href="#">Video & Animation</a></li>
+                <li><a href="#">Music & Audio</a></li>
+                <li><a href="#">Programming & Tech</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Trending</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcumb Sections -->
+    <section class="breadcumb-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcumb-style1">
+              <div class="breadcumb-list">
+                <a href="">Home</a>
+                <a href="">Services</a>
+                <a href="">Design & Creative</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcumb Sections -->
+    <section class="breadcumb-section pt-0">
+      <div class="cta-service-v1 cta-banner mx-auto maxw1700 pt120 pb120 bdrs16 position-relative overflow-hidden d-flex align-items-center mx20-lg px30-lg">
+        <img class="left-top-img wow zoomIn" src="{% static 'assets/images/vector-img/left-top.png' %}" alt="">
+        <img class="right-bottom-img wow zoomIn" src="{% static 'assets/images/vector-img/right-bottom.png' %}" alt="">
+        <img class="service-v1-vector bounce-y d-none d-xl-block" src="{% static 'assets/images/vector-img/vector-service-v1.png' %}" alt="">
+        <div class="container">
+          <div class="row wow fadeInUp">
+            <div class="col-xl-7">
+              <div class="position-relative">
+                <h2>Projects List</h2>
+                <p class="text mb30">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
+              </div>
+              <div class="advance-search-tab bgc-white p10 bdrs4 zi1 position-relative">
+                <div class="row">
+                  <div class="col-md-8 col-xl-9">
+                    <div class="advance-search-field ">
+                      <form class="form-search position-relative">
+                        <div class="box-search bb1-sm">
+                          <span class="icon far fa-magnifying-glass"></span>
+                          <input class="form-control" type="text" name="search" placeholder="What are you looking for?">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-xl-3">
+                    <div class="text-center text-xl-start">
+                      <button class="ud-btn btn-thm w-100" type="button">Search</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Listings All Lists -->
+    <section class="pt30 pb90">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="list-sidebar-style1 d-none d-lg-block">
+              <div class="accordion" id="accordionExample">
+                <div class="card mb20 pb10 mt-0">
+                  <div class="card-header active" id="heading0">
+                    <h4>
+                      <button class="btn btn-link ps-0 pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse0" aria-expanded="true" aria-controls="collapse0">Category</button>
+                    </h4>
+                  </div>
+                  <div id="collapse0" class="collapse show" aria-labelledby="heading0" data-parent="#accordionExample">
+                    <div class="card-body card-body px-0 pt-0">
+                      <div class="checkbox-style1 mb15">
+                        <label class="custom_checkbox">UX Designer
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(1,945)</span>
+                        </label>
+                        <label class="custom_checkbox">Web Developers
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(8,136)</span>
+                        </label>
+                        <label class="custom_checkbox">Illustrators
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(917)</span>
+                        </label>
+                        <label class="custom_checkbox">Node.js
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(240)</span>
+                        </label>
+                        <label class="custom_checkbox">Project Managers
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">((2,460)</span>
+                        </label>
+                      </div>
+                      <a class="text-thm" href="">+20 more</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb20 pb10">
+                  <div class="card-header active" id="heading01">
+                    <h4>
+                      <button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse01" aria-expanded="true" aria-controls="collapse01">Project type</button>
+                    </h4>
+                  </div>
+                  <div id="collapse01" class="collapse show" aria-labelledby="heading01" data-parent="#accordionExample">
+                    <div class="card-body card-body px-0 pt-0">
+                      <div class="switch-style1">
+                        <div class="form-check form-switch mb20">
+                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                          <label class="form-check-label" for="flexSwitchCheckDefault">Fixed</label>
+                          <span class="right-tags">(1,945)</span>
+                        </div>
+                      </div>
+                      <div class="switch-style1">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault2" checked="checked">
+                          <label class="form-check-label" for="flexSwitchCheckDefault2">Hourly</label>
+                          <span class="right-tags">(8,136)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb20 pb0">
+                  <div class="card-header active" id="heading1">
+                    <h4>
+                      <button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">Price</button>
+                    </h4>
+                  </div>
+                  <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionExample">
+                    <div class="card-body card-body px-0 pt-0">
+                      <!-- Range Slider Desktop Version -->
+                      <div class="range-slider-style1">
+                        <div class="range-wrapper">
+                          <div class="slider-range mb10 mt15"></div>
+                          <div class="text-center">
+                            <input type="text" class="amount" placeholder="Tsh 20"><span class="fa-sharp fa-solid fa-minus mx-2 dark-color"></span>
+                            <input type="text" class="amount2" placeholder="Tsh 70987">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb20 pb10">
+                  <div class="card-header active" id="heading0">
+                    <h4>
+                      <button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse02" aria-expanded="true" aria-controls="collapse02">Skills</button>
+                    </h4>
+                  </div>
+                  <div id="collapse02" class="collapse show" aria-labelledby="heading0" data-parent="#accordionExample">
+                    <div class="card-body card-body px-0 pt-0">
+                      <div class="checkbox-style1 mb15">
+                        <label class="custom_checkbox">Adobe Photoshop
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(1,945)</span>
+                        </label>
+                        <label class="custom_checkbox">Figma
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(8,136)</span>
+                        </label>
+                        <label class="custom_checkbox">Sketch
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(917)</span>
+                        </label>
+                        <label class="custom_checkbox">Adobe XD
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(240)</span>
+                        </label>
+                        <label class="custom_checkbox">Balsamiq
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">((2,460)</span>
+                        </label>
+                      </div>
+                      <a class="text-thm" href="">+20 more</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb20 pb5">
+                  <div class="card-header active" id="heading2">
+                    <h4>
+                      <button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">Location</button>
+                    </h4>
+                  </div>
+                  <div id="collapse2" class="collapse show" aria-labelledby="heading2" data-parent="#accordionExample">
+                    <div class="card-body card-body px-0 pt-0">
+                      <div class="search_area mb15">
+                        <input type="text" class="form-control" placeholder="What are you looking for?">
+                        <label><span class="flaticon-loupe"></span></label>
+                      </div>
+                      <div class="checkbox-style1 mb15">
+                        <label class="custom_checkbox">United States
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(1,945)</span>
+                        </label>
+                        <label class="custom_checkbox">United Kingdom
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(8,136)</span>
+                        </label>
+                        <label class="custom_checkbox">Canada
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(917)</span>
+                        </label>
+                        <label class="custom_checkbox">Germany
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(240)</span>
+                        </label>
+                        <label class="custom_checkbox">Turkey
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">((2,460)</span>
+                        </label>
+                      </div>
+                      <a class="text-thm" href="">+20 more</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb20 pb5">
+                  <div class="card-header active" id="heading3">
+                    <h4>
+                      <button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">Languange</button>
+                    </h4>
+                  </div>
+                  <div id="collapse3" class="collapse show" aria-labelledby="heading3" data-parent="#accordionExample">
+                    <div class="card-body card-body px-0 pt-0">
+                      <div class="checkbox-style1 mb15">
+                        <label class="custom_checkbox">Turkish
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(1,945)</span>
+                        </label>
+                        <label class="custom_checkbox">English
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(8,136)</span>
+                        </label>
+                        <label class="custom_checkbox">Italian
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(917)</span>
+                        </label>
+                        <label class="custom_checkbox">Spanish
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(240)</span>
+                        </label>
+                      </div>
+                      <a class="text-thm" href="">+20 more</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb20 pb5">
+                  <div class="card-header active" id="heading4">
+                    <h4>
+                      <button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">English Level</button>
+                    </h4>
+                  </div>
+                  <div id="collapse4" class="collapse show" aria-labelledby="heading4" data-parent="#accordionExample">
+                    <div class="card-body card-body px-0 pt-0">
+                      <div class="checkbox-style1">
+                        <label class="custom_checkbox">Basic level
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(1,945)</span>
+                        </label>
+                        <label class="custom_checkbox">Bilingual
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(8,136)</span>
+                        </label>
+                        <label class="custom_checkbox">Fluent
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(917)</span>
+                        </label>
+                        <label class="custom_checkbox">Native
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                          <span class="right-tags">(240)</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row align-items-center mb20">
+              <div class="col-md-6">
+                <div class="text-center text-md-start">
+                  <p class="text mb-0 mb10-sm"><span class="fw500">5,512</span> services available</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="page_control_shorting d-md-flex align-items-center justify-content-center justify-content-md-end">
+                  <div class="dropdown-lists d-block d-lg-none me-2 mb10-sm">
+                    <ul class="p-0 mb-0 text-center text-md-start">
+                      <li>
+                        <!-- Advance Features modal trigger -->
+                        <button type="button" class="open-btn filter-btn-left"> <img class="me-2" src="{% static 'assets/images/icon/all-filter-icon.svg" alt=""> All Filter</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="pcs_dropdown dark-color pr10 text-center text-md-end"><span>Sort by</span>
+                    <select class="selectpicker show-tick">
+                      <option>Best Selling</option>
+                      <option>Recommended</option>
+                      <option>New Arrivals</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-12">
+                <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
+                  <div class="col-lg-8 ps-0">
+                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
+                      <div class="thumb w60 position-relative rounded-circle mb15-md">
+                        <img class="rounded-circle mx-auto" src="{% static 'assets/images/team/client-1.png' %}" alt="">
+                        <span class="online-badge2"></span>
+                      </div>
+                      <div class="details ml15 ml0-md mb15-md">
+                        <h5 class="title mb-3">Food Delviery Mobile App</h5>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-place fz16 vam text-thm2 me-1"></i> London, UK</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 2 hours ago</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm"><i class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 1 Received</p>
+                        <p class="text mt10">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+                        <div class="skill-tags d-flex align-items-center justify-content-start">
+                          <span class="tag">Figma</span>
+                          <span class="tag mx10">Sketch</span>
+                          <span class="tag">HTML5</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
+                    <div class="details">
+                      <div class="text-lg-end">
+                        <h4>Tsh 100 - Tsh 150</h4>
+                        <p class="text">Hourly Rate</p>
+                      </div>
+                      <div class="d-grid mt15">
+                        <a href="page-freelancer-single.html" class="ud-btn btn-light-thm">Send Proposal<i class="fal fa-arrow-right-long"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-12">
+                <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
+                  <div class="col-lg-8 ps-0">
+                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
+                      <div class="thumb w60 position-relative rounded-circle mb15-md">
+                        <img class="rounded-circle mx-auto" src="{% static 'assets/images/team/client-2.png' %}" alt="">
+                      </div>
+                      <div class="details ml15 ml0-md mb15-md">
+                        <h5 class="title mb-3">Swift / SwiftUI Developer for B2B iOS apps</h5>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-place fz16 vam text-thm2 me-1"></i> London, UK</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 2 hours ago</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm"><i class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 1 Received</p>
+                        <p class="text mt10">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+                        <div class="skill-tags d-flex align-items-center justify-content-start">
+                          <span class="tag">Figma</span>
+                          <span class="tag mx10">Sketch</span>
+                          <span class="tag">HTML5</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
+                    <div class="details">
+                      <div class="text-lg-end">
+                        <h4>Tsh 100 - Tsh 150</h4>
+                        <p class="text">Hourly Rate</p>
+                      </div>
+                      <div class="d-grid mt15">
+                        <a href="page-freelancer-single.html" class="ud-btn btn-light-thm">Send Proposal<i class="fal fa-arrow-right-long"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-12">
+                <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
+                  <div class="col-lg-8 ps-0">
+                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
+                      <div class="thumb w60 position-relative rounded-circle mb15-md">
+                        <img class="rounded-circle mx-auto" src="{% static 'assets/images/team/client-3.png' %}" alt="">
+                      </div>
+                      <div class="details ml15 ml0-md mb15-md">
+                        <h5 class="title mb-3">English content writer for Fintech</h5>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-place fz16 vam text-thm2 me-1"></i> London, UK</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 2 hours ago</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm"><i class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 1 Received</p>
+                        <p class="text mt10">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+                        <div class="skill-tags d-flex align-items-center justify-content-start">
+                          <span class="tag">Figma</span>
+                          <span class="tag mx10">Sketch</span>
+                          <span class="tag">HTML5</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
+                    <div class="details">
+                      <div class="text-lg-end">
+                        <h4>Tsh 100 - Tsh 150</h4>
+                        <p class="text">Hourly Rate</p>
+                      </div>
+                      <div class="d-grid mt15">
+                        <a href="page-freelancer-single.html" class="ud-btn btn-light-thm">Send Proposal<i class="fal fa-arrow-right-long"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-12">
+                <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
+                  <div class="col-lg-8 ps-0">
+                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
+                      <div class="thumb w60 position-relative rounded-circle mb15-md">
+                        <img class="rounded-circle mx-auto" src="{% static 'assets/images/team/client-4.png' %}" alt="">
+                      </div>
+                      <div class="details ml15 ml0-md mb15-md">
+                        <h5 class="title mb-3">Full-stack Developer to help us to build our</h5>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-place fz16 vam text-thm2 me-1"></i> London, UK</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 2 hours ago</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm"><i class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 1 Received</p>
+                        <p class="text mt10">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+                        <div class="skill-tags d-flex align-items-center justify-content-start">
+                          <span class="tag">Figma</span>
+                          <span class="tag mx10">Sketch</span>
+                          <span class="tag">HTML5</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
+                    <div class="details">
+                      <div class="text-lg-end">
+                        <h4>Tsh 100 - Tsh 150</h4>
+                        <p class="text">Hourly Rate</p>
+                      </div>
+                      <div class="d-grid mt15">
+                        <a href="page-freelancer-single.html" class="ud-btn btn-light-thm">Send Proposal<i class="fal fa-arrow-right-long"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-12">
+                <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
+                  <div class="col-lg-8 ps-0">
+                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
+                      <div class="thumb w60 position-relative rounded-circle mb15-md">
+                        <img class="rounded-circle mx-auto" src="{% static 'assets/images/team/client-5.png' %}" alt="">
+                      </div>
+                      <div class="details ml15 ml0-md mb15-md">
+                        <h5 class="title mb-3">Looking for team members for web agency</h5>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-place fz16 vam text-thm2 me-1"></i> London, UK</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 2 hours ago</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm"><i class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 1 Received</p>
+                        <p class="text mt10">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+                        <div class="skill-tags d-flex align-items-center justify-content-start">
+                          <span class="tag">Figma</span>
+                          <span class="tag mx10">Sketch</span>
+                          <span class="tag">HTML5</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
+                    <div class="details">
+                      <div class="text-lg-end">
+                        <h4>Tsh 100 - Tsh 150</h4>
+                        <p class="text">Hourly Rate</p>
+                      </div>
+                      <div class="d-grid mt15">
+                        <a href="page-freelancer-single.html" class="ud-btn btn-light-thm">Send Proposal<i class="fal fa-arrow-right-long"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-12">
+                <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
+                  <div class="col-lg-8 ps-0">
+                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
+                      <div class="thumb w60 position-relative rounded-circle mb15-md">
+                        <img class="rounded-circle mx-auto" src="{% static 'assets/images/team/client-6.png' %}" alt="">
+                      </div>
+                      <div class="details ml15 ml0-md mb15-md">
+                        <h5 class="title mb-3">Video animator to bring some illustrations to life</h5>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-place fz16 vam text-thm2 me-1"></i> London, UK</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 2 hours ago</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm"><i class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 1 Received</p>
+                        <p class="text mt10">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+                        <div class="skill-tags d-flex align-items-center justify-content-start">
+                          <span class="tag">Figma</span>
+                          <span class="tag mx10">Sketch</span>
+                          <span class="tag">HTML5</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
+                    <div class="details">
+                      <div class="text-lg-end">
+                        <h4>Tsh 100 - Tsh 150</h4>
+                        <p class="text">Hourly Rate</p>
+                      </div>
+                      <div class="d-grid mt15">
+                        <a href="page-freelancer-single.html" class="ud-btn btn-light-thm">Send Proposal<i class="fal fa-arrow-right-long"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-12">
+                <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
+                  <div class="col-lg-8 ps-0">
+                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
+                      <div class="thumb w60 position-relative rounded-circle mb15-md">
+                        <img class="rounded-circle mx-auto" src="{% static 'assets/images/team/client-7.png' %}" alt="">
+                      </div>
+                      <div class="details ml15 ml0-md mb15-md">
+                        <h5 class="title mb-3">Food Delviery Mobile App</h5>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-place fz16 vam text-thm2 me-1"></i> London, UK</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 2 hours ago</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm"><i class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 1 Received</p>
+                        <p class="text mt10">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+                        <div class="skill-tags d-flex align-items-center justify-content-start">
+                          <span class="tag">Figma</span>
+                          <span class="tag mx10">Sketch</span>
+                          <span class="tag">HTML5</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
+                    <div class="details">
+                      <div class="text-lg-end">
+                        <h4>Tsh 100 - Tsh 150</h4>
+                        <p class="text">Hourly Rate</p>
+                      </div>
+                      <div class="d-grid mt15">
+                        <a href="page-freelancer-single.html" class="ud-btn btn-light-thm">Send Proposal<i class="fal fa-arrow-right-long"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-12">
+                <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
+                  <div class="col-lg-8 ps-0">
+                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
+                      <div class="thumb w60 position-relative rounded-circle mb15-md">
+                        <img class="rounded-circle mx-auto" src="{% static 'assets/images/team/client-8.png' %}" alt="">
+                      </div>
+                      <div class="details ml15 ml0-md mb15-md">
+                        <h5 class="title mb-3">Food Delviery Mobile App</h5>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-place fz16 vam text-thm2 me-1"></i> London, UK</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 2 hours ago</p>
+                        <p class="mb-0 fz14 list-inline-item mb5-sm"><i class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i> 1 Received</p>
+                        <p class="text mt10">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+                        <div class="skill-tags d-flex align-items-center justify-content-start">
+                          <span class="tag">Figma</span>
+                          <span class="tag mx10">Sketch</span>
+                          <span class="tag">HTML5</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
+                    <div class="details">
+                      <div class="text-lg-end">
+                        <h4>Tsh 100 - Tsh 150</h4>
+                        <p class="text">Hourly Rate</p>
+                      </div>
+                      <div class="d-grid mt15">
+                        <a href="page-freelancer-single.html" class="ud-btn btn-light-thm">Send Proposal<i class="fal fa-arrow-right-long"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mbp_pagination mt30 text-center">
+                <ul class="page_navigation">
+                  <li class="page-item">
+                    <a class="page-link" href="#"> <span class="fas fa-angle-left"></span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item d-inline-block d-sm-none"><a class="page-link" href="#">...</a></li>
+                  <li class="page-item"><a class="page-link" href="#">5</a></li>
+                  <li class="page-item d-none d-sm-inline-block"><a class="page-link" href="#">...</a></li>
+                  <li class="page-item d-none d-sm-inline-block"><a class="page-link" href="#">20</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#"><span class="fas fa-angle-right"></span></a>
+                  </li>
+                </ul>
+                <p class="mt10 mb-0 pagination_page_count text-center">1 – 20 of 300+ property available</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Footer --> 
+    <section class="footer-style1 pt25 pb-0">
+      <div class="container">
+        <div class="row bb-white-light pb10 mb60">
+          <div class="col-md-7">
+            <div class="d-block text-center text-md-start justify-content-center justify-content-md-start d-md-flex align-items-center mb-3 mb-md-0">
+              <a class="fz17 fw500 text-white mr15-md mr30" href="">Terms of Service</a>
+              <a class="fz17 fw500 text-white mr15-md mr30" href="">Privacy Policy</a>
+              <a class="fz17 fw500 text-white" href="">Site Map</a>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="social-widget text-center text-md-end">
+              <div class="social-style1">
+                <a class="text-white me-2 fw500 fz17" href="">Follow us</a>
+                <a href=""><i class="fab fa-facebook-f list-inline-item"></i></a>
+                <a href=""><i class="fab fa-twitter list-inline-item"></i></a>
+                <a href=""><i class="fab fa-instagram list-inline-item"></i></a>
+                <a href=""><i class="fab fa-linkedin-in list-inline-item"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-lg-3">
+            <div class="link-style1 mb-4 mb-sm-5">
+              <h5 class="text-white mb15">About</h5>
+              <div class="link-list">
+                <a href="">Careers</a>
+                <a href="">Press & News</a>
+                <a href="">Partnerships</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Terms of Service</a>
+                <a href="">Investor Relations</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="link-style1 mb-4 mb-sm-5">
+              <h5 class="text-white mb15">Categories</h5>
+              <ul class="ps-0">
+                <li><a href="">Graphics & Design</a></li>
+                <li><a href="">Digital Marketing</a></li>
+                <li><a href="">Writing & Translation</a></li>
+                <li><a href="">Video & Animation</a></li>
+                <li><a href="">Music & Audio</a></li>
+                <li><a href="">Programming & Tech</a></li>
+                <li><a href="">Data</a></li>
+                <li><a href="">Business</a></li>
+                <li><a href="">Lifestyle</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="link-style1 mb-4 mb-sm-5">
+              <h5 class="text-white mb15">Support</h5>
+              <ul class="ps-0">
+                <li><a href="">Help & Support</a></li>
+                <li><a href="">Trust & Safety</a></li>
+                <li><a href="">Selling on Freeio</a></li>
+                <li><a href="">Buying on Freeio</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="footer-widget">
+              <div class="footer-widget mb-4 mb-sm-5">
+                <div class="mailchimp-widget">
+                  <h5 class="title text-white mb20">Subscribe</h5>
+                  <div class="mailchimp-style1">
+                    <input type="email" class="form-control" placeholder="Your email address">
+                    <button type="submit">Send</button>
+                  </div>
+                </div>
+              </div>
+              <div class="app-widget mb-4 mb-sm-5">
+                <h5 class="title text-white mb20">Apps</h5>
+                <div class="row mb-4 mb-lg-5">
+                  <div class="col-lg-12">
+                    <a class="app-list d-flex align-items-center mb10" href="">
+                      <i class="fab fa-apple fz17 mr15"></i>
+                      <h6 class="app-title fz15 fw400 mb-0">iOS App</h6>
+                    </a>
+                    <a class="app-list d-flex align-items-center" href="">
+                      <i class="fab fa-google-play fz15 mr15"></i>
+                      <h6 class="app-title fz15 fw400 mb-0">Android App</h6>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container white-bdrt1 py-4">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="text-center text-lg-start">
+              <p class="copyright-text mb-2 mb-md-0 text-white-light ff-heading">© Freeio. 2023 CreativeLayers. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="footer_bottom_right_btns text-center text-lg-end">
+              <ul class="p-0 m-0">
+                <li class="list-inline-item">
+                  <select class="selectpicker show-tick">
+                    <option>USTsh  USD</option>
+                    <option>Euro</option>
+                    <option>Pound</option>
+                  </select>
+                </li>
+                <li class="list-inline-item">
+                  <select class="selectpicker show-tick">
+                    <option>English</option>
+                    <option>Frenc</option>
+                    <option>Italian</option>
+                    <option>Spanish</option>
+                    <option>Turkey</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <a class="scrollToHome" href="#"><i class="fas fa-angle-up"></i></a>
+  
+{% endblock content %}
