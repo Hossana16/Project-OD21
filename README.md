@@ -1,3 +1,6 @@
+![header-logo](https://github.com/Hossana16/Project-OD21/assets/80108666/52537967-4cda-48ad-ad6b-9fd283f9871d)
+
+
 # Service Marketplace Platform
 
 Welcome to the Service Marketplace Platform! This platform allows users to browse, review, and purchase services offered by various sellers. Sellers can manage their services and receive reviews from buyers.
