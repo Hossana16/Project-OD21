@@ -1,0 +1,80 @@
+/*  Funfact Styles  */
+.funfact-floating-img1 {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+.funfact-floating-img2{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.funfact_one{
+  @include transition(all, 0.4s, ease);
+  .timer,
+  span{
+    @include heading-typo6;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 49px;
+  }
+  &.at-home2-hero{
+    .timer,
+    span{
+      color: $white-color;
+      font-size: 28px;
+    }
+  }
+  &.at-home5{
+    border-radius: 12px;
+    padding: 50px 0;
+    &:hover{
+      background-color: $white-color;
+    }
+    .icon,
+    .timer,
+    span{
+      color: $theme-color2;
+    }
+  }
+  &.at-home5-hero{
+    .timer,
+    span{
+      color: $theme-color2;
+      font-size: 28px;
+    }
+  }
+}
+.funfact-style1{
+  background-color: $white-color;
+  @include default-box-shadow1;
+  margin-bottom: 30px;
+  max-width: 280px;
+  padding: 60px 15px 35px;
+  position: relative;
+  @include media-breakpoint-down(lg){
+    padding: 30px 15px 25px;
+  }
+  @include media-breakpoint-down(sm){
+    max-width: initial;
+  }
+  .title,
+  span{
+    color: $title-color;
+    font-family: $body-font;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 59px;
+    letter-spacing: 0em;
+    @include media-breakpoint-down(lg){
+      font-size: 35px;
+    }
+  }
+  &.at-home5{
+    padding: 40px 15px 30px;
+  }
+}
+.home11-funfact{
+  background-image: url(../images/background/home11-cta-1.png);
+  background-size: cover;
+}

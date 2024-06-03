@@ -1,0 +1,52 @@
+/*	All styles about breadcumb  */
+.breadcumb-section{
+	padding: 20px 0;
+}
+.breadcumb-section2{
+	align-items: center;
+	background-image: url(../images/background/about-page-bg.jpg);
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	height: 450px;
+}
+.breadcumb-section3{
+	align-items: center;
+	background-image: url(../images/background/compare-bg.jpg);
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	height: 450px;
+	@include media-breakpoint-down(lg){
+		height: 250px;
+		position: relative;
+	}
+}
+.breadcumb-style1{
+	position: relative;
+	.title{
+		letter-spacing: .02em;
+	}
+	.breadcumb-list{
+		position: relative;
+		a{
+			color: $body-color;
+			display: inline-block;
+			font-size: 14px;
+			position: relative;
+			margin-right: 25px;
+			&:after{
+				content: "/";
+		    font-size: 14px;
+		    position: absolute;
+		    right: -20px;
+			}
+			&:last-child{
+				color: $title-color;
+				&:after{
+					display: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,217 @@
+/* Mixins */
+// @mixin special-text {
+//   @include important-text;
+//   @include link;
+//   @include special-border;
+// }
+
+@mixin default-box-shadow1 {
+  -webkit-box-shadow:0px 6px 15px rgba(64, 79, 104, 0.05);
+  -moz-box-shadow:0px 6px 15px rgba(64, 79, 104, 0.05);
+  -o-box-shadow:0px 6px 15px rgba(64, 79, 104, 0.05);
+  box-shadow:0px 6px 15px rgba(64, 79, 104, 0.05);
+}
+@mixin default-box-shadow2 {
+  -webkit-box-shadow:0px 5px 20px rgba(91, 187, 123, 0.15);
+  -moz-box-shadow:0px 5px 20px rgba(91, 187, 123, 0.15);
+  -o-box-shadow:0px 5px 20px rgba(91, 187, 123, 0.15);
+  box-shadow:0px 5px 20px rgba(91, 187, 123, 0.15);
+}
+@mixin default-box-shadow3 {
+  -webkit-box-shadow:0px 25px 70px rgba(1, 33, 58, 0.07);
+  -moz-box-shadow:0px 25px 70px rgba(1, 33, 58, 0.07);
+  -o-box-shadow:0px 25px 70px rgba(1, 33, 58, 0.07);
+  box-shadow:0px 25px 70px rgba(1, 33, 58, 0.07);
+}
+@mixin default-box-shadow4{
+  -webkit-box-shadow:10px 10px 40px rgba(34, 34, 34, 0.05);
+  -moz-box-shadow:10px 10px 40px rgba(34, 34, 34, 0.05);
+  -o-box-shadow:10px 10px 40px rgba(34, 34, 34, 0.05);
+  box-shadow:10px 10px 40px rgba(34, 34, 34, 0.05);
+}
+@mixin default-box-shadow5{
+  -webkit-box-shadow:0px 10px 35px rgba(5, 16, 54, 0.1);
+  -moz-box-shadow:0px 10px 35px rgba(5, 16, 54, 0.1);
+  -o-box-shadow:0px 10px 35px rgba(5, 16, 54, 0.1);
+  box-shadow:0px 10px 35px rgba(5, 16, 54, 0.1);
+}
+@mixin default-box-shadow6{
+  -webkit-box-shadow:10px 10px 0px $theme-color4;
+  -moz-box-shadow:10px 10px 0px $theme-color4;
+  -o-box-shadow:10px 10px 0px $theme-color4;
+  box-shadow:10px 10px 0px $theme-color4;
+}
+@mixin default-box-shadow7{
+  -webkit-box-shadow:0px 40px 30px rgba(25, 25, 46, 0.04);;
+  -moz-box-shadow:0px 40px 30px rgba(25, 25, 46, 0.04);;
+  -o-box-shadow:0px 40px 30px rgba(25, 25, 46, 0.04);;
+  box-shadow:0px 40px 30px rgba(25, 25, 46, 0.04);;
+}
+@mixin default-border-radius1 {
+  border-radius: 4px;
+}
+@mixin default-border-radius2 {
+  border-radius: 8px;
+}
+@mixin default-border-radius3 {
+  border-radius: 16px;
+}
+@mixin default-border-radius4 {
+  border-radius: 24px;
+}
+@mixin default-border-radius5 {
+  border-radius: 32px;
+}
+@mixin heading-typo1 {
+  color: $title-color;
+  font-family: $title-font;
+  font-weight: 500;
+}
+@mixin heading-typo2 {
+  color: $title-color;
+  font-family: $title-font;
+  font-weight: 400;
+}
+@mixin heading-typo3 {
+  font-family: $title-font;
+  font-weight: 600;
+}
+@mixin heading-typo4 {
+  font-family: $title-font;
+  font-weight: 400;
+}
+@mixin heading-typo5 {
+  font-family: $title-font;
+  font-weight: 500;
+}
+@mixin heading-typo6 {
+  color: $title-color;
+  font-family: $title-font;
+}
+@mixin listing-fav {
+  background-color: $white-color;
+  @include default-box-shadow1;
+  color: $title-color;
+  border-radius: 50%;
+  height: 36px;
+  line-height: 36px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  text-align: center;
+  width: 36px;
+  @include transition(all, 0.4s, ease);
+}
+@mixin listing-tag2 {
+  background-color: $dark-color;
+  @include default-border-radius2;
+  color: $white-color;
+  @include heading-typo3;
+  left: 135px;
+  opacity: 1;
+  padding: 2px 12px;
+  position: absolute;
+  top: 20px;
+  transform: translateY(0px);
+  visibility: visible;
+  @include transition(all, 0.4s, ease);
+}
+@mixin listing-meta2 {
+  background-color: $white-color;
+  @include default-border-radius2;
+  height: 35px;
+  line-height: 40px;
+  text-align: center;
+  width: 35px;
+  @include transition(all, 0.4s, ease);
+  margin-right: 2px;
+  &:hover{
+    background-color: $light-color;
+    color: $title-color;
+  }
+}
+@mixin listing-meta3 {
+  background-color: rgba($dark-color, 0.9);
+  border: 1px solid $title-color;
+  @include default-border-radius2;
+  color: $white-color;
+  display: block;
+  height: 35px;
+  line-height: 40px;
+  text-align: center;
+  width: 35px;
+  @include transition(all, 0.4s, ease);
+  margin-bottom: 10px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  &:hover{
+    background-color: rgba($theme-color, 0.9);
+    border: 1px solid $theme-color;
+    color: $white-color;
+  }
+}
+@mixin listing-meta4{
+  background-color: $white-color;
+  @include default-border-radius2;
+  color: $title-color;
+  display: inline-block;
+  height: 35px;
+  line-height: 38px;
+  text-align: center;
+  width: 35px;
+  @include transition(all, 0.4s, ease);
+  margin-bottom: 10px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  &:hover{
+    background-color: rgba($theme-color, 0.9);
+    color: $white-color;
+  }
+}
+@mixin listing-meta5{
+  background-color: rgba($dark-color, 0.9);
+  @include default-border-radius2;
+  color: $white-color;
+  display: inline-block;
+  height: 35px;
+  line-height: 38px;
+  text-align: center;
+  width: 35px;
+  @include transition(all, 0.4s, ease);
+  margin-bottom: 10px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  &:hover{
+    background-color: rgba($theme-color, 0.9);
+    color: $white-color;
+  }
+}
+@mixin default-transition1 {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+}
+@mixin default-transition2 {
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+@mixin transition($t-what: all, $t-time: 0.4s, $t-how: ease) {
+  -webkit-transition: $t-what $t-time $t-how;
+  -moz-transition:    $t-what $t-time $t-how;
+  -ms-transition:     $t-what $t-time $t-how;
+  -o-transition:      $t-what $t-time $t-how;
+  transition:         $t-what $t-time $t-how;
+}
+@mixin transform($transformation) {
+  transform: $transformation;
+  -webkit-transform: $transformation;
+  -moz-transform: $transformation;
+  -ms-transform: $transformation;
+  -o-transform: $transformation;  
+}

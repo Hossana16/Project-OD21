@@ -1,0 +1,343 @@
+{% extends "dashboards/sellers-dashboard/base.html" %}
+{%load static%}
+{% block content %}
+
+<div cl`ass="col-lg-9">
+  <div class="dashboard_title_area">
+    <h2>My Profile</h2>
+    <p class="text">Hey {{ user.username }}, you can edit your profile here.</p>
+    {% for message in messages %}
+    <p class="text">Hey {{ user.username }}, {{ message }}!</p>
+    {% endfor %}
+  </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-xl-12">
+    <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+      <div class="bdrb1 pb15 mb25">
+        <h5 class="list-title">Profile Details</h5>
+      </div>
+      <div class="col-xl-7">
+        <div class="profile-box d-sm-flex align-items-center mb30">
+          <div class="profile-img mb20-sm">
+            <img class="w-100 rounded-circle wa-xs"
+              src="{% if user.profile_image %}{{ user.profile_image.url }}{% else %}{% static 'assets/images/resource/user.png' %}{% endif %}"
+              alt="">
+          </div>
+          <div class="profile-content ml20 ml0-xs">
+            <div class="d-flex align-items-center my-3">
+              <a href="" class="tag-delt text-thm2"><span class="flaticon-delete text-thm2"></span></a>
+              <a href="" class="upload-btn ml10">Upload Images</a>
+            </div>
+            <p class="text mb-0">Max file size is 1MB, Minimum dimension: 330x300 And Suitable files are .jpg & .png</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+
+        <!-- <form method="post" enctype="multipart/form-data" class="form-style1">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+          {{ sellerprofile_form.as_p }}
+          <div class="col-md-12">
+              <div class="text-start">
+                  <button class="ud-btn btn-thm" type="submit">Update <i class="fal fa-arrow-right-long"></i></button>
+              </div>
+          </div>
+      </form> -->
+
+
+
+        <form method="post" enctype="multipart/form-data" class="form-style1">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          <div class="row">
+              <!-- User fields -->
+              <div class="mb20">
+                <label class="heading-color ff-heading fw500 mb10">Username</label>
+                <input name="username" type="text" class="form-control" placeholder="Username" value="{{ user_form.username.value }}">
+              </div>
+
+              <div class="col-sm-6">
+                <!-- User fields -->
+                <div class="mb20">
+                  <label class="heading-color ff-heading fw500 mb10">First Name</label>
+                  <input name="first_name" type="text" class="form-control" placeholder="Alie...." value="{{ user_form.first_name.value }}">
+                </div>
+              </div>  
+            
+              <div class="col-sm-6">
+                <div class="mb20">
+                    <label class="heading-color ff-heading fw500 mb10">Last Name</label>
+                    <input name="last_name" type="text" class="form-control" placeholder="adro..." value="{{ user_form.last_name.value }}">
+                </div>
+              </div>
+              <div class="col-sm-6">    
+                <div class="mb20">
+                    <label class="heading-color ff-heading fw500 mb10">Email</label>
+                    <input name="email" type="email" class="form-control" placeholder="name@domain.com.." value="{{ user_form.email.value }}">
+                </div>
+              </div>
+              
+              <div class="col-sm-6">  
+                <div class="mb20">
+                    <label class="heading-color ff-heading fw500 mb10">Phone Number</label>
+                    <input name="phone_number" type="text" class="form-control" placeholder="0764800000" value="{{ user_form.phone_number.value }}" required>
+                </div>
+              </div>  
+              <div class="col-sm-6">
+                <div class="mb20">
+                  <label class="heading-color ff-heading fw500 mb10">Date of Birth</label>
+                  <input name="date_of_birth" type="text" placeholder="2000-05-18" class="form-control" value="{{ user_form.date_of_birth.value }}">
+              </div>
+              </div>
+
+              <div class="col-sm-6">
+                
+                <div class="mb20">
+                    <label class="heading-color ff-heading fw500 mb10">Gender</label>
+                    <select name="gender" class="form-control">
+                        <option value="">Select Gender</option>
+                        <option value="Male" {% if user_form.gender.value == "Male" %}selected{% endif %}>Male</option>
+                        <option value="Female" {% if user_form.gender.value == "Female" %}selected{% endif %}>Female</option>
+                        <option value="Other" {% if user_form.gender.value == "Other" %}selected{% endif %}>Other</option>
+                    </select>
+                </div>
+               </div> 
+            <div class="mb20">
+                <label class="heading-color ff-heading fw500 mb10">Update Profile Image</label>
+                <input name="profile_image" type="file" class="form-control" value="{{user_form.profile_image.value}}">
+            </div>
+        
+            <!-- UserProfile fields -->
+            <div class="mb20">
+                <label class="heading-color ff-heading fw500 mb10">Location</label>
+                <input name="location" type="text" class="form-control" value="{{ profile_form.location.value }}">
+            </div>
+            <div class="col-sm-6">
+              <div class="mb20">
+                  <label class="heading-color ff-heading fw500 mb10">Language</label>
+                  <input name="language" type="text" class="form-control" value="{{ profile_form.language.value }}">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="mb20">
+                  <label class="heading-color ff-heading fw500 mb10">Language Level</label>
+                  <input name="language_level" type="text" class="form-control" value="{{ profile_form.language_level.value }}">
+              </div>
+            </div>  
+            <div class="col-sm-6">
+              <div class="mb20">
+                  <label class="heading-color ff-heading fw500 mb10">Proffesion</label>
+                  <input name="profession" type="text" class="form-control" value="{{ sellerprofile_form.profession.value }}">
+              </div>
+            </div>  
+            <div class="mb20">
+              <label class="heading-color ff-heading fw500 mb10">Your Bio</label>
+              <textarea name="bio" placeholder="Brief us about what you do." id="id_description" class="form-control h-100" rows="5">{{ sellerprofile_form.bio.value }}</textarea>
+          </div>
+          </div>  
+      
+          <div class="col-md-12">
+              <div class="text-start">
+                  <button class="ud-btn btn-thm" type="submit">Update profile <i class="fal fa-arrow-right-long"></i></button>
+              </div>
+          </div>
+      </form>
+      
+
+      </div>
+    </div>
+
+    
+    <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+      <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+        <h5 class="list-title">Education</h5>
+        <a href="{% url 'core:add-education' %}" class="add-more-btn text-thm"><i class="icon far fa-plus mr10"></i>Add Aducation</a>
+      </div>
+      <div class="position-relative">
+        {% if user_education %}
+        {% for education in user_education %}
+        <div class="educational-quality">
+          <div class="m-circle text-thm">M</div>
+          <div class="wrapper mb40 position-relative">
+            <div class="del-edit">
+              <div class="d-flex">
+                <a href="{% url 'core:edit-education' education.pk %}" class="icon me-2" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                  data-bs-original-title="Edit" aria-label="Edit"><span class="flaticon-pencil"></span></a>
+                <a href="{% url 'core:delete-education' education.pk %}" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                  data-bs-original-title="Delete" aria-label="Delete"><span class="flaticon-delete"></span></a>
+              </div>
+            </div>
+            <span class="tag">{{ education.start_year}} - {{ education.end_year}}</span>
+            <h5 class="mt15">{{ education.title }}</h5>
+            <h6 class="text-thm">{{education.school_name}}</h6>
+            <p>{{ education.description }}<br class="d-none d-lg-block"></p>
+          </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="educational-quality">
+          <div class="wrapper mb40 position-relative">
+            <h5 class="mt15">You have no education cv yet set your education CV here! ☝️</h5>
+          </div>
+        </div>
+        {% endif %}
+        <!-- <div class="text-start">
+          <a class="ud-btn btn-thm" href="">Save<i class="fal fa-arrow-right-long"></i></a>
+        </div> -->
+      </div>
+    </div>
+    <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+      <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+        <h5 class="list-title">Work & Experience</h5>
+        <a href="{% url 'core:add-workexperience' %}" class="add-more-btn text-thm"><i class="icon far fa-plus mr10"></i>Add Experience</a>
+      </div>
+      <div class="position-relative">
+        {% if work_experiences %}
+        {% for work_experience in work_experiences %}
+        <div class="educational-quality">
+          <div class="m-circle text-thm">M</div>
+          <div class="wrapper mb40 position-relative">
+            <div class="del-edit">
+              <div class="d-flex">
+                <a href="{% url 'core:edit-workexperience' work_experience.pk %}" class="icon me-2" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                  data-bs-original-title="Edit" aria-label="Edit"><span class="flaticon-pencil"></span></a>
+                <a href="" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                  data-bs-original-title="Delete" aria-label="Delete"><span class="flaticon-delete"></span></a>
+              </div>
+            </div>
+            <span class="tag">{{work_experience.start_date}} - {{work_experience.end_date}}</span>
+            <h5 class="mt15">{{ work_experience.job_title}}</h5>
+            <h6 class="text-thm">{{ work_experience.company_name }}</h6>
+            <p>{{work_experience.description }} <br class="d-none d-lg-block"></p>
+          </div>
+        </div>        
+        {% endfor %}
+        {% else %}
+        <div class="educational-quality">
+          <div class="wrapper mb40 position-relative">
+            <h5 class="mt15">Hey You have no Work Experience Would you like to add one here! ☝️</h5>
+          </div>
+        </div>
+        {% endif %}
+        
+        <!-- <div class="text-start">
+          <a class="ud-btn btn-thm" href="">Save<i class="fal fa-arrow-right-long"></i></a>
+        </div> -->
+      </div>
+    </div>
+    <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+      <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+        <h5 class="list-title">Awards</h5>
+        <a href="{% url 'core:add-awards' %}" class="add-more-btn text-thm"><i class="icon far fa-plus mr10"></i>Add Awards</a>
+      </div>
+      <div class="position-relative">
+        {% if user_awards %}
+        {% for user_award in user_awards %}
+        <div class="educational-quality ps-0">
+          <div class="wrapper mb40 position-relative">
+            <div class="del-edit">
+              <div class="d-flex">
+                <a href="{% url 'core:edit-awards' user_award.pk %}" class="icon me-2" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                  data-bs-original-title="Edit" aria-label="Edit"><span class="flaticon-pencil"></span></a>
+                <a href="" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                  data-bs-original-title="Delete" aria-label="Delete"><span class="flaticon-delete"></span></a>
+              </div>
+            </div>
+            <span class="tag">{{user_award.date_awarded}}</span>
+            <h5 class="mt15">{{ user_award.title}}</h5>
+            <h6 class="text-thm">{{ user_award.issuer }}</h6>
+            <p>{{user_award.description}}</p>
+          </div>
+          
+        </div>
+        {% endfor %}
+        {% else %}  
+        <div class="educational-quality">
+          <div class="wrapper mb40 position-relative">
+            <h5 class="mt15">You can now add any Awards Would you like to add one here! ☝️</h5>
+          </div>
+        </div>
+        {% endif %}
+        
+        <!-- <div class="text-start">
+          <a class="ud-btn btn-thm" href="">Save<i class="fal fa-arrow-right-long"></i></a>
+        </div> -->
+      </div>
+    </div>
+    <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+      <div class="bdrb1 pb15 mb25">
+        <h5 class="list-title">Change password</h5>
+      </div>
+      <div class="col-lg-7">
+        <div class="row">
+          <form class="form-style1">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="mb20">
+                  <label class="heading-color ff-heading fw500 mb10">Old Password</label>
+                  <input type="text" class="form-control" placeholder="********">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="mb20">
+                  <label class="heading-color ff-heading fw500 mb10">New Password</label>
+                  <input type="text" class="form-control" placeholder="********">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="mb20">
+                  <label class="heading-color ff-heading fw500 mb10">Confirm New Password</label>
+                  <input type="text" class="form-control" placeholder="********">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="text-start">
+                  <a class="ud-btn btn-thm" href="page-contact.html">Change Password<i
+                      class="fal fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+      <div class="col-lg-7">
+        <div class="row">
+          <div class="bdrb1 pb15 mb25">
+            <h5 class="list-title">close account</h5>
+          </div>
+          <form class="form-style1">
+            <div class="row">
+              <div class="col-sm-12">
+                <h6>Close account</h6>
+                <p class="text">Warning: If you close your account, you will be unsubscribed from all your services,
+                  and will lose access forever.</p>
+              </div>
+              <div class="col-sm-6">
+                <div class="mb20">
+                  <label class="heading-color ff-heading fw500 mb10">Enter Password</label>
+                  <input type="text" class="form-control" placeholder="********">
+                </div>
+                <div class="text-start">
+                  <a class="ud-btn btn-thm" href="page-contact.html">close account<i
+                      class="fal fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock content %}

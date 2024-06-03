@@ -1,0 +1,11 @@
+/*	blockquote Styles	*/
+.blockquote-style1{
+	background-color: $theme-color4;
+	border-left: 3px solid $title-color;
+	padding: 45px 60px 20px;
+	position: relative;
+	.fst-italic{
+		max-width: 645px;
+		width: 100%;
+	}
+}

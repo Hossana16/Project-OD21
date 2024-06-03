@@ -1,0 +1,213 @@
+{% extends "dashboards/sellers-dashboard/base.html" %}
+{% load static %}
+{% block content %}
+            <div class="col-lg-12">
+              <div class="dashboard_title_area">
+                <h2>Reviews</h2>
+                <p class="text">{{ user.username }} here are your reviews</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                <div class="packages_table table-responsive">
+                  <div class="navtab-style1">
+                    <nav>
+                      <div class="nav nav-tabs mb20" id="nav-tab2" role="tablist">
+                        <button class="nav-link active fw500 ps-0" id="nav-item1-tab" data-bs-toggle="tab" data-bs-target="#nav-item1" type="button" role="tab" aria-controls="nav-item1" aria-selected="true">Services</button>
+                        <button class="nav-link fw500" id="nav-item2-tab" data-bs-toggle="tab" data-bs-target="#nav-item2" type="button" role="tab" aria-controls="nav-item2" aria-selected="false">Jobs</button>
+                        {% comment %} <button class="nav-link fw500" id="nav-item3-tab" data-bs-toggle="tab" data-bs-target="#nav-item3" type="button" role="tab" aria-controls="nav-item3" aria-selected="false">Jobs</button> {% endcomment %}
+                      </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-item1" role="tabpanel" aria-labelledby="nav-item1-tab">
+                        <div class="col-md-12">
+                          {% for review in reviews %}
+                          <div class="bdrb1 pb20">
+                            <div class="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
+                              <img src="{% static 'assets/images/blog/comments-2.png' %}" class="mr-3" alt="comments-2.png' %}">
+                              <div class="ml20 ml0-xs mt20-xs">
+                                <div class="del-edit"><span class="flaticon-flag"></span></div>
+                                <h6 class="mt-0 mb-1">{{review.buyer.user.username}}</h6>
+                                <div class="d-flex align-items-center">
+                                  <div><i class="fas fa-star vam fz10 review-color me-2"></i><span class="fz15 fw500">{{review.rating}}</span></div>
+                                  <div class="ms-3"><span class="fz14 text">Published {{review.created_at|date:"d F Y" }}</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="text mt20 mb20">{{review.comment}}</p>
+                            {% comment %} <a href="{% url 'marketplace:service-details' reviews.pk %}" class="ud-btn bgc-thm4 text-thm">Respond</a> {% endcomment %}
+                          </div>
+                          {% endfor %}
+                          
+                        </div>
+
+                      </div>
+
+                      <div class="tab-pane fade show" id="nav-item2" role="tabpanel" aria-labelledby="nav-item2-tab">
+                      <div class="col-md-12">
+                          {% comment %} <div class="bdrb1 pb20">
+                            <div class="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
+                              <img src="{% static 'assets/images/blog/comments-2.png' %}" class="mr-3" alt="comments-2.png' %}">
+                              <div class="ml20 ml0-xs mt20-xs">
+                                <div class="del-edit"><span class="flaticon-flag"></span></div>
+                                <h6 class="mt-0 mb-1">Ali Tufan !Jobs</h6>
+                                <div class="d-flex align-items-center">
+                                  <div><i class="fas fa-star vam fz10 review-color me-2"></i><span class="fz15 fw500">4.98</span></div>
+                                  <div class="ms-3"><span class="fz14 text">Published 2 months ago</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="text mt20 mb20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                            <a href="{% url 'marketplace:service-details' reviews.pk  %}" class="ud-btn bgc-thm4 text-thm">Respond</a>
+                          </div> {% endcomment %}
+                        </div>
+                      </div>
+
+
+
+
+
+                        {% comment %} <div class="col-md-12">
+                          <div class="bdrb1 pb20">
+                            <div class="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
+                              <img src="{% static 'assets/images/blog/comments-2.png' %}" class="mr-3" alt="comments-2.png' %}">
+                              <div class="ml20 ml0-xs mt20-xs">
+                                <div class="del-edit"><span class="flaticon-flag"></span></div>
+                                <h6 class="mt-0 mb-1">Ali Tufan</h6>
+                                <div class="d-flex align-items-center">
+                                  <div><i class="fas fa-star vam fz10 review-color me-2"></i><span class="fz15 fw500">4.98</span></div>
+                                  <div class="ms-3"><span class="fz14 text">Published 2 months ago</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="text mt20 mb20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                            <a href="page-service-single.html" class="ud-btn bgc-thm4 text-thm">Respond</a>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
+                            <img src="{% static 'assets/images/blog/comments-2.png' %}" class="mr-3" alt="comments-2.png' %}">
+                            <div class="ml20 ml0-xs mt20-xs">
+                              <div class="del-edit"><span class="flaticon-flag"></span></div>
+                              <h6 class="mt-0 mb-1">Ali Tufan</h6>
+                              <div class="d-flex align-items-center">
+                                <div><i class="fas fa-star vam fz10 review-color me-2"></i><span class="fz15 fw500">4.98</span></div>
+                                <div class="ms-3"><span class="fz14 text">Published 2 months ago</span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="text mt20 mb20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                          <a href="page-service-single.html" class="ud-btn bgc-thm4 text-thm">Respond</a>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="nav-item2" role="tabpanel" aria-labelledby="nav-item2-tab">
+                        <div class="col-md-12">
+                          <div class="bdrb1 pb20">
+                            <div class="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
+                              <img src="{% static 'assets/images/blog/comments-2.png' %}" class="mr-3" alt="comments-2.png' %}">
+                              <div class="ml20 ml0-xs mt20-xs">
+                                <div class="del-edit"><span class="flaticon-flag"></span></div>
+                                <h6 class="mt-0 mb-1">Ali Tufan</h6>
+                                <div class="d-flex align-items-center">
+                                  <div><i class="fas fa-star vam fz10 review-color me-2"></i><span class="fz15 fw500">4.98</span></div>
+                                  <div class="ms-3"><span class="fz14 text">Published 2 months ago</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="text mt20 mb20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                            <a href="page-service-single.html" class="ud-btn bgc-thm4 text-thm">Respond</a>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="bdrb1 pb20">
+                            <div class="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
+                              <img src="{% static 'assets/images/blog/comments-2.png' %}" class="mr-3" alt="comments-2.png' %}">
+                              <div class="ml20 ml0-xs mt20-xs">
+                                <h6 class="mt-0 mb-1">Ali Tufan</h6>
+                                <div class="del-edit"><span class="flaticon-flag"></span></div>
+                                <div class="d-flex align-items-center">
+                                  <div><i class="fas fa-star vam fz10 review-color me-2"></i><span class="fz15 fw500">4.98</span></div>
+                                  <div class="ms-3"><span class="fz14 text">Published 2 months ago</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="text mt20 mb20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                            <a href="page-service-single.html" class="ud-btn bgc-thm4 text-thm">Respond</a>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
+                            <img src="{% static 'assets/images/blog/comments-2.png' %}" class="mr-3" alt="comments-2.png' %}">
+                            <div class="ml20 ml0-xs mt20-xs">
+                              <h6 class="mt-0 mb-1">Ali Tufan</h6>
+                              <div class="d-flex align-items-center">
+                                <div><i class="fas fa-star vam fz10 review-color me-2"></i><span class="fz15 fw500">4.98</span></div>
+                                <div class="ms-3"><span class="fz14 text">Published 2 months ago</span></div>
+                                <div class="del-edit"><span class="flaticon-flag"></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="text mt20 mb20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                          <a href="page-service-single.html" class="ud-btn bgc-thm4 text-thm">Respond</a>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="nav-item3" role="tabpanel" aria-labelledby="nav-item3-tab">
+                        <div class="col-md-12">
+                          <div class="bdrb1 pb20">
+                            <div class="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
+                              <img src="{% static 'assets/images/blog/comments-2.png' %}" class="mr-3" alt="comments-2.png' %}">
+                              <div class="ml20 ml0-xs mt20-xs">
+                                <div class="del-edit"><span class="flaticon-flag"></span></div>
+                                <h6 class="mt-0 mb-1">Ali Tufan</h6>
+                                <div class="d-flex align-items-center">
+                                  <div><i class="fas fa-star vam fz10 review-color me-2"></i><span class="fz15 fw500">4.98</span></div>
+                                  <div class="ms-3"><span class="fz14 text">Published 2 months ago</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="text mt20 mb20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                            <a href="page-service-single.html" class="ud-btn bgc-thm4 text-thm">Respond</a>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="bdrb1 pb20">
+                            <div class="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
+                              <img src="{% static 'assets/images/blog/comments-2.png' %}" class="mr-3" alt="comments-2.png' %}">
+                              <div class="ml20 ml0-xs mt20-xs">
+                                <div class="del-edit"><span class="flaticon-flag"></span></div>
+                                <h6 class="mt-0 mb-1">Ali Tufan</h6>
+                                <div class="d-flex align-items-center">
+                                  <div><i class="fas fa-star vam fz10 review-color me-2"></i><span class="fz15 fw500">4.98</span></div>
+                                  <div class="ms-3"><span class="fz14 text">Published 2 months ago</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="text mt20 mb20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                            <a href="page-service-single.html" class="ud-btn bgc-thm4 text-thm">Respond</a>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="mbp_first position-relative d-sm-flex align-items-center justify-content-start mb30-sm mt30">
+                            <img src="{% static 'assets/images/blog/comments-2.png' %}" class="mr-3" alt="comments-2.png' %}">
+                            <div class="ml20 ml0-xs mt20-xs">
+                              <div class="del-edit"><span class="flaticon-flag"></span></div>
+                              <h6 class="mt-0 mb-1">Ali Tufan</h6>
+                              <div class="d-flex align-items-center">
+                                <div><i class="fas fa-star vam fz10 review-color me-2"></i><span class="fz15 fw500">4.98</span></div>
+                                <div class="ms-3"><span class="fz14 text">Published 2 months ago</span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="text mt20 mb20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                          <a href="page-service-single.html" class="ud-btn bgc-thm4 text-thm">Respond</a>
+                        </div> 
+                      </div> {% endcomment %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       {% endblock content %}

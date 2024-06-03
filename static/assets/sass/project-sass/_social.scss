@@ -1,0 +1,58 @@
+/*	Social Styles  */
+.social-style1{
+	i{
+		color: $white-color;
+		border-radius: 50%;
+		height: 40px;
+		line-height:40px;
+		text-align: center;
+		width: 40px;
+	  @include transition(all, 0.4s, ease);
+	  &:hover{
+			background-color: rgba($white-color, .05);
+	  }
+	}
+	&.light-style{
+		i{
+			color: $title-color;
+		  &:hover{
+				background-color: $title-color;
+				color: $white-color;
+		  }
+		}
+	}
+	&.light-style2{
+		i{
+			color: $title-color;
+		  &:hover{
+				background-color: $light-color;
+				color: $title-color;
+		  }
+		}
+	}
+}
+.app-list{
+	.app-title,
+	i{
+		color: rgba($white-color, .7);
+	  @include transition(all, 0.4s, ease);
+	}
+	&:hover{
+		.app-title,
+		i{
+			color: $white-color;
+		}
+	}
+	&.light-style{
+		i{
+			color:rgba($dark-color, .7);
+		  &:hover{
+				background-color: $title-color;
+				color: $white-color;
+		  }
+		}
+		.app-title{
+			color:rgba($dark-color, .7);
+		}
+	}
+}

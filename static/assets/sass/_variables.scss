@@ -1,0 +1,58 @@
+/* Variables */
+:root{
+  --title-font-family    : 'DM Sans', sans-serif;
+  --body-font-family     : 'DM Sans', sans-serif;
+  --icon-font-family     : 'Font Awesome 6 Pro';
+  --icon-font-family2    : 'Flaticon';
+  --container-width      : 1460px;
+  --divder-space         : 200px;
+  --headings-color       : #222222;
+  --body-text-color      : #6B7177
+}
+// Color Variation
+$theme-color             : #5BBB7B;
+$theme-color2            : #1F4B3F;
+$theme-color2-dark       : #102C2D;
+$theme-color3            : #F1FCFA;
+$theme-color4            : #FFEDE8;
+$theme-color5            : #FFF8F6;
+$theme-color6            : #443297;
+$theme-color7            : #E0F1E0;
+$black-color             : #000000;
+$dark-color              : #222222;
+$dark-color2             : #140342;
+$body-light-color        : #697488;
+$white-color             : #ffffff;
+$light-color             : #F7F7F7;
+$gray-color              : #BEBDBD;
+$hover-bg-color          : #F0EFEC;
+$silver-color            : #C0C0C0;
+$primary-color           : #4780AA;
+$warning-color           : #927238;
+$light-yellow-color      : #FBF7ED;
+$review-color            : #E1C03F;
+$review-color2           : #C4C640;
+$review-color3           : #C8973B;
+$denger-color            : #AB3331;
+$success-color           : #5B7052;
+$success-color2          : #5BBB7B;
+$border-color            : #E9E9E9;
+$red-color               : #E8543E;
+
+// Font Variations
+$icon-font               : var(--icon-font-family);
+$icon-font2              : var(--icon-font-family2);
+
+// Typography
+$body-font               : var(--body-font-family);
+$body-color              : var(--body-text-color);
+$body-font-size          : 15px;
+$body-font-weight        : 400;
+$body-line-Height        : 28px;
+$title-font              : var(--title-font-family);
+$title-color             : var(--headings-color);
+$title-font-weight       : 700;
+$title-font-weight2      : 500;
+$paragraph-line-Height   : 1.85;       
+
+

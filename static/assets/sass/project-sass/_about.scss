@@ -1,0 +1,218 @@
+/* About Pages Design Content Styles */
+.about-box-1{
+	position: relative;
+	.list-style1{
+		li{
+			@include heading-typo1;
+		}
+	}
+}
+.about-box2{
+	background-color: rgba($theme-color, 0.07);
+	@include default-border-radius1;
+	margin-bottom: 30px;
+	overflow: hidden;
+	padding: 60px 60px 160px;
+	position: relative;
+	@include media-breakpoint-down(lg){
+		padding: 40px 30px;
+	}
+	.title{
+		font-size: 22px;
+		line-height: 33px;
+		letter-spacing: 0.02em;
+	}
+	.img-1 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+		@include media-breakpoint-down(lg){
+			display: none;
+		}
+	}
+}
+.freelancer-widget{
+	background-color: $white-color;
+	@include default-border-radius1;
+	@include default-box-shadow1;
+	margin-bottom: 30px;
+	max-width: 345px;
+	padding: 40px;
+	position: relative;
+	@include media-breakpoint-down(xl){
+		padding: 40px 20px;
+	}
+	.title{
+		@include heading-typo1;
+	}
+}
+.exclusive-agent-single{
+	background-color: $white-color;
+  bottom: -90px;
+	@include default-border-radius1;
+	@include default-box-shadow1;
+	max-width: 250px;
+	padding: 20px;
+  position: absolute;
+  right: 70px;
+	.agent-img{
+		@include default-border-radius1;
+		overflow: hidden;
+	}
+	@include media-breakpoint-down(lx){
+		bottom: -60px;
+		right: 30px;
+	}
+	@include media-breakpoint-down(lg){
+		bottom: -20px;
+	}
+	@include media-breakpoint-down(md){
+		bottom: 0;
+		position: relative;
+		right: 0;
+	}
+}
+.left-top-img{
+	position: absolute;
+	left: -60px;
+	top: 0;
+	@include media-breakpoint-down(md){
+		width: 40%;
+	}
+}
+.right-bottom-img{
+	bottom: -50px;
+	position: absolute;
+	right: 0;
+	@include media-breakpoint-down(md){
+		width: 50%;
+	}
+}
+.service-v1-vector{
+  bottom: -10px;
+  position: absolute;
+  right: 5%;
+  &.at-job{
+  	bottom: 0;
+  }
+}
+.vector-v12{
+  bottom: 0;
+  position: absolute;
+  right: 6.6%;
+  top: 0;
+}
+.service-v3-vector{
+  bottom: 0;
+  position: absolute;
+  right: 5%;
+}
+.imgbox-about-page{
+	.img-1{
+    bottom: 500px;
+		position: absolute;
+    right: -100px;
+	}
+	.img-2{
+    left: 230px;
+    opacity: 0.2;
+		position: absolute;
+    top: -100px;
+	}
+	.img-3{
+    left: -100px;
+    opacity: .2;
+		position: absolute;
+		top: -100px;
+	}
+	.img-4{
+    bottom: 500px;
+    left: -100px;
+    position: absolute;
+	}
+	.img-5{
+		position: absolute;
+    right: 60px;
+    top: -60px;
+	}
+}
+.imgbox-1{
+	position: relative;
+	.img-1{
+		bottom: 0;
+		left: 0;
+		margin: 0 auto;
+		position: absolute;
+		right: 0;
+		@media (max-width: 400px) {
+			width: 100%;
+		}
+	}
+}
+.floating-img-1 {
+  position: absolute;
+  left: -150px;
+  top: -150px;
+}
+.floating-img-2 {
+  position: absolute;
+  right: 0;
+  top: -50px;
+}
+.floating-img-3 {
+  position: absolute;
+  right: -150px;
+}
+.home4-about-1{
+	position: relative;
+	.iconbox-small1{
+		top: -35px;
+		@include media-breakpoint-down(lx){
+			top: 0;
+		}
+	}
+	.iconbox-small2{
+		top: 0;
+		@include media-breakpoint-down(lx){
+			right: 0;
+		}
+	}
+	.img-1{
+		bottom: -30px;
+		position: absolute;
+		right: 0;
+		@include media-breakpoint-down(lx){
+			bottom: 0;
+		}
+	}
+}
+.home5-floating-img-1{
+	position: absolute;
+	right: 4%;
+}
+.video-button-home8{
+	@include media-breakpoint-down(md){
+    margin-bottom: -40%;
+    margin-top: 40%;
+	}
+}
+.video-button-home11{
+	background: $white-color;
+	border-radius: 50%;
+	color: $title-color;
+	font-size: 17px;
+	height: 80px;
+	left: 0;
+	line-height: 80px;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	top: 35%;
+	text-align: center;
+	width: 80px;
+}
+.listbox-style1{
+	max-width: 330px;
+	position: relative;
+	z-index: 1;
+}

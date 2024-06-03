@@ -1,0 +1,100 @@
+/*	Different Styles of Alart	*/
+.message-alart-style1{
+	position: relative;
+	.alert{
+		border-radius: 4px;
+		font-family: $title-font;
+		font-weight: $title-font-weight2;
+		padding: 23px 30px;
+		position: relative;
+	}
+	.btn-close{
+    cursor: pointer;
+		right: 12px;
+    top: 5px;
+    font-size: 16px;
+    opacity: 1;
+    background: transparent;
+	}
+	.alart_style_one{
+		background-color: rgba(205, 233, 246, 0.5);
+		color: $primary-color;
+		.btn-close{
+	    color: $primary-color;
+		}
+	}
+	.alart_style_two{
+		background-color: rgba(247, 243, 215, 0.5);
+		color: $warning-color;
+		.btn-close{
+	    color: $warning-color;
+		}
+	}
+	.alart_style_three{
+		background-color: rgba(236, 200, 197, 0.5);
+		color: $denger-color;
+		.btn-close{
+	    color: $denger-color;
+		}
+	}
+	.alart_style_four{
+		background-color: rgba(222, 242, 215, 0.5);
+		color: $success-color;
+		.btn-close{
+	    color: $success-color;
+		}
+	}
+}
+.search-modal{
+	.modal-header{
+		border: none;
+		padding: 30px 30px 0;
+	}
+	.btn-close{
+		background: none;
+		border-radius: 50%;
+		color: $white-color;
+		font-size: 20px;
+		height: 40px;
+		opacity: 1;
+		padding: 0;
+		text-align: center;
+		width: 40px;
+		&:focus{
+			box-shadow: none;
+			outline: none;
+		}
+	}
+	.modal-content{
+		background-color: transparent;
+		border: none;
+	}
+	.modal-body{
+		padding: 15px 30px 30px;		
+	}
+}
+.log-reg-form{
+	.hr_content {
+	  overflow: hidden;
+	  position: relative;
+	}
+	.hr_top_text{
+    background-color:$white-color;
+    color: $title-color;
+    font-family: $title-font;
+    font-size: 16px;
+    height: 40px;
+    left: 0;
+    letter-spacing: 0em;
+    line-height: 40px;
+    margin: 0 auto;
+    right: 0;
+    text-align: center;
+    top: -5px;
+    width: 40px;
+    position: absolute;
+	}
+}
+.modal-backdrop{
+	z-index: 0;
+}

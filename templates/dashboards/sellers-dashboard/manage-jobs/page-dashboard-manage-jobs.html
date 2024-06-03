@@ -1,0 +1,85 @@
+{% extends "dashboards/sellers-dashboard/base.html" %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+          <div class="col-lg-12">
+              <div class="dashboard_title_area">
+                <h2>Manage Jobs</h2>
+                <p class="text">{{user.username }} Here is where you can manage your Jobs </p>
+              </div>
+              <div class="col-lg-3">
+                <div class="text-lg-end">
+                  <a href="{% url 'core:add-job' %}" class="ud-btn btn-dark default-box-shadow2">Add Job<i class="fal fa-arrow-right-long"></i></a>
+                </div>
+              </div>
+       
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                <div class="packages_table table-responsive">
+                  <table class="table-style3 table at-savesearch">
+                    <thead class="t-head">
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Applications</th>
+                        <th scope="col">Created & Expired</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody class="t-body">
+                    {% for job in jobs %}
+                      <tr>
+                        <th scope="row">
+                          <div class="freelancer-style1 p-0 mb-0 box-shadow-none">
+                            <div class="d-lg-flex align-items-lg-center">
+                              <div class="thumb w60 position-relative rounded-circle mb15-md">
+                                <img class="rounded-circle mx-auto" src="{% if job.image %}{{ job.image.url }} {% else %} {% static 'assets/images/team/client-2.png' %}{% endif %}" alt="">
+                                <span class="online-badge2"></span>
+                              </div>
+                              <div class="details ml15 ml0-md mb15-md">
+                                <h5 class="title mb-2">{{job.description}}</h5>
+                                <h6 class="mb-0 text-thm">{{job.title}}</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <td class="vam"><span class="fz15 fw400">{% if job_applications_count %}{{ job_applications_count|get_item:job }} {% else %} 0 {% endif %} Applied</span></td>
+                        <td class="vam"><span>{{job.created_at}}</span><br><span class="fz14 fw400">{% if job.end_at %}{{job.end_at}}{% else %} Not set {% endif %}</span></td>
+                        <td class="vam"><span class="pending-style style6">{{job.status}}</span></td>
+                        <td>
+                          <div class="d-flex">
+                            <a href="{% url 'core:edit-job' job.pk %}" class="icon me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="flaticon-pencil"></span></a>
+                            <a href="{% url 'core:delete-job' job.pk %}" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><span class="flaticon-delete"></span></a>
+                          </div>
+                        </td>
+                      </tr>
+                    {% endfor %}  
+                    </tbody>
+                  </table>
+                  <div class="mbp_pagination text-center mt30">
+                    <ul class="page_navigation">
+                      <li class="page-item">
+                        <a class="page-link" href="#"> <span class="fas fa-angle-left"></span></a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">4</a></li>
+                      <li class="page-item"><a class="page-link" href="#">5</a></li>
+                      <li class="page-item"><a class="page-link" href="#">...</a></li>
+                      <li class="page-item"><a class="page-link" href="#">20</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#"><span class="fas fa-angle-right"></span></a>
+                      </li>
+                    </ul>
+                    <p class="mt10 mb-0 pagination_page_count text-center">1 – 20 of 300+ property available</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+{% endblock content %}

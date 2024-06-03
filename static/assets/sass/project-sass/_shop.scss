@@ -1,0 +1,325 @@
+/*	Shop Styles  */
+.shop-item{
+	border: 1px solid $border-color;
+	@include default-border-radius2;
+	margin-bottom: 30px;
+	padding: 10px 30px 20px;
+	position: relative;
+  @include transition(all, 0.3s ease 0s);
+	&:hover{
+		@include default-box-shadow1;
+	}
+}
+/*	Shop Single Page	*/
+.shop-single{
+	.nav-link{
+		border: 1px solid $border-color;
+		@include default-border-radius2;
+		padding: 0;
+		&.active{
+			background-color: transparent;
+			border: 1px solid $dark-color;
+		}
+	}
+	.shop-single-item{
+		max-width: 643px;
+	}
+}
+.shop-single-content{
+	.price{
+		font-weight: 700;
+	}
+}
+/*	Cart Page	*/
+.cart-img{
+	border: 1px solid $border-color;
+	@include default-border-radius2;
+  height: 100px;
+  line-height: 100px;
+  margin-right: 22px;
+  text-align: center;
+	width: 100px;
+}
+.shopping_cart_table{
+	thead{
+		height: 70px;
+    line-height: 70px;
+	}
+	th{
+		background-color: $theme-color3;
+		padding: 0;
+	}
+	.table_body{
+		padding-left: 30px;
+		td{
+			border-bottom: 1px solid $border-color;
+			padding: 30px 0;
+			vertical-align: middle;
+		}
+	}
+}
+.shopping_cart_table{
+	.coupon_input{
+		width: 270px;
+		@include media-breakpoint-down(xl) {
+			width: auto;
+		}
+	}
+}
+.quantity-arrow-minus,
+.quantity-arrow-plus{
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: $title-color;
+  font-size: 10px;
+  height: 25px;
+  line-height: 20px;
+  left: 10px;
+  outline: none;
+  position: absolute;
+  text-align: center;
+  width: 25px;
+  top: 15px;
+}
+.quantity-arrow-plus{
+	left: auto;
+	right: 10px;
+}
+.quantity-num{
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 15px;
+  height: 56px;
+  max-width: 140px;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+.quantity-block {
+	border: 1px solid $border-color;
+	@include default-border-radius1;
+	height: 60px;
+	position: relative;
+	vertical-align: middle;
+	width: 140px;
+}
+.cart-delete{
+	background-color: $theme-color4;
+	@include default-border-radius1;
+	color: $theme-color2;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 40px;
+}
+/*	Shop Order  */
+.order_complete_message {
+	position: relative;
+	.icon {
+		border-radius: 50%;
+		font-size: 30px;
+		height: 80px;
+		line-height: 80px;
+		margin: 0 auto 20px;
+		width: 80px;
+	}
+	.title {
+		font-size: 28px;
+	}
+}
+.shop_order_box {
+	position: relative;
+	.order_list_raw {
+		background-color: $theme-color4;
+		border: 2px dashed $dark-color;
+		@include default-border-radius2;
+		margin-bottom: 60px;
+		padding: 35px 80px;
+		@include media-breakpoint-down(sm) {
+			padding: 40px 30px;
+		}
+	}
+	.order_details {
+		background-color: $white-color;
+		border: 1px solid $border-color;
+		@include default-border-radius2;
+		padding: 50px 60px 70px;
+		@include media-breakpoint-down(sm) {
+			padding: 40px 30px;
+		}
+	}
+}
+.checkout_form{
+	.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+		width: 100%;
+		.btn,
+		.btn-light{
+			background-color: $white-color;
+			border: 1px solid $border-color;
+			@include default-border-radius1;
+		}
+	}
+}
+.checkout_coupon{
+	position: relative;
+}
+.order_sidebar_widget{
+  background-color: $white-color;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 30px;
+  position: relative;
+  .title{
+	  margin-bottom: 28px;
+	}
+}
+.payment_widget{
+  background-color: $white-color;
+  border: 1px solid $border-color;
+	@include default-border-radius2;
+  margin-bottom: 30px;
+  padding: 30px;
+  position: relative;
+  .title{
+  	margin-bottom: 28px;
+  }
+  .form-check-label{
+  	font-weight: 500;
+  }
+}
+/*	Shop Details Pages Styles */
+.service-single-sldier{
+	position: relative;
+	&:after{
+		background-color: #404040;
+		@include default-border-radius1;
+		bottom: 130px;
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: -1;
+		@include media-breakpoint-down(md){
+			bottom: 0;
+		}
+	}
+	&.vam_nav_style{
+		&.owl-theme{
+			.owl-nav{
+				button.owl-prev{
+					left: 30px;
+					@include media-breakpoint-down(md){
+						font-size: 12px;
+						height: 35px;
+						line-height: 35px;
+						left: 10px;
+						width: 35px;
+					}
+				}
+				button.owl-next{
+					right: 30px;
+					@include media-breakpoint-down(md){
+						font-size: 12px;
+						height: 35px;
+						line-height: 35px;
+						right: 10px;
+						width: 35px;
+					}
+				}
+			}
+		}
+	}
+	button.owl-dot{
+		@include default-border-radius1;
+		height: 114px;
+		margin-right: 10px;
+		width: 150px;
+		&:first-child{
+			background-image: url(../images/listings/service-details-s-1.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			@include media-breakpoint-down(md){
+				display: none;
+			}
+		}
+		&:nth-child(2){
+			background-image: url(../images/listings/service-details-s-2.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			@include media-breakpoint-down(md){
+				display: none;
+			}
+		}
+		&:nth-child(3){
+			background-image: url(../images/listings/service-details-s-3.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			@include media-breakpoint-down(md){
+				display: none;
+			}
+		}
+	}
+}
+/*	Employee Single Styles */
+.employee-single-slider{
+	&.vam_nav_style{
+		&.owl-theme{
+			.owl-nav{
+				button.owl-prev{
+					left: 30px;
+					@include media-breakpoint-down(md){
+						font-size: 12px;
+						height: 35px;
+						line-height: 35px;
+						left: 10px;
+						width: 35px;
+					}
+				}
+				button.owl-next{
+					right: 30px;
+					@include media-breakpoint-down(md){
+						font-size: 12px;
+						height: 35px;
+						line-height: 35px;
+						right: 10px;
+						width: 35px;
+					}
+				}
+			}
+		}
+	}
+	button.owl-dot{
+		@include default-border-radius1;
+		height: 114px;
+		margin-right: 10px;
+		width: 150px;
+		&:first-child{
+			background-image: url(../images/about/employee-single-2.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			@include media-breakpoint-down(md){
+				display: none;
+			}
+		}
+		&:nth-child(2){
+			background-image: url(../images/about/employee-single-3.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			@include media-breakpoint-down(md){
+				display: none;
+			}
+		}
+		&:nth-child(3){
+			background-image: url(../images/about/employee-single-4.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			@include media-breakpoint-down(md){
+				display: none;
+			}
+		}
+	}
+}

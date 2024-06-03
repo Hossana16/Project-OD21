@@ -1,0 +1,132 @@
+/* Typography Styles */
+html,
+body {
+  scroll-behavior: auto !important;
+}
+body {
+  background-color: $white-color;
+  font-family: $body-font;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  color: $body-color;
+  line-height: $body-line-Height;
+  -webkit-font-smoothing: antialiased;
+  @include transition(all, 0.4s, ease);
+}
+// .modal-open {
+//   padding: 0px !important;
+// }
+a,
+.btn {
+  color: $title-color;
+  text-decoration: none;
+  outline: none;
+  @include default-transition1;
+  &:hover {
+    color: $theme-color;
+  }
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
+    text-decoration: none;
+    outline: none;
+  }
+}
+button,
+.btn {
+  @include default-transition1;
+}
+iframe {
+  border: none;
+  width: 100%;
+}
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+  font-family: $title-font;
+  color: $title-color;
+  line-height: 1.3125;
+}
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3{
+  font-weight: $title-font-weight;
+}
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+  font-weight: $title-font-weight2;
+}
+p {
+  margin: 0 0 15px 0;
+  color: $body-color;
+  line-height: $paragraph-line-Height;
+  font-weight: $body-font-weight;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+p a,
+span a {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+.h1,
+h1 {
+  font-size: 45px;
+}
+
+.h2,
+h2 {
+  font-size: 32px;
+}
+
+.h3,
+h3 {
+  font-size: 24px;
+}
+
+.h4,
+h4 {
+  font-size: 20px;
+}
+
+.h5,
+h5 {
+  font-size: 17px;
+}
+
+.h6,
+h6 {
+  font-size: 15px;
+}
+li{
+  list-style-type: none;
+}
+@include media-breakpoint-down(sm) {
+.h2,
+h2 {
+  font-size: 20px;
+}
+}

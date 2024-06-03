@@ -11,6 +11,7 @@ urlpatterns = [
     path('manage-service/', views.ManageServiceView.as_view(), name='manage-service'),
     path('manage-service/add/', views.AddServiceView.as_view(), name='add-service'),
     path('manage-service/edit/<int:pk>/', views.ServiceUpdateView.as_view(), name='edit-service'),
+    path('manage-service/delete/<int:pk>/', views.ServiceDeleteView.as_view(), name='delete-service'),
 
     # create & update profiles education level, workexperience, awards
     path('users/profile/', views.ProfileUpdateView.as_view(), name='profile'),
@@ -20,7 +21,12 @@ urlpatterns = [
 
     #reviews,  manage-job & manage-projects
     path('reviews/', views.ReviewsView.as_view(), name='reviews'),
+    # jobs
     path('Manage-jobs/', views.ManageJobView.as_view(), name='manage-jobs'),
+    path('Manage-jobs/add-job/', views.JobCreateView.as_view(), name='add-job'),
+    path('Manage-jobs/edit/<int:pk>', views.JobUpdateView.as_view(), name='edit-job'),
+    path('Manage-jobs/delete/<int:pk>', views.JobDeleteView.as_view(), name='delete-job'),
+
     path('Manage-projects/', views.ManageProjectView.as_view(), name='manage-projects'),
 
     # edit experiences

@@ -1,0 +1,27 @@
+/*	Contact Styles  */
+.home8-map{
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	&.contact-page{
+		height: 550px;
+		@include media-breakpoint-down(lg){
+			height: 350px;
+			position: relative;
+		}
+	}
+}
+.contact-page-map{
+	@include default-border-radius3;
+	height: 510px;
+}
+.contact-page-form{
+	margin-top: -200px;
+	@include media-breakpoint-down(lg){
+		margin-top: 0;
+	}
+}

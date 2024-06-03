@@ -1,0 +1,660 @@
+/*	Hero Styles All Type Of  */
+/*	Home 1 Banner */
+.home1-banner-content {
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 35%;
+  width: 80%;
+  z-index: 1;
+	@include media-breakpoint-down(xl) {
+		top: 30%;
+	}
+	@include media-breakpoint-down(md) {
+		top: 25%;
+		width: 100%;
+	}
+	&.at-home9{
+		top: 25%;
+		@include media-breakpoint-down(md) {
+			top: 8%;
+		}
+	}
+}
+/*	Home 2 Banner  */
+/*	Home 3 Banner */
+.home3-hero{
+	background-image: url(../images/background/home3-bg.png);
+	align-items: center;
+	display: flex;
+	height: 670px;
+}
+.home3-hero-content{
+	.title{
+		font-size: 45px;
+		line-height: 59px;
+		@include media-breakpoint-down(md) {
+			font-size: 30px;
+			line-height: 45px;
+		}
+	}
+}
+.home3-hero-img{
+	bottom: -400px;
+	position: absolute;
+	right: -90px;
+	@media (max-width: 1600px) {
+		right: 0;
+	}
+}
+.home3-hero-partner{
+	img{
+	  filter: contrast(0.1);
+	  @include transition(all, 0.4s, ease);
+		&:hover{
+			filter: contrast(1);
+		}
+	}
+}
+/*	Home 4 Banner Content */
+/*	Home 5 Slider Content */
+.slider-slide-item{
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 900px;
+	position: relative;
+	&:before{
+	  background-color: rgba($dark-color, 0.6);
+	  bottom: 0;
+	  content: "";
+	  height: 100%;
+	  left: 0;
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	  width: 100%;
+	}
+	@include media-breakpoint-down(xl){
+		height: 500px;
+	}
+}
+.thumbimg-countnumber-carousel{
+	.slider-subtitle{
+	  @include heading-typo3;
+	  margin: 0 0 10px;
+	  -webkit-animation-duration: 2s;
+	  animation-duration: 2s;
+	  -webkit-animation-fill-mode: both;
+	  animation-fill-mode: both;
+	  -webkit-backface-visibility: visible !important;
+	  backface-visibility: visible !important;
+		@include media-breakpoint-down(lg){
+			font-size: 26px;
+		}
+	}
+	.slider-title{
+	  @include heading-typo3;
+	  font-size: 52px;
+	  margin: 0;
+	  -webkit-animation-duration: 2s;
+	  animation-duration: 2s;
+	  -webkit-animation-fill-mode: both;
+	  animation-fill-mode: both;
+	  -webkit-backface-visibility: visible !important;
+	  backface-visibility: visible !important;
+		@include media-breakpoint-down(lg){
+			font-size: 36px;
+		}
+	}
+	.slider-text{
+	  @include heading-typo4;
+	  font-size: 15px;
+	  -webkit-animation-duration: 2s;
+	  animation-duration: 2s;
+	  -webkit-animation-fill-mode: both;
+	  animation-fill-mode: both;
+	  -webkit-backface-visibility: visible !important;
+	  backface-visibility: visible !important;
+	}
+	.slider-btn{
+	  border-color: transparent;
+	  -webkit-animation-duration: 2s;
+	  animation-duration: 2s;
+	  -webkit-animation-fill-mode: both;
+	  animation-fill-mode: both;
+	  -webkit-backface-visibility: visible !important;
+	  backface-visibility: visible !important;
+	}
+	.active{
+		.slider-subtitle {
+		  -webkit-animation-name: fadeInDown;
+		  animation-name: fadeInDown;
+		  -webkit-animation-delay: 0.3s;
+		  animation-delay: 0.3s;
+		}
+		.slider-title {
+		  -webkit-animation-name: fadeInDown;
+		  animation-name: fadeInDown;
+		  -webkit-animation-delay: 0.5s;
+		  animation-delay: 0.5s;
+		}
+		.slider-text {
+		  -webkit-animation-name: fadeInUp;
+		  animation-name: fadeInUp;
+		  -webkit-animation-delay: 1s;
+		  animation-delay: 1s;
+		}
+		.slider-btn {
+		  -webkit-animation-name: fadeInUp;
+		  animation-name: fadeInUp;
+		  -webkit-animation-delay: 1.5s;
+		  animation-delay: 1.5s;
+		}
+	}
+}
+/*	Home 2 Banner */
+.hero-home2{
+	background-image: url(../images/background/home2-hero-bg.jpg);
+	background-position: center bottom;
+	background-size: cover;
+	align-items: end;
+	display: flex;
+	height: 860px;
+	@include media-breakpoint-down(xxl) {
+		align-items: center;
+	}
+	@include media-breakpoint-down(xl) {
+		height: auto;
+	}
+	@media (max-width: 1440px) {
+	}
+}
+.main-img-home2{
+	bottom: 0;
+	left: -100px;
+  position: absolute;
+	@media (max-width: 1400px) {
+		left: 0;
+		width: 100%;
+	}
+}
+.home2-hero-content{
+	.img-1 {
+    left: -50px;
+    position: absolute;
+    top: 365px;
+		@include media-breakpoint-down(xl) {
+		}
+	}
+	.iconbox-small1{
+		@include default-border-radius3;
+    padding: 20px 30px 20px 20px;
+    top: 0;
+		.icon{
+			background-color: rgba($theme-color, 0.15);
+			color: $theme-color;
+			left: 0;
+			position: relative;
+			top: 0;
+		}
+		&:hover{
+			.icon{
+				background-color: rgba($theme-color, 0.15);
+				color: $theme-color;
+			}
+		}
+	}
+	.iconbox-small2{
+		@include default-border-radius3;
+    padding: 20px 30px 20px 20px;
+    right: -90px;
+    top: 300px;
+		@media (max-width: 1500px) {
+			right: 0;
+		}
+		@media (max-width: 1400px) {
+			right: -60px;
+	    top: 200px;
+		}
+		.icon{
+			background-color: rgba($theme-color2, 0.1);
+			color: $theme-color2;
+			left: 0;
+			position: relative;
+			top: 0;
+		}
+		&:hover{
+			.icon{
+				background-color: rgba($theme-color2, 0.1);
+				color: $theme-color2;
+			}
+		}
+	}
+}
+/*	Home 3 Banner */
+/*	Home 4 Banner */
+/*	Home 5 Banner */
+.hero-home5{
+	align-items: center;
+	background: linear-gradient(180deg, #FBF7ED 0%, rgba(251, 247, 237, 0) 100%);
+	display: flex;
+	height: 760px;
+	margin-top: -80px;
+	@include media-breakpoint-down(lg) {
+		padding-top: 120px;
+	}
+}
+.home5-hero-content{
+	position: relative;
+	.img-1 {
+    bottom: 150px;
+    position: absolute;
+    top: auto;
+    z-index: 1;
+		@include media-breakpoint-down(xl) {
+			bottom: 0;
+		}
+	}
+	.iconbox-small1{
+		top: 200px;
+		.icon{
+			background-color: $theme-color2;
+		}
+		&:hover{
+			.icon{
+				background-color: #F5CB77;
+			}
+		}
+	}
+	.iconbox-small2{
+		bottom: 200px;
+		top: auto;
+		.icon{
+			background-color: $theme-color2;
+		}
+		&:hover{
+			.icon{
+				background-color: #F5CB77;
+			}
+		}
+	}
+}
+/*	Home 6 Banner */
+.hero-home6{
+	&:before{
+    background-color: #FAF7EE;
+    bottom: 0;
+    content: "";
+    height: 115%;
+    position: absolute;
+    right: 0;
+    top: -80px;
+    width: 29.5%;
+    z-index: -1;
+	}
+}
+.home6-hero-content{
+	position: relative;
+	.img-1 {
+    position: absolute;
+    top: 30%;
+	}
+	.img-2 {
+    position: absolute;
+    right: 0;
+    top: 20px;
+	}
+	.img-3 {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+	}
+	.img-4 {
+    position: absolute;
+    left: 90px;
+    top: 100px;
+	}
+	.img-5 {
+    position: absolute;
+    right: 160px;
+    top: -10px;
+	}
+	.iconbox-small1{
+		bottom: 170px;
+		top: auto;
+		.icon{
+			background-color: $theme-color2;
+		}
+		&:hover{
+			.icon{
+				background-color: #F1AB88;
+			}
+		}
+	}
+	.iconbox-small2{
+		bottom: 70px;
+		top: auto;
+		.icon{
+			background-color: $theme-color2;
+		}
+		&:hover{
+			.icon{
+				background-color: #F1AB88;
+			}
+		}
+	}
+}
+.home6-newslatter{
+	background-image: url(../images/background/home6-newslatter-bg.jpg);
+	background-size: cover;
+  background-repeat: no-repeat;
+}
+/*	Home 7 Banner */
+.hero-home7{
+	align-items: center;
+	display: flex;
+	height: 650px;
+	position: relative;
+	@include media-breakpoint-down(xl) {
+		height: auto;
+	}
+	&:before{
+		background-color: $theme-color3;
+		content: "";
+		height: 513px;
+		position: absolute;
+		right: 0;
+		top: 70px;
+		width: 513px;
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+	}
+}
+.home7-hero-slide{
+	position: relative;
+	.details{
+		position: absolute;
+		left: 30px;
+		top: 30px;
+	}
+}
+.home7-hero-slider{
+	&:before{
+		background-color: $theme-color4;
+    bottom: -50px;
+		content: "";
+		height: 277px;
+    left: -50px;
+		position: absolute;
+    right: -50px;
+		@include media-breakpoint-down(xl) {
+			bottom: -30px;
+			left: -30px;
+			right: -30px;
+		}
+	}
+}
+/*	Home 8 Banner */
+.hero-home8{
+	background-image: url(../images/background/home8-hero-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	align-items: center;
+	display: flex;
+	height: 800px;
+	position: relative;
+}
+.home8-hero-img{
+	position: absolute;
+  right: 0;
+  top: 80px;
+	@media (max-width: 1600px) {
+	}
+}
+/*	Home 9 Banner */
+.home9-hero-content{
+	.banner-style-one {
+		.slide{
+			display: flex;
+			height: 780px;
+			align-items: center;
+			@include media-breakpoint-down(md) {
+				height: 650px;
+			}
+		}
+	}
+}
+.home9-tags{
+	a{
+		background-color: rgba($white-color, 0.1);
+		color: $white-color;
+		display: inline-block;
+		@include heading-typo4;
+		font-size: 15px;
+		line-height: 28px;
+		margin-right: 10px;
+		padding: 5px 24px;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	&.at-home12{
+		a{
+			background-color: $white-color;
+			color: $dark-color;
+		}
+	}
+}
+/*	Home 10 Banner */
+.home10-hero-content{
+	.banner-style-one {
+		.slide{
+			display: flex;
+			height: 700px;
+			align-items: center;
+			@include media-breakpoint-down(md) {
+				height: 500px;
+			}
+		}
+	}
+	.navi_pagi_bottom_center{
+		&.owl-theme {
+			.owl-nav{
+				bottom: 45px;
+			}
+			.owl-dots{
+				bottom: 23px;
+			}
+		}
+	}
+}
+/*	Home 11 Banner */
+.home11-hero-content{
+	position: relative;
+	.tag{
+		background-color: $theme-color4;
+		border-radius: 12px;
+		@include heading-typo1;
+		font-size: 13px;
+		padding: 5px 17px;
+	}
+	.title{
+		font-size: 55px;
+		line-height: 72px;
+		@include media-breakpoint-down(md) {
+			font-size: 30px;
+			line-height: 45px;
+		}
+	}
+}
+.home11-hero-img{
+	position: relative;
+	.iconbox-small1{
+		@include default-border-radius3;
+    padding: 20px 30px 20px 20px;
+    bottom: 0;
+    @include default-box-shadow4;
+    top: auto;
+		@include media-breakpoint-down(md) {
+			position: absolute;
+		}
+		.icon{
+			background-color: $dark-color;
+			color: $white-color;
+			left: 0;
+			position: relative;
+			top: 0;
+		}
+		&:hover{
+			.icon{
+				background-color: #EAFAC1;
+				color: $dark-color;
+			}
+		}
+	}
+	.iconbox-small2{
+		@include default-border-radius3;
+    @include default-box-shadow4;
+    padding: 20px 30px 20px 20px;
+    right: -90px;
+    top: 300px;
+		@media (max-width: 1500px) {
+			right: 0;
+		}
+		@media (max-width: 1400px) {
+			right: -30px;
+	    top: 200px;
+		}
+		@include media-breakpoint-down(md) {
+			position: absolute;
+			right: 0;
+		}
+		.icon{
+			background-color: #EAFAC1;
+			color: $dark-color;
+			left: 0;
+			position: relative;
+			top: 0;
+		}
+		&:hover{
+			.icon{
+				background-color: #EAFAC1;
+				color: $dark-color;
+			}
+		}
+	}
+}
+/*	Home 12 Banner */
+.hero-home12{
+	background-image: url(../images/background/home12-hero-bg.png);
+	display: flex;
+	align-items: center;
+	height: 860px;
+}
+.home12-hero-content{
+	position: relative;
+	.tag{
+		background-color: #EAFAC1;
+		border-radius: 120px;
+		@include heading-typo1;
+		font-size: 13px;
+		padding: 5px 17px;
+	}
+}
+.home12-hero-img {
+	.img-0 {
+    bottom: 0;
+    position: absolute;
+	}
+	.img-1{
+		left: 70px;
+		position: absolute;
+		top: 0;
+	}
+	.img-2{
+		right: -100px;
+    position: absolute;
+    top: 100px;
+    width: 108px;
+    z-index: 1;
+		@media (max-width: 1500px) {
+			right: 0;
+			top: 0;
+		}
+	}
+	.img-3{
+    position: absolute;
+    right: -100px;
+		top: 450px;
+		width: 80px;
+		z-index: 1;	
+		@media (max-width: 1500px) {
+			right: 0;
+		}
+	}
+	.iconbox-small1{
+		@include default-border-radius3;
+		@include default-box-shadow4;
+		margin-left: 4%;
+    padding: 20px 30px 20px 20px;
+    bottom: 50px;
+    top: auto;
+		@include media-breakpoint-down(md) {
+			position: absolute;
+		}
+		.icon{
+			background-color: #CEF9D6;
+			color: $dark-color;
+			left: 0;
+			position: relative;
+			top: 0;
+		}
+		&:hover{
+			.icon{
+				background-color: #CEF9D6;
+				color: $dark-color;
+			}
+		}
+	}
+	.iconbox-small2{
+		@include default-border-radius3;
+		@include default-box-shadow4;
+		bottom: 250px;
+    padding: 20px 30px 20px 20px;
+    right: 200px;
+    top: auto;
+		@media (max-width: 1500px) {
+			right: 0;
+		}
+		@include media-breakpoint-down(md) {
+			position: absolute;
+			right: 0;
+		}
+		.icon{
+			background-color: $dark-color;
+			color: $white-color;
+			left: 0;
+			position: relative;
+			top: 0;
+		}
+		&:hover{
+			.icon{
+				background-color: $dark-color;
+				color: $white-color;
+			}
+		}
+	}
+}
+/*	Home 13 Banner */
+/*	Home 14 Banner */
+/*	Home 15 Banner */
+/*	Home 16 Banner */
+/*	Home 17 Banner */
+/*	Home 18 Banner */
+/*	Home 19 Banner */
+/*	Home 20 Banner */

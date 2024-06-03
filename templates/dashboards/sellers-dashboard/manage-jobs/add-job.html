@@ -1,0 +1,354 @@
+{% extends "dashboards/sellers-dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+ <div class="col-lg-9">
+              <div class="dashboard_title_area">
+                <h2>Add Job</h2>
+                <p class="text">Add new Job to the marketplace</p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="text-lg-end">
+                <a href="" class="ud-btn btn-dark">Save & Publish<i class="fal fa-arrow-right-long"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                <div class="bdrb1 pb15 mb25">
+                  <h5 class="list-title">Basic Information</h5>
+                </div>
+                
+                <div class="col-xl-8">
+                  <div class="row">
+                    <div class="col-xl-12">
+                      <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                            <form method="post" enctype="multipart/form-data" class="form-style1">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="col-md-12">
+                                <div class="text-start">
+                                    <button class="ud-btn btn-thm" type="submit">Update  Service<i class="fal fa-arrow-right-long"></i></button>
+                                </div>
+                            </div>
+                            </form>
+                      </div>
+                    </div>
+                </div>
+
+                  <!-- <form class="form-style1">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="mb20">
+                          <label class="heading-color ff-heading fw500 mb10">Service Title</label>
+                          <input type="text" class="form-control" placeholder="i will">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb20">
+                          <label class="heading-color ff-heading fw500 mb10">Price</label>
+                          <input type="email" class="form-control" placeholder="$10">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb20">
+                          <div class="form-style1">
+                            <label class="heading-color ff-heading fw500 mb10">Category</label>
+                            <div class="bootselect-multiselect">
+                              <select class="selectpicker">
+                                <option>Select</option>
+                                <option>Graphics & Design</option>
+                                <option>Digital Marketing</option>
+                                <option>Writing & Translation</option>
+                                <option>Video & Animation</option>
+                                <option>Music & Audio</option>
+                                <option>Programming & Tech</option>
+                                <option>Business</option>
+                                <option>Lifestyle</option>
+                                <option>Trending</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb20">
+                          <div class="form-style1">
+                            <label class="heading-color ff-heading fw500 mb10">English Level</label>
+                            <div class="bootselect-multiselect">
+                              <select class="selectpicker">
+                                <option>Select</option>
+                                <option>Fluent</option>
+                                <option>Mid Level</option>
+                                <option>Conversational</option>
+                                <option>Other</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb20">
+                          <div class="form-style1">
+                            <label class="heading-color ff-heading fw500 mb10">Response Time</label>
+                            <div class="bootselect-multiselect">
+                              <select class="selectpicker">
+                                <option>Select</option>
+                                <option>Response Time One</option>
+                                <option>Response Time Two</option>
+                                <option>Response Time Three</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb20">
+                          <div class="form-style1">
+                            <label class="heading-color ff-heading fw500 mb10">Delivery Time</label>
+                            <div class="bootselect-multiselect">
+                              <select class="selectpicker">
+                                <option>Select</option>
+                                <option>Delivery Time One</option>
+                                <option>Delivery Time Two</option>
+                                <option>Delivery Time Three</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="mb20">
+                          <div class="form-style1">
+                            <label class="heading-color ff-heading fw500 mb10">Skills</label>
+                            <div class="bootselect-multiselect">
+                              <select class="selectpicker" multiple>
+                                <option>Figma</option>
+                                <option>Adobe XD</option>
+                                <option>CSS</option>
+                                <option>HTML</option>
+                                <option>Bootstrap</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb20">
+                          <div class="form-style1">
+                            <label class="heading-color ff-heading fw500 mb10">Country</label>
+                            <div class="bootselect-multiselect">
+                              <select class="selectpicker">
+                                <option>Turkey</option>
+                                <option>United Kingdom</option>
+                                <option>United State</option>
+                                <option>Ukraine</option>
+                                <option>Uruguay</option>
+                                <option>UK</option>
+                                <option>Uzbekistan</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb20">
+                          <div class="form-style1">
+                            <label class="heading-color ff-heading fw500 mb10">City</label>
+                            <div class="bootselect-multiselect">
+                              <select class="selectpicker">
+                                <option data-tokens="California">California</option>
+                                <option data-tokens="Chicago">Chicago</option>
+                                <option data-tokens="LosAngeles">Los Angeles</option>
+                                <option data-tokens="Manhattan">Manhattan</option>
+                                <option data-tokens="NewJersey">New Jersey</option>
+                                <option data-tokens="NewYork">New York</option>
+                                <option data-tokens="SanDiego">San Diego</option>
+                                <option data-tokens="SanFrancisco">San Francisco</option>
+                                <option data-tokens="Texas">Texas</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="mb10">
+                          <label class="heading-color ff-heading fw500 mb10">Services Detail</label>
+                          <textarea cols="30" rows="6" placeholder="Description"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="text-start">
+                          <a class="ud-btn btn-thm" href="page-contact.html">Save<i class="fal fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </form> -->
+                </div>
+              </div>
+
+              <!-- <div class="ps-widget bgc-white bdrs12 p30 mb30 overflow-hidden position-relative">
+                <div class="bdrb1 pb15 mb30">
+                  <h5 class="list-title">Packages</h5>
+                </div>
+                <div class="col-xl-8">
+                  <div class="table-style2 table-responsive bdr1 mb30">
+                    <table class="table table-borderless mb-0">
+                      <thead class="t-head">
+                        <tr>
+                          <th class="col" scope="col"></th>
+                          <th class="col" scope="col">
+                            <span class="h4 mb15">Basic <span class="text-thm2 flaticon-pencil fz16 float-end mt10 me-2"></span></span> <br>
+                            <span class="text">I will redesign your current <br class="d-none d-lg-block"> landing page or create one for <br class="d-none d-lg-block"> you (upto 4 sections)</span>
+                          </th>
+                          <th class="col" scope="col">
+                            <span class="h4 mb15">Standard <span class="text-thm2 flaticon-pencil fz16 float-end mt10 me-2"></span></span> <br>
+                            <span class="text">4 High Quality Desktop <br class="d-none d-lg-block"> Pages.</span>
+                          </th>
+                          <th class="col" scope="col">
+                            <span class="h4 mb15">Premium <span class="text-thm2 flaticon-pencil fz16 float-end mt10 me-2"></span></span> <br>
+                            <span class="text">4 High Quality Desktop and <br class="d-none d-lg-block"> Mobile Pages.</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="t-body">
+                        <tr class="bgc-thm3">
+                          <th scope="row">Source file</th>
+                          <td>
+                            <label class="custom_checkbox">
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </td>
+                          <td>
+                            <label class="custom_checkbox">
+                              <input type="checkbox" checked>
+                              <span class="checkmark"></span>
+                            </label>                            
+                          </td>
+                          <td>
+                            <label class="custom_checkbox">
+                              <input type="checkbox" checked>
+                              <span class="checkmark"></span>
+                            </label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Prototype</th>
+                          <td>
+                            <label class="custom_checkbox">
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </td>
+                          <td>
+                            <label class="custom_checkbox">
+                              <input type="checkbox" checked>
+                              <span class="checkmark"></span>
+                            </label>                            
+                          </td>
+                          <td>
+                            <label class="custom_checkbox">
+                              <input type="checkbox" checked>
+                              <span class="checkmark"></span>
+                            </label>
+                          </td>
+                        </tr>
+                        <tr class="bgc-thm3">
+                          <th scope="row">Responsive design</th>
+                          <td>
+                            <label class="custom_checkbox">
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                          </td>
+                          <td>
+                            <label class="custom_checkbox">
+                              <input type="checkbox" checked>
+                              <span class="checkmark"></span>
+                            </label>                            
+                          </td>
+                          <td>
+                            <label class="custom_checkbox">
+                              <input type="checkbox" checked>
+                              <span class="checkmark"></span>
+                            </label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Number of pages</th>
+                          <td>2 <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                          <td>4 <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                          <td>6 <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                        </tr>
+                        <tr class="bgc-thm3">
+                          <th scope="row">Revisions</th>
+                          <td>1 <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                          <td>3 <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                          <td>5 <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Delivery Time </th>
+                          <td>2 Days <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                          <td>3 Days <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                          <td>4 Days <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                        </tr>
+                        <tr class="bgc-thm3">
+                          <th scope="row">Total</th>
+                          <td>$29 <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                          <td>$49 <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                          <td>$89 <span class="text-thm2 flaticon-pencil fz16 float-end me-3"></span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <a href="" class="ud-btn btn-thm">Save<i class="fal fa-arrow-right-long"></i></a>
+                </div>
+              </div> -->
+
+              <!-- <div class="ps-widget bgc-white bdrs12 p30 mb30 overflow-hidden position-relative">
+                <div class="bdrb1 pb15 mb25">
+                  <h5 class="list-title">Add extra services</h5>
+                </div>
+                <div class="col-xl-8">
+                  <div class="extra-service-tab">
+                    <nav>
+                      <div class="nav flex-column nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link" id="nav-home2-tab" data-bs-toggle="tab" data-bs-target="#nav-home2" type="button" role="tab" aria-selected="true">
+                          <label class="custom_checkbox fw500 text-start">100 Words (+2 days)
+                            <span class="text text-bottom">I will professionally translate english to german</span>
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <span class="price">$25</span>
+                        </button>
+                        <button class="nav-link active" id="nav-profile2-tab" data-bs-toggle="tab" data-bs-target="#nav-profile2" type="button" role="tab" aria-selected="false">
+                          <label class="custom_checkbox fw500 text-start">100 Words (+2 days)
+                            <span class="text text-bottom">I will professionally translate english to german</span>
+                            <input type="checkbox"checked="checked">
+                            <span class="checkmark"></span>
+                          </label>
+                          <span class="price">$45</span>
+                        </button>
+                        <button class="nav-link" id="nav-contact2-tab" data-bs-toggle="tab" data-bs-target="#nav-contact2" type="button" role="tab" aria-selected="false">
+                          <label class="custom_checkbox fw500 text-start">100 Words (+2 days)
+                            <span class="text text-bottom">I will professionally translate english to german</span>
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <span class="price">$75</span>
+                        </button>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div> -->
+
+             
+              </div>
+            </div>
+          </div>
+          </div>
+{% endblock content %}

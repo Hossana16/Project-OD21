@@ -1,0 +1,176 @@
+/*	Team Styles  */
+.team-style1{
+	position: relative;
+	.team-img{
+		@include default-border-radius1;
+		overflow: hidden;
+		position: relative;
+	}
+	img{
+		transform: scale(1.0);
+	  @include transition(all, 0.4s, ease);
+	}
+	&:hover{
+		img{
+				transform: scale(1.1) rotate(-1deg);
+		}
+	}
+}
+.agency-style1{
+	position: relative;
+	.tag{
+		background-color: $theme-color;
+		border-radius: 6px;
+		color: $white-color;
+		@include heading-typo3;
+		font-size: 12px;
+		left: 20px;
+		padding: 0 6px;
+		position: absolute;
+		top: 20px;
+	  @include transition(all, 0.4s, ease);
+	}
+	&:hover{
+		.tag{
+			transform: translateY(30px);
+			opacity: 0;
+		}
+	}
+}
+.freelancer-style1{
+	background-color: $white-color;
+	@include default-border-radius1;
+	@include default-box-shadow1;
+	margin-bottom: 30px;
+	padding: 30px;
+	position: relative;
+	width: 100%;
+  @include transition(all, 0.3s, ease);
+	.meta{
+		color: $title-color;
+	}
+	&.about-page-style{
+    margin-left: 280px;
+    margin-top: -270px;
+    z-index: 1;
+		max-width: 329px;
+		@include media-breakpoint-down(xl){
+	    margin-left: 210px;
+		}
+		@include media-breakpoint-down(md){
+	    margin-left: 0;
+	    margin-top: 0;
+		}
+	}
+	&.service-single{
+		background-color: $white-color;
+		border: 1px solid $border-color;
+		@include default-border-radius1;
+		@include default-box-shadow1;
+		max-width: inherit;
+	}
+	&.hover-box-shadow{
+		box-shadow: none;
+		&:hover{
+			@include default-box-shadow1;
+		}
+	}
+	&.at-home7{
+		&:hover{
+			border: 1px solid $dark-color;
+			@include default-box-shadow6;
+		}
+	}
+}
+.tag{
+	background-color: $theme-color4;
+	border-radius: 60px;
+	@include heading-typo1;
+	display: inline-block;
+	padding: 5px 17px;
+	font-style: normal;
+	font-size: 13px;
+	line-height: 28px;
+}
+.online,
+.online2,
+.online-badge2,
+.online-badge,
+.online-badges{
+	background-color: $theme-color;
+	border: 2px solid $white-color;
+	border-radius: 50%;
+	height: 16px;
+	position: absolute;
+  right: 0;
+  top: 8px;
+	width: 16px;
+}
+.online2{
+	right: 10px;
+}
+.online-badge,
+.online-badges{
+  right: 3px;
+	top: -9px;
+	height: 9px;
+	width: 9px;
+	@include media-breakpoint-down(sm){
+		right: 0;
+	}
+}
+.online-badges{
+	top: 0;
+}
+.online-badge2{
+	height: 9px;
+	right: 0;
+	width: 9px;
+}
+.freelancer-single-style{
+	.online{
+		@include media-breakpoint-down(sm){
+			top: -30px;
+		}
+	}	
+}
+.job-list-style1{
+	background-color: $white-color;
+	@include default-border-radius1;
+	margin-bottom: 30px;
+	padding: 30px;
+	position: relative;
+  @include transition(all, 0.4s, ease);
+  .fav-icon{
+		background-color: $white-color;
+		border-radius: 50%;
+		color: $theme-color;
+  	font-size: 20px;
+  	height: 36px;
+  	line-height: 45px;
+  	position: absolute;
+  	right: 20px;
+  	text-align: center;
+  	top: 20px;
+  	width: 36px;
+	  @include transition(all, 0.4s, ease);
+  }
+	&:hover{
+		@include default-box-shadow1;
+		.fav-icon{
+			background-color: $theme-color3;
+		}
+	}
+	&.at-home7{
+		@include default-border-radius2;
+		&:hover{
+			border: 1px solid $dark-color;
+			@include default-box-shadow6;
+		}
+	}
+	&.at-dashboard{
+		&:hover{
+			box-shadow: none;
+		}
+	}
+}

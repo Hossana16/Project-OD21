@@ -1,0 +1,20 @@
+/*	Header Styles  */
+.login-info{
+	font-size: $body-font-size;
+	@include heading-typo1;
+  @include transition(all, 0.4s, ease);
+}
+.header-top-home11{
+	background-color: #CCE8CA;
+	position: relative;
+}
+.header-top-home12{
+	background-color: #EAFAC1;
+	position: relative;
+}
+.ht-close-icon{
+	color: $title-color;
+	position: absolute;
+	right: 30px;
+	top: 10px;
+}

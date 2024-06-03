@@ -1,0 +1,623 @@
+/*	Iconbox Styles  */
+.iconbox-style1{
+	background-color: $white-color;
+	@include default-border-radius2;
+	margin-bottom: 30px;
+	padding: 40px 30px 30px;
+	position: relative;
+  @include transition(all, 0.3s, ease);
+	.icon{
+		color: $theme-color2;
+		display: inline-block;
+		font-size: 40px;
+		position: relative;
+		z-index: 1;
+		&:before{
+			background-color: #FBF7ED;
+	    border-radius: 50%;
+	    bottom: -10px;
+	    content: "";
+	    height: 40px;
+	    position: absolute;
+	    right: -20px;
+	    width: 40px;
+	    z-index: -1;
+		  @include transition(all, 0.3s, ease);
+		}
+	}
+	.title{
+		margin-bottom: 5px;
+	}
+	&:hover{
+		@include default-box-shadow1;
+	}
+	&.contact-style{
+		border: none;
+		padding: 0;
+		.details{
+			padding-left: 35px;
+		}
+		&:hover{
+			box-shadow: none;
+		}
+	}
+	&.border-less{
+		border: none;
+		&:hover{
+			box-shadow: none;
+		}
+	}
+	&.at-home4{
+		.icon{
+			border-radius: 50%;
+			@include default-box-shadow3;
+			display: inline-block;
+			height: 110px;
+			line-height: 120px;
+			margin-bottom: 20px;
+			width: 110px;
+		  @include transition(all, 0.3s, ease);
+		}
+		&:hover{
+			box-shadow: none;
+			.icon{
+				background-color: $theme-color;
+				box-shadow: none;
+				color: $white-color;
+			}
+		}
+	}
+	&.at-home5{
+		&:hover{
+			box-shadow: none;
+		}
+	}
+	&.at-home6{
+		.icon{
+			color: #CBEFD2;
+		}
+	}
+	&.at-home7{
+		border-radius: 0;
+		&:hover{
+			border: 1px solid $dark-color;
+			@include default-box-shadow6;
+		}
+	}
+	&.at-home11{
+		.icon{
+			background-color: #E5F0E3;
+			border-radius: 50%;
+			color: #325854;
+			display: inline-block;
+			font-size: 30px;
+			height: 70px;
+			line-height: 80px;
+			margin-bottom: 20px;
+			width: 70px;
+		  @include transition(all, 0.3s, ease);
+		}
+		&:hover{
+			box-shadow: none;
+			.icon{
+				background-color: #325854;
+				box-shadow: none;
+				color: #E5F0E3;
+			}
+		}
+	}
+	&.at-home11-v2{
+		.icon{
+			&:before{
+				background-color: #F9FBFA;
+			}
+		}
+		&:hover{
+			background-color: #266464;
+			.icon{
+				color: $white-color;
+				&:before{
+					background-color: rgba($white, .07);
+				}
+			}
+			.text,
+			.title{
+				color: $white-color;
+			}
+		}
+	}
+	&.at-home12{
+		.icon{
+			background-color: transparent;
+			border: 1px solid $border-color;
+			border-radius: 50%;
+			display: inline-block;
+			height: 110px;
+			line-height: 120px;
+			margin-bottom: 20px;
+			width: 110px;
+		  @include transition(all, 0.3s, ease);
+		}
+		&:hover{
+			box-shadow: none;
+			.icon{
+				background-color: $dark-color;
+				box-shadow: none;
+				color: $white-color;
+			}
+		}
+	}
+	&.at-home12-v2{
+		box-shadow: none;
+		&:hover{
+			.icon{
+				&:before{
+					background-color: #EAFAC1;
+				}
+			}
+		}
+	}
+}
+.iconbox-small1{
+	background-color: $white-color;
+	@include default-border-radius1;
+	padding: 25px 55px 20px 35px;
+	position: absolute;
+	top: 130px;
+	z-index: 1;
+	@include media-breakpoint-down(sm){
+		position: relative;
+		top: 0;
+	}
+	.icon{
+		background-color: $theme-color;
+		border-radius: 50%;
+		color: $white-color;
+		display: inline-block;
+		font-size: 24px;
+		height: 50px;
+		left: -25px;
+		line-height: 60px;
+		position: absolute;
+		text-align: center;
+		top: -25px;
+		width: 50px;
+	  @include transition(all, 0.4s, ease);
+	}
+	&:hover{
+		.icon{
+			background-color: $theme-color2;
+		}
+	}
+	&.at-home1{
+		left: -45px;
+		@media (max-width: 1550px) {
+			left: -10px;
+		}
+		@media (max-width: 1440px) {
+			left: 0;
+		}
+	}
+}
+.iconbox-small2{
+	background-color: $white-color;
+	@include default-border-radius1;
+	padding: 25px 55px 20px 35px;
+	position: absolute;
+	right: -30px;
+	top: 200px;
+	z-index: 1;
+	@include media-breakpoint-down(lg){
+		right: 0;
+	}
+	@include media-breakpoint-down(sm){
+		position: relative;
+		top: 30px;
+	}
+	.icon{
+		background-color: $theme-color;
+		border-radius: 50%;
+		color: $white-color;
+		display: inline-block;
+		font-size: 24px;
+		height: 50px;
+		left: -25px;
+		line-height: 60px;
+		position: absolute;
+		text-align: center;
+		top: -25px;
+		width: 50px;
+	  @include transition(all, 0.4s, ease);
+	}
+	&:hover{
+		.icon{
+			background-color: $theme-color2;
+		}
+	}
+}
+
+
+
+
+
+
+
+.iconbox-style2{
+	background-color: $white-color;
+	@include default-border-radius1;
+	margin-bottom: 30px;
+	padding: 60px 35px 20px;
+	position: relative;
+  @include transition(all, 0.4s, ease);
+	@include media-breakpoint-down(lg){
+		padding: 60px 25px 20px;
+	}
+	&.active,
+  &:hover{
+  	@include default-box-shadow1;
+  }
+  .icon{
+  	margin-bottom: 25px;
+  }
+  .title{
+  	margin-bottom: 12px;
+  }
+  .text{
+  	@include heading-typo2;
+  	margin-bottom: 25px;
+  }
+}
+.iconbox-style3{
+	background-color: $white-color;
+	@include default-border-radius1;
+	margin-bottom: 30px;
+	padding: 60px 35px 20px;
+	position: relative;
+  @include transition(all, 0.4s, ease);
+	@include media-breakpoint-down(lg){
+		padding: 60px 25px 20px;
+	}
+	&.active,
+  &:hover{
+  	@include default-box-shadow1;
+  }
+  img{
+  	max-height: 150px;
+  }
+  .icon{
+  	margin-bottom: 25px;
+  }
+  .title{
+  	margin-bottom: 12px;
+  }
+  .text{
+  	@include heading-typo2;
+  	margin-bottom: 25px;
+  }
+}
+.iconbox-style4{
+	background-color: $white-color;
+	@include default-border-radius1;
+	@include default-box-shadow1;
+	margin-bottom: 30px;
+	padding: 30px;
+	position: relative;
+  @include transition(all, 0.4s, ease);
+	.icon{
+		background-color: rgba($theme-color, .07);
+		border-radius: 50%;
+		color: $title-color;
+		display: block;
+		font-size: 30px;
+		height: 70px;
+		line-height: 75px;
+		margin-bottom: 15px;
+		text-align: center;
+		width: 70px;
+	  @include transition(all, 0.4s, ease);
+	}
+	.title{
+		margin-bottom: 5px;
+	}
+	&:hover{
+		background-color: $theme-color;
+		.title,
+		.text,
+		.icon{
+			color: $white-color;
+		}
+		.icon{
+			background-color: rgba($white-color, 0.1);
+		}
+	}
+}
+.iconbox-style5{
+	background-color: $white-color;
+	bottom: 20px;
+	@include default-border-radius1;
+	@include default-box-shadow1;
+	max-width: 210px;
+	padding: 20px;
+	position: absolute;
+	right: -50px;
+  @include transition(all, 0.4s, ease);
+	@include media-breakpoint-down(lg) {
+		right: -10px;
+	}
+	.icon{
+		background-color: $theme-color;
+		border-radius: 50%;
+		color: $white-color;
+		display: block;
+		font-size: 24px;
+		height: 60px;
+		line-height: 65px;
+		text-align: center;
+		width: 60px;
+	  @include transition(all, 0.4s, ease);
+	}
+	.title{
+		margin-bottom: 5px;
+	}
+	&:hover{
+		background-color: $theme-color;
+		.title,
+		.text,
+		.icon{
+			color: $white-color;
+		}
+		.icon{
+			background-color: rgba($white-color, 0.1);
+		}
+	}
+}
+.iconbox-style6{
+	border: 1px solid $border-color;
+	@include default-border-radius1;
+	margin-bottom: 30px;
+	padding: 45px 30px 20px;
+	position: relative;
+  @include transition(all, 0.4s, ease);
+	.title{
+		color: $theme-color;
+	}
+	.icon{
+		color: $theme-color;
+		font-size: 36px;
+		position: absolute;
+		right: 30px;
+		top: 17px;
+	}
+	.iconbox-text{
+		@include heading-typo4;
+		font-size: 13px;
+	}
+	&:hover{
+		@include default-box-shadow1;
+	}
+}
+.iconbox-style7{
+	background-color: $white-color;
+	bottom: 20px;
+	@include default-border-radius1;
+	@include default-box-shadow1;
+	max-width: 210px;
+	padding: 20px;
+	position: absolute;
+	right: -50px;
+  @include transition(all, 0.4s, ease);
+	@include media-breakpoint-down(lg) {
+		right: -10px;
+	}
+	.icon{
+		background-color: $dark-color;
+		border-radius: 50%;
+		color: $white-color;
+		display: block;
+		font-size: 24px;
+		height: 60px;
+		line-height: 65px;
+		text-align: center;
+		width: 60px;
+	  @include transition(all, 0.4s, ease);
+	}
+	.title{
+		margin-bottom: 5px;
+	}
+	&:hover{
+		background-color: $theme-color;
+		.title,
+		.text,
+		.icon{
+			color: $white-color;
+		}
+		.icon{
+			background-color: rgba($white-color, 0.1);
+		}
+	}
+}
+.iconbox-style9{
+	background-color: $white-color;
+	@include default-border-radius1;
+	@include default-box-shadow1;
+	position: relative;
+  @include transition(all, 0.4s, ease);
+	.icon{
+		color: $theme-color2;
+		display: block;
+		font-size: 40px;
+	  @include transition(all, 0.4s, ease);
+	}
+}
+.apartment-category{
+	background-color: $light-color;
+	border:1px solid $light-color;
+	border-radius: 70px;
+	margin-bottom: 30px;
+	padding: 10px 30px 10px 10px;
+	position: relative;
+  @include transition(all, 0.4s, ease);
+	.icon{
+		background-color: $white-color;
+		border-radius: 50%;
+		color: $title-color;
+		font-size: 20px;
+		height: 50px;
+		line-height: 55px;
+		text-align: center;
+		width: 50px;
+	  @include transition(all, 0.4s, ease);
+	}
+	.title{
+		margin-left: 12px;
+	}
+	&:hover{
+		background-color: $white-color;
+		border:1px solid $border-color;
+		@include default-box-shadow1;
+		.icon{
+			background-color: $theme-color;
+			color: $white-color;
+		}
+	}
+}
+.feature-style1{
+	@include default-border-radius1;
+	overflow: hidden;
+	position: relative;
+	.feature-img{
+		position: relative;
+	}
+	img{
+		transform: scale(1.0);
+	  @include transition(all, 0.4s, ease);
+	}
+	.feature-content{
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	  @include transition(all, 0.4s, ease);
+	}
+	.title,
+	.text,
+	.ud-btn2{
+		color: $white-color;
+	}
+	.ud-btn2{
+		font-size: 14px;
+		font-weight: 400;
+	}
+	.top-area{
+		padding-left: 30px;
+		position: absolute;
+		top: 35px;
+	}
+	&:hover{
+		.feature-content{
+			background-color: rgba($dark-color, .6);
+		}
+		img{
+				transform: scale(1.1) rotate(-1deg);
+		}
+	}
+}
+.feature-style2{
+	position: relative;
+	.feature-img{
+		@include default-border-radius1;
+		overflow: hidden;
+		position: relative;
+	}
+	img{
+		transform: scale(1.0);
+	  @include transition(all, 0.4s, ease);
+	}
+	.title,
+	.text{
+		color: $title-color;
+		font-family: $title-font;
+	}
+	&:hover{
+		img{
+				transform: scale(1.1) rotate(-1deg);
+		}
+	}
+}
+.feature-style3{
+	position: relative;
+	.feature-img{
+		overflow: hidden;
+		position: relative;
+	}
+	img{
+		transform: scale(1.0);
+	  @include transition(all, 0.4s, ease);
+	}
+	.feature-content{
+	  @include transition(all, 0.4s, ease);
+	}
+	&:hover{
+		img{
+				transform: scale(1.1) rotate(-1deg);
+		}
+	}
+}
+.why-chose-list{
+	position: relative;	
+	.list-one{
+		position: relative;
+		.list-icon{
+			color: $theme-color2;
+			display: block;
+			font-size: 30px;
+		  @include transition(all, 0.4s, ease);
+		}
+	}
+	&.style2{
+		.list-one{
+			&:hover{
+				.list-icon{
+					background-color: rgba($theme-color, .6);
+					color: $white-color;
+				}
+			}
+		}
+		.list-icon{
+			color: $title-color;
+		}
+	}
+	&.style3{
+		.list-icon{
+			background-color: $light-color;
+		}
+		.list-icon{
+			color: $title-color;
+		}
+	}
+	&.at-home5{
+		.list-icon{
+			&:after{
+				background-color: $light-yellow-color;
+		    border-radius: 50%;
+		    content: "";
+		    height: 30px;
+		    position: absolute;
+		    width: 30px;
+		    left: 10px;
+		    z-index: -1;
+		    top: 10px;
+			}
+		}
+	}
+}
+.home9-city-style{
+	position: relative;
+	padding: 20px;
+  @include transition(all, 0.4s, ease);
+	&:hover{
+		@include default-border-radius1;
+		@include default-box-shadow1;
+	}
+}

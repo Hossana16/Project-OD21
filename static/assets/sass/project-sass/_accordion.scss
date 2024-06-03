@@ -1,0 +1,140 @@
+/*	Different Accordion Styles	*/
+.accordion-style1{
+	position: relative;
+	margin-bottom: 30px;
+	.accordion-item{
+		border: none;
+		@include default-border-radius1;
+		overflow: hidden;
+	}
+	.accordion-header{
+		border: none;
+	}
+	.accordion-button{
+		background-color: transparent;
+		box-shadow: none;
+		@include heading-typo1;
+		font-size: 17px;
+		line-height: 50px;
+		padding-bottom: 4px;
+		padding-left: 40px;
+		padding-right: 30px;
+		padding: 30px 30px 4px 40px;
+	  @include transition(all, 0.2s, ease);
+		&:before{
+	    color: #041e42;
+	    content: "\2b";
+			font-family: $icon-font;
+	    font-size: 16px;
+	    font-weight: bold;
+	    right: 40px;
+	    position: absolute;
+		}
+		&:after{
+			display: none;
+		}
+		&.collapsed{
+			&:before{
+		    content: "+";				
+			}
+		}
+		&:not(.collapsed){
+			background-color: $theme-color3;
+			&:before{
+				content: "";
+			}
+		}
+	}
+	.accordion-body{
+		background-color: $theme-color3;
+		@include heading-typo2;
+		padding: 15px 30px 35px 40px;
+	  @include transition(all, 0.1s, ease);
+	}
+	&.faq-page{
+		.accordion-body{
+			max-width: initial;
+		}
+	}
+	&.style2{
+		.accordion-item{
+			border: none;
+			padding: 0;
+			&.active{
+				box-shadow: none;
+			}
+		}
+		.accordion-header{
+			border: none;
+			border-bottom: 1px solid $border-color;
+		}
+		.accordion-body{
+			max-width: initial;
+			padding: 0;
+		}
+	}
+}
+.feature-accordion{
+	position: relative;
+	.accordion-button{
+		background-color: transparent;
+		box-shadow: none;
+		@include heading-typo1;
+		outline: none;
+	}
+}
+.agent-single-accordion{
+	.accordion-button{
+		background-color: transparent;
+		box-shadow: none;
+		color: $title-color;
+		@include heading-typo3;
+		font-size: 14px;
+		text-decoration-line: underline;
+		&:after{
+			display: none;
+		}
+	}
+}
+.accordion-style2{
+	position: relative;
+	margin-bottom: 30px;
+	.accordion-item{
+		padding: 0;
+		&.active{
+			.accordion-button{
+				&:before{
+					content:"\f106";
+				}				
+			}
+		}
+	}
+	.accordion-header{
+		border: none;
+	}
+	.accordion-button{
+		background-color: transparent;
+		box-shadow: none;
+		@include heading-typo1;
+		font-size: 17px;
+		padding-left: 0;
+		padding-bottom: 0;
+		padding-top: 0;
+		&:before{
+	    color: #041e42;
+	    content: "\f107";
+			font-family: $icon-font;
+	    font-size: 14px;
+	    font-weight: bold;
+	    right: 10px;
+	    position: absolute;
+		}
+		&:after{
+			display: none;
+		}
+	}
+	.accordion-body{
+		@include heading-typo2;
+		padding: 20px 0 0;
+	}
+}

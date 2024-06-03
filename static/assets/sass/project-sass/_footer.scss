@@ -1,0 +1,340 @@
+/*	All Type Of Footer Styles  */
+.footer-style1{
+	background-color: $title-color;
+	&.at-home5{
+		background-color: $theme-color3;
+	}
+	&.at-home6{
+		background-color: $theme-color2;
+	}
+	&.at-home7,
+	&.at-home8{
+		background-color: $white-color;
+	}
+	&.at-home10{
+		border-radius: 16px 16px 0 0;
+	}
+	&.at-home11{
+		background-color: #1D6362;
+	}
+}
+.home2-footer-radius{
+	border-radius: 0 90px 0 0;
+}
+.footer-widget{
+	position: relative;
+}
+.app-widget{
+	position: relative;
+	.app-info{
+		background-color: rgba($white-color, .1);
+		padding: 8px 30px 10px 20px;
+	  @include transition(all, 0.4s, ease);
+		.flex-shrink-0{
+			border-right: 1px solid rgba($white-color, .3);
+		}
+		&:hover{
+			background-color: $theme-color;
+		}
+		&.light-style{
+			background-color: $dark-color;
+			&:hover{
+				background-color: $theme-color;
+				.app-text{
+					color: $white-color;
+				}
+			}
+		}
+	}
+	&.at-home6{
+		.app-info{
+			background-color: $theme-color2;
+			@include default-border-radius2;
+			font-size: 14px;
+			padding: 8px 20px 10px;
+			.flex-shrink-0{
+				border-right: 1px solid rgba($white-color, .3);
+				padding-right: 20px;
+			}
+			.flex-grow-1{
+				padding-left: 20px;
+			}
+			.app-text{
+				color: $white-color;
+			}
+		}
+	}
+	&.at-home7{
+		.app-info{
+			border-radius: 0;
+		}
+	}
+	&.at-home8{
+		.app-info{
+			background-color: $theme-color3;
+		}
+	}
+	&.at-home9{
+		.app-info{
+			padding: 7px 30px;
+		}
+	}
+	&.at-home12{
+		.app-info{
+			background-color: $dark-color;
+			border-radius: 120px;
+			font-size: 14px;
+			.flex-shrink-0{
+				border-right: 1px solid rgba($white-color, .3);
+				padding-right: 20px;
+			}
+			.flex-grow-1{
+				padding-left: 20px;
+			}
+			.app-text{
+				color: $white-color;
+			}
+		}
+	}
+}
+.mailchimp-style1{
+	position: relative;
+	.form-control{
+		background-color: rgba($white-color, .05);
+		border: none;
+		color: $white-color;
+		font-size: 15px;
+		font-weight: 400;
+		height: 60px;
+		outline: none;
+		padding-left: 20px;
+		&::placeholder{
+			color: rgba($white-color, .7);
+			font-size: 15px;
+			font-weight: 400;
+		}
+		&:focus{
+			border: none;
+			box-shadow: none;
+			outline: none;
+		}
+	}
+	button{
+		background-color: transparent;		
+		border: none;
+		color: $white-color;
+		@include heading-typo5;
+		font-size: 15px;
+		position: absolute;
+		right: 25px;
+		top: 15px;
+	}
+	&.white-version{
+		.form-control{
+			background-color: $white-color;
+			&::placeholder{
+				color: $title-color;
+				font-size: 14px;
+				font-weight: 400;
+			}
+		}
+		button{
+			font-size: 15px;
+			@include heading-typo1;
+		}
+	}
+	&.at-home4{
+		@include default-border-radius1;
+		border: 1px solid $border-color;
+		.form-control{
+			height: 60px;
+			color: $title-color;
+			&::placeholder{
+				color: $title-color;
+			}
+		}
+		button{
+			background-color: transparent;
+			color: $title-color;
+		}
+	}
+	&.at-home7{
+		border: 1px solid $border-color;
+		@include default-border-radius1;
+		.form-control{
+			@include default-border-radius1;
+			color: rgba($dark-color, .7);
+			height: 60px;
+			&::placeholder{
+				color: rgba($dark-color, .7);
+			}
+		}
+		button{
+			color: $dark-color;
+			display: block;
+	    height: 40px;
+	    line-height: 35px;
+	    right: 20px;
+	    top: 10px;
+	    width: 40px;
+		}
+	}
+	&.at-home8{
+		.form-control{
+			background-color: $theme-color3;
+			color: $title-color;
+			&::placeholder{
+				color: $title-color;
+			}
+		}
+		button{
+			color: $title-color;
+		}
+	}
+	&.at-home9{
+		.form-control{
+	    border-radius: 60px;
+			height: 70px;
+	    line-height: 70px;
+		}
+		button{
+			color: $theme-color;
+			top: 20px;
+		}
+	}
+	&.at-home11{
+		.form-control{
+			background-color: $white-color;
+			color: $title-color;
+			@include default-border-radius3;
+			&::placeholder{
+				color: $title-color;
+				font-size: 14px;
+				font-weight: 400;
+			}
+		}
+		button{
+			font-size: 15px;
+			@include heading-typo1;
+		}
+	}
+}
+.mailchimp-style2{
+	position: relative;
+	.form-control{
+		background-color: $white-color;
+		border: none;
+		border-radius: 12px;
+		color: $title-color;
+		font-size: 14px;
+		font-weight: 400;
+		height: 70px;
+		padding-left: 30px;
+		&:placeholder{
+			color: $title-color;
+			font-size: 14px;
+			font-weight: 400;
+		}
+		&:focus{
+			border: none;
+			box-shadow: none;
+			outline: none;
+		}
+	}
+	button{
+		height: 50px;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+}
+.link-style1{
+	a{
+		color: rgba($white-color, .7);
+		display: block;
+		font-family: $title-font;
+		line-height: 35px;
+		position: relative;
+	  @include transition(all, 0.3s, ease);
+		&:hover{
+			color: $white-color;
+			text-decoration: underline;
+		}
+	}
+	&.light-style{
+		a{
+			@include heading-typo2;
+		}
+	}
+	&.at-home8{
+		a{
+			color: rgba($dark-color, 0.7);
+		}
+	}
+	&.at-home9{
+		a{
+			&:hover{
+				color: $theme-color;
+			}
+		}
+	}
+	&.at-home11{
+		a{
+			color: $white-color;
+			&:hover{
+				color: $theme-color;
+			}
+		}
+	}
+}
+.footer_bottom_right_btns{
+	.bootstrap-select{
+		.btn,
+		.btn-light{
+			background-color: rgba($white-color, .05);
+			border: none;
+			color: rgba($white-color, .7);
+			@include heading-typo4;
+			font-size: 14px;
+			height: 40px;
+			line-height: 25px;
+			&:focus{
+				outline: none !important;
+				outline-offset: initial;
+			}
+		}
+		.dropdown-item{
+			&.active,
+			&:active{
+				background-color: $theme-color3;
+				color: $theme-color;
+				span{
+					color: $theme-color;
+				}
+			}
+			span{
+				color: $title-color;
+			}
+		}
+	}
+	&.at-home8{
+		.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) .btn,
+		.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) .btn-light{
+			@include default-border-radius1;
+			border: 1px solid $border-color;
+			color: $title-color;
+	    height: 40px;
+	    line-height: 30px;
+	    padding: 5px 25px;
+		}
+	}
+	&.at-home9{
+		.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) .btn,
+		.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) .btn-light{
+			border-radius: 60px;
+	    height: 40px;
+	    line-height: 30px;
+	    padding: 5px 25px;
+		}
+	}
+}

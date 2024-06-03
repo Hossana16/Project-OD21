@@ -1,0 +1,171 @@
+/*	Table Styles  */
+.table-style1{
+	position: relative;
+	.table{
+		thead{
+	    tr{
+		    background-color: #F1FCFA;
+	    	overflow: hidden;
+	    }
+		}
+		th {
+	    color: #222222;
+	    line-height: 55px;
+	    padding-left: 27px;
+	    &:first-child{
+	    	border-radius: 8px 0 0 8px;
+	    }
+	    &:last-child{
+	    	border-radius: 0 8px 8px 0;
+	    }
+		}
+		td {
+	    border-bottom: 1px solid $border-color;
+	    font-family: $title-font;
+	    line-height: 52px;
+	    padding-left: 27px;
+		}
+	}
+}
+.table-style2{
+	position: relative;
+	.table{
+		.t-head{
+			th{
+		    @include heading-typo1;
+		    font-size: 15px;
+		    line-height: 22px;
+		    padding-bottom: 30px;
+		    padding-top: 30px;
+		    vertical-align: baseline;
+			}
+			small{
+				@include heading-typo4;
+				font-size: 15px;
+				color: $body-light-color;
+			}
+		}
+	}
+	.t-body{
+		th{
+			@include heading-typo1;
+			font-size: 15px;
+			letter-spacing: 0em;
+	    padding: 30px;
+		}
+		tr{
+			border-top: 1px solid $border-color;
+		}
+		td{
+			@include heading-typo2;
+	    padding-bottom: 30px;
+	    padding-top: 30px;
+		}
+		.check_circle{
+			border-radius: 50%;
+			color: $white-color;
+			display: block;
+			font-size: 8px;
+			height: 25px;
+			line-height:25px;
+			text-align: center;
+			width: 25px;
+		}
+	}
+}
+.table-style2 table.table > :not(caption) > * > * {
+  border-bottom-width: 0;
+}
+.table-style3{
+	&.table{
+		border-spacing: inherit;
+		border-collapse: separate;
+	}
+	.t-head{
+		background-color: $theme-color3;
+		@include default-border-radius1;			
+		th{
+			border: 0;
+			@include heading-typo1;
+			font-size: 17px;
+			padding: 20px 30px;
+		}
+	}
+	.t-body{
+		th{
+			@include heading-typo1;
+			font-size: 15px;
+			padding: 30px;
+			vertical-align: middle;
+		}
+		td{
+			@include heading-typo2;
+			padding: 30px;
+			vertical-align: middle;
+		}
+		tr{
+			&:last-child{
+				border-color: transparent;
+			}
+		}
+	}
+	.icon{
+		background-color: $theme-color4;
+		border-radius: 4px;
+		color: $theme-color2;
+		display: block;
+		height: 40px;
+		line-height:45px;
+		text-align: center;
+		width: 40px;
+	}
+	&.at-savesearch{
+		.t-body{
+			tr{
+				&:last-child{
+					border-color: $border-color;
+				}
+			}
+		}
+	}
+}
+.invoice_table {
+  background-color: $white-color;
+  @include default-box-shadow1;
+	@include default-border-radius2;
+  position: relative;
+  .wrapper{
+  	padding: 120px 100px;
+		@include media-breakpoint-down(lg){
+			padding: 60px 30px;
+		}
+  }
+	.tblh_row {
+    background-color: $theme-color3;
+    border-radius: 8px;
+    th {
+	    color: $title-color;
+		}
+	}
+	.tbleh_title,
+	.tbl_title,
+	.tblpr_title,
+	.tblp_title{
+		@include heading-typo1;
+		font-size: 17px;
+		padding-bottom: 20px;
+		padding-left: 30px;
+		padding-top: 25px;
+	}
+	.tbl_title,
+	.tblpr_title{
+		font-size: 15px;
+		font-weight: 400;
+	}
+}
+.invoice_footer {
+  background-color: $white-color;
+  border-radius: 0 0 6px 6px;
+  border-top: 1px solid $border-color;
+  padding: 45px 0 40px;
+}

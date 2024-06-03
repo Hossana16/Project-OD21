@@ -1,0 +1,109 @@
+/*
+Project/Template Name:  Freeio - Freelance Marketplace HTML Template
+Template Url: 
+Author: CreativeLayers
+Author Url: https://themeforest.net/user/creativelayers/portfolio
+Version: 1.0.0
+Description: Freeio - Freelance Marketplace HTML Template
+Tag:  bidding, fiverr, freelance marketplace, freelancers, freelancing, gigs, hiring, job board, job portal, job posting, jobs marketplace, peopleperhour, proposals, sell services, upwork
+*/
+
+/* == Table Of Content  == */
+
+/* Variables */
+/* Mixins */
+/* Typography Styles */
+/* Header Styles */
+/* All Type Of Footer Styles */
+/* All styles about breadcumb */
+/* Dashboard Style Code Here */
+/* Messages Styles */
+/* Listings Styles */
+/* About Pages Design Content Styles  */
+/* Hero Styles All Type Of */
+/* ALl Blogs Styles Here  */
+/* Brands */
+/* Commons Styles of Template */
+/* Contact Styles */
+/* All CTA Styles Here */
+/* Error Pages Styles */
+/* Iconbox Styles */
+/* All Type Of Forms Styles */
+/* Gallery Styles */
+/* Packages And Pricing Tables */
+/* Testimonials Styles */
+/* Team Styles */
+/* Different Styles Of Animations */
+/* Different Accordion Styles*/
+/* Different Styles of Alart */
+/* blockquote Styles*/
+/* All kind Of btns Styles */
+/* Funfact Styles */
+/* Menu Style */
+/* Nav & Tabs Styles */
+/* Paginations Styles */
+/* ProgressBar Styles */
+/* Social Styles */
+/* Sliders Styles */
+/* Sidebar Styles */
+/* Table Styles */
+/* Essential utility classes */
+
+/*=================================
+   Bootstrap Sass
+==================================*/
+@import "bootstrap-sass/functions";
+@import "bootstrap-sass/mixins";
+@import "bootstrap-sass/variables";
+/*=================================
+   Theme Based
+==================================*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+@import "mixin";
+@import "variables";
+@import "typography";
+
+@import "project-sass/header";
+@import "project-sass/footer";
+@import "project-sass/breadcumb";
+
+@import "project-sass/dashboard";
+@import "project-sass/message";
+@import "project-sass/listings";
+
+@import "project-sass/about";
+@import "project-sass/hero";
+@import "project-sass/blog";
+@import "project-sass/brand";
+@import "project-sass/common";
+@import "project-sass/contact";
+@import "project-sass/cta";
+@import "project-sass/error";
+@import "project-sass/iconbox";
+@import "project-sass/form";
+@import "project-sass/gallery";
+@import "project-sass/package";
+@import "project-sass/testimonial";
+@import "project-sass/team";
+
+
+@import "project-sass/animation";
+@import "project-sass/accordion";
+@import "project-sass/alart";
+@import "project-sass/blockquotes";
+@import "project-sass/btns";
+@import "project-sass/funfact";
+@import "project-sass/menu";
+@import "project-sass/navtabs";
+@import "project-sass/pagination";
+@import "project-sass/progressbar";
+@import "project-sass/shop";
+@import "project-sass/social";
+@import "project-sass/slider";
+@import "project-sass/sidebar";
+@import "project-sass/tables";
+@import "project-sass/utility";
+
+
+

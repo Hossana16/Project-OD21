@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'core',
     'marketplace',
+    'template_tags',
     # 'notifications',
 
 ]
@@ -90,7 +91,7 @@ WSGI_APPLICATION = 'lite_exchange.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lite_exchange', # database name
+        'NAME': 'lite_exchange2', # database name
         'USER': 'root', # database username
         'PASSWORD': 'Kijanicart1@',#  database password 
         'HOST': 'localhost',

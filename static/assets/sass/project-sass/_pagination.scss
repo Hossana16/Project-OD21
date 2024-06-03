@@ -1,0 +1,46 @@
+/*  Paginations Styles  */
+.mbp_pagination {
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+  .page_navigation {
+    margin-bottom: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .page-item {
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    @include transition(all, 0.4s, ease);
+    &:hover{
+      background-color: $theme-color3;
+    }
+    &:first-child{
+      border: 1px solid $border-color;
+    }
+    &:last-child{
+      border: 1px solid $dark-color;
+    }
+    &.active{
+      .page-link{
+        background-color: $theme-color;
+        color: $white-color;        
+      }
+    }
+  }
+  .page-link{
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    @include heading-typo1;
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    width: 40px;
+  }
+}

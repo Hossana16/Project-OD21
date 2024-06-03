@@ -14,7 +14,7 @@ from allauth.account.views import SignupView, LoginView
 from allauth.account.decorators import login_required 
 from core.forms import AccountSignUpForm
 from core.models import UserProfile, SellerProfile
-from marketplace.models import Service, Review, Job
+from marketplace.models import Service, Review, Job, JobApplication
 from marketplace.forms import JobForm
 
 
@@ -95,9 +95,10 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
         messages.error(self.request, 'Failed to update the profile. Please check the form for errors.')
         return self.render_to_response(self.get_context_data(user_form=user_form, sellerprofile_form=sellerprofile_form, profile_form=profile_form))
 
+
 # organize and Manage
 class ManageServiceView(LoginRequiredMixin, TemplateView):
-    template_name = 'dashboards/sellers-dashboard/manage/manage-service.html'
+    template_name = 'dashboards/sellers-dashboard/manage-service/manage-service.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -112,31 +113,68 @@ class ManageServiceView(LoginRequiredMixin, TemplateView):
         
         # return super().dispatch(request, *args, **kwargs)
 
-
-
 class ReviewsView(LoginRequiredMixin, TemplateView):
     template_name = 'dashboards/sellers-dashboard/page-dashboard-reviews.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         seller_profile = SellerProfile.objects.get(user_profile__user=self.request.user)
-        # reviews = Review.objects.filter(seller_profile=seller_profile)
-        # context['reviews'] = reviews
+        # Fetching services related to the seller
+        services = Service.objects.filter(seller_profile=seller_profile)
+        # Fetching reviews related to those services
+        reviews = Review.objects.filter(service__in=services)
+        context['reviews'] = reviews
         return context
     
 # manage Jobs     
 class ManageJobView(LoginRequiredMixin, TemplateView):
-    template_name = 'dashboards/sellers-dashboard/page-dashboard-manage-jobs.html'
+    template_name = 'dashboards/sellers-dashboard/manage-jobs/page-dashboard-manage-jobs.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        userprofile = UserProfile.objects.get(user=self.request.user)
+        jobs = Job.objects.filter(user=userprofile)
+        
+        # dictionary  holds job applications count for each job
+        job_applications_count = {job: JobApplication.objects.filter(job=job).count() for job in jobs}
+        
+        context['job_applications_count'] = job_applications_count
+        context['jobs'] = jobs
+        return context
+
 
 class JobCreateView(LoginRequiredMixin, CreateView):
     model = Job
     form_class = JobForm
-    template_name = 'jobs/job_form.html'
+    template_name = 'dashboards/sellers-dashboard/manage-jobs/add-job.html'
     success_url = reverse_lazy('core:manage-jobs')
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        user_profile = self.request.user.userprofile
+        # form.instance.user_profile = user_profile
+        form.instance.user = user_profile
         return super().form_valid(form)
+
+
+class JobUpdateView(LoginRequiredMixin, UpdateView):
+    model = Job
+    fields = ['title', 'category', 'image', 'description', 'budget', 'status', 'image', 'job_type', 'end_at']
+    template_name = 'dashboards/sellers-dashboard/manage-jobs/edit-job.html'
+    success_url = reverse_lazy('core:manage-jobs')
+    context_object_name = 'job'
+
+    def get_context_data(self, **kwargs):
+        context =  super().get_context_data(**kwargs)
+        return context   
+    
+class JobDeleteView(LoginRequiredMixin, DeleteView):
+    model = Job
+    success_url = reverse_lazy('core:manage-jobs')
+    template_name = 'dashboards/sellers-dashboard/manage-jobs/confirm-delete-job.html'
+
+    def get_object(self, queryset=None):
+        obj = get_object_or_404(Job, pk=self.kwargs['pk'])
+        return obj     
 
 
 class ManageProjectView(LoginRequiredMixin, TemplateView):
@@ -161,7 +199,7 @@ class CreateEducation(LoginRequiredMixin, CreateView):
 class AddServiceView(LoginRequiredMixin, CreateView):
     model = Service
     form_class = ServiceForm
-    template_name = 'dashboards/sellers-dashboard/manage/add-service.html'
+    template_name = 'dashboards/sellers-dashboard/manage-service/add-service.html'
     success_url = reverse_lazy('core:manage-service')
     
     def form_valid(self, form):
@@ -175,7 +213,7 @@ class AddServiceView(LoginRequiredMixin, CreateView):
 class ServiceUpdateView(LoginRequiredMixin, UpdateView):
     model = Service
     fields = ['title', 'category', 'image', 'description', 'price', 'status', 'delivery_time']
-    template_name = 'dashboards/sellers-dashboard/edit/edit-service.html'
+    template_name = 'dashboards/sellers-dashboard/manage-service/edit-service.html'
     success_url = reverse_lazy('core:manage-service')
     context_object_name = 'service'
 
@@ -183,7 +221,16 @@ class ServiceUpdateView(LoginRequiredMixin, UpdateView):
         context =  super().get_context_data(**kwargs)
         return context    
 
-  
+
+class ServiceDeleteView(LoginRequiredMixin, DeleteView):
+    model = Service
+    success_url = reverse_lazy('core:manage-service')
+    template_name = 'dashboards/sellers-dashboard/manage-service/confirm-delete-service.html'
+
+    def get_object(self, queryset=None):
+        obj = get_object_or_404(Service, pk=self.kwargs['pk'])
+        return obj
+
 # creating and editing profile 
 class CreateEducation(LoginRequiredMixin, CreateView):
     model = Education

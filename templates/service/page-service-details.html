@@ -62,11 +62,11 @@
           <div class="row wow fadeInUp">
             <div class="col-xl-7">
               <div class="position-relative">
-                <h2>{{service.description}}</h2>
+                <h2>{{service.title}}</h2>
                 <div class="list-meta mt30">
                   <a class="list-inline-item mb5-sm" href="{% url 'marketplace:seller-details' service.pk %}">
                     <span class="position-relative mr10">
-                      <img class="rounded-circle" src="{{service.seller_profile.user_profile.user.profile_image.url}}" alt="Freelancer Photo">
+                      <img class="rounded-circle" src="{% if service.seller_profile.user_profile.user.profile_image %} {{service.seller_profile.user_profile.user.profile_image.url}}{% endif %}" alt="Seller Photo">
                       <span class="online-badge"></span>
                     </span>
                     <span class="fz14">{% if service.seller_profile.user_profile.user.first_name and service.seller_profile.user_profile.user.first_name %}{{service.seller_profile.user_profile.user.first_name}} {{service.seller_profile.user_profile.user.last_name}}{% else %}{{service.seller_profile.user_profile.user.username}}{% endif %}</span>
@@ -119,7 +119,7 @@
               </div>
               <div class="service-single-sldier vam_nav_style slider-1-grid owl-carousel owl-theme mb60">
                 <div class="item">
-                  <div class="thumb p50 p30-sm"><img src="{% static 'assets/images/listings/service-details-1.jpg' %}" alt="" class="w-100"></div>
+                  <div class="thumb p50 p30-sm"><img src="{% if service.image %} {{service.image.url}} {% else %}{% static 'assets/images/listings/service-details-1.jpg' %}{% endif %}" alt="" class="w-100"></div>
                 </div>
                 <div class="item">
                   <div class="thumb p50 p30-sm"><img src="{% static 'assets/images/listings/service-details-1.jpg' %}" alt="" class="w-100"></div>
@@ -130,8 +130,9 @@
               </div>
               <div class="service-about">
                 <h4>About</h4>
-                <p class="text mb30">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                <p class="text mb-0">Services I provide:</p>
+                <p class="text mb30">{{service.description }}</p>
+                
+                {% comment %} <p class="text mb-0">Services I provide:</p>
                 <p class="text mb-0">1) Website Design</p>
                 <p class="text mb-0">2) Mobile App Design</p>
                 <p class="text mb-0">3) Brochure Design</p>
@@ -153,7 +154,7 @@
                     <h6>Device</h6>
                     <p class="text">Mobile, Desktop</p>
                   </div>
-                </div>
+                </div> {% endcomment %}
                 
                 <hr class="opacity-100 mb60">
                 
@@ -215,7 +216,7 @@
                       {% for review in reviews  %}
                       <div class="col-md-12">
                         <div class="mbp_first position-relative d-flex align-items-center justify-content-start mb30-sm">
-                          <img src="{{ review.buyer.user.profile_image.url }}" class="mr-3" alt="comments-2.png">
+                          <img src="{% if review.buyer.user.profile_image%}{{ review.buyer.user.profile_image.url }}{% else %} {% endif %}" class="mr-3" alt="comments-2.png">
                           <div class="ml20">
                             <h6 class="mt-0 mb-0">{{review.buyer.user.username}}</h6>
                             <div><span class="fz14">{{review.created_at}}</span></div>
@@ -254,7 +255,7 @@
                       <div class="col-md-12">
                         <div class="mb-4">
                           <label class="fw500 fz16 ff-heading dark-color mb-2">Comment</label>
-                          <textarea name="comment" class="pt15" rows="6" placeholder="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text."></textarea>
+                          <textarea name="comment" class="pt15" rows="6" placeholder="I like this service."></textarea>
                         </div>
                       </div>
                       <div class="col-md-6">

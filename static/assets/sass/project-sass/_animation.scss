@@ -1,0 +1,76 @@
+/*  Different Styles Of Animations  */
+.scale-infini{
+  animation-name: myanimation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes myanimation {
+  0%   {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1)
+  }
+  50%  {
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2)
+  }
+  100%  {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+.bounce-y{
+  transform: translatey(0px);
+  animation: bounceY 6s ease-in-out infinite;
+}
+@keyframes bounceY {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.bounce-x{
+  transform: translatey(0px);
+  animation: bounceX 6s ease-in-out infinite;
+}
+@keyframes bounceX {
+  0% {
+    transform: translatex(0px);
+  }
+  50% {
+    transform: translatex(-20px);
+  }
+  100% {
+    transform: translatex(0px);
+  }
+}
+
+.spin-right{
+  animation: spin-right 14s infinite linear;
+}
+@keyframes spin-right {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+.spin-left{
+  animation: spin-left 14s infinite linear;
+}
+@keyframes spin-left {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-360deg);}
+}
