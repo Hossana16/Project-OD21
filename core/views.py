@@ -28,18 +28,34 @@ class HomeView(TemplateView):
 
         context['services'] = services
         return context   
-
-
-class DashboardView(LoginRequiredMixin ,TemplateView):
+    
+class DashboardView(LoginRequiredMixin, TemplateView):
     template_name = 'dashboards/sellers-dashboard/dashboard.html'
+
+    def get_object(self, queryset=None):
+        return get_object_or_404(UserProfile, user=self.request.user)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        
-        total_number_of_service = Service.objects.all().count()
+        user_profile = self.get_object()
+
+        # Check if the user has a seller profile
+        try:
+            seller_profile = user_profile.sellerprofile
+        except SellerProfile.DoesNotExist:
+            seller_profile = None
+
+        if seller_profile:
+            total_reviews = Review.objects.filter(service__seller_profile=seller_profile).count()
+            total_number_of_service = Service.objects.filter(seller_profile=seller_profile).count()
+        else:
+            total_reviews = 0
+            total_number_of_service = 0
 
         context['total_number_of_service'] = total_number_of_service
+        context['total_reviews'] = total_reviews
         return context
+
     
     # def dispatch(self, request, *args, **kwargs):
     #     if not hasattr(request.user, 'adminprofile'):

@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+_pycache_/
+*.pyc
+*.pyo
+*.pyd
+
+# Caches
+*.db
+*.sqlite3
+*.log
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Secret keys
+*.env
+
+# Compiled Python files
+*.pyc
+
+# Media files
+media/
+
+# Static files
+#staticfiles/
+
+# Database
+db.sqlite3
+
+# Local development settings
+#local_settings.py
+
+# IDE files
+.vscode/
+.idea/
+
+# Ignore migrations, as these are usually not needed in version control
+**/migrations/
+users/migrations
+
+# Ignore local configuration files
+#**/local_settings.py
+
+# Ignore environment-specific files
+*/.local
+
+# Ignore any logs
+logs/
+*.logSet-ExecutionPolicy RemoteSigned -Scope CurrentUser PS C:\> venv/scripts/activate

@@ -39,12 +39,16 @@ class Service(models.Model):
                 img.thumbnail(output_size)
                 img.save(self.image.path)
 
+    def review_count(self):
+        return self.reviews.count()
+        
     def delete(self, *args, **kwargs):
         self.image.delete()   
         super().delete(*args, **kwargs)             
 
     def __str__(self):
         return self.title
+    
 
 class Order(models.Model):
     STATUS_CHOICES = [
