@@ -16,3 +16,9 @@ class JobApplicationForm(forms.ModelForm):
     class Meta:
         model = JobApplication
         fields = ['cover_letter']
+
+class ServiceSearchForm(forms.Form):
+    query = forms.CharField(label='Search Services', max_length=100)
+
+class JobSearchForm(forms.Form):
+    query = forms.CharField(label='Search Jobs', max_length=100)        

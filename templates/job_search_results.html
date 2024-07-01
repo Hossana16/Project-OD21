@@ -1,0 +1,29 @@
+<!-- job_search_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Jobs</title>
+</head>
+<body>
+    <h1>Search Jobs</h1>
+    <form method="get" action="{% url 'marketplace:job_search' %}">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    <h2>Search Results</h2>
+    {% if jobs %}
+        <ul>
+            {% for job in jobs %}
+                <li>
+                    <h3>{{ job.title }}</h3>
+                    <p>{{ job.description }}</p>
+                    <p>Created at: {{ job.created_at }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No jobs found.</p>
+    {% endif %}
+</body>
+</html>

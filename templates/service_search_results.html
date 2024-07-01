@@ -1,0 +1,29 @@
+<!-- service_search_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Services</title>
+</head>
+<body>
+    <h1>Search Services</h1>
+    <form method="get" action="{% url 'marketplace:service_search' %}">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    <h2>Search Results</h2>
+    {% if services %}
+        <ul>
+            {% for service in services %}
+                <li>
+                    <h3>{{ service.title }}</h3>
+                    <p>{{ service.description }}</p>
+                    <p>Price: ${{ service.price }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No services found.</p>
+    {% endif %}
+</body>
+</html>

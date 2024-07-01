@@ -14,7 +14,42 @@ from django.utils import timezone
 from .forms import ReviewForm
 from django.shortcuts import get_object_or_404, redirect
 from .models import Job, JobApplication
-from .forms import JobForm, JobApplicationForm
+from .forms import JobForm, JobApplicationForm, ServiceSearchForm, JobSearchForm
+
+
+# testzone
+class ServiceSearchView(ListView):
+    model = Service
+    template_name = 'service_search_results.html'
+    context_object_name = 'services'
+
+    def get_queryset(self):
+        query = self.request.GET.get('query')
+        if query:
+            return Service.objects.filter(title__icontains=query)
+        return Service.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = ServiceSearchForm()
+        return context
+
+class JobSearchView(ListView):
+    model = Job
+    template_name = 'job_search_results.html'
+    context_object_name = 'jobs'
+
+    def get_queryset(self):
+        query = self.request.GET.get('query')
+        if query:
+            return Job.objects.filter(title__icontains=query)
+        return Job.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = JobSearchForm()
+        return context
+
 
 class AccountSignUpView(SignupView):
     form_class = AccountSignUpForm

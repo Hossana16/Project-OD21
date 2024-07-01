@@ -5,6 +5,9 @@ from core.urls import views as core
 app_name ='marketplace'
 
 urlpatterns = [
+    # test urls
+    path('search/services/', views.ServiceSearchView.as_view(), name='service_search'),
+    path('search/jobs/', views.JobSearchView.as_view(), name='job_search'),
     # path('', core.home),
     path('register/', views.AccountSignUpView.as_view(), name='register'),
     path('login/', views.AccountSignInView.as_view(), name='login'),
