@@ -94,9 +94,9 @@ WSGI_APPLICATION = 'lite_exchange.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lite_exchange2', # database name
+        'NAME': 'lite_exchange', # database name
         'USER': 'root', # database username
-        'PASSWORD': 'Kijanicart1@',#  database password 
+        'PASSWORD': '',#  database password 
         'HOST': 'localhost',
         'PORT': '3306',
     }
