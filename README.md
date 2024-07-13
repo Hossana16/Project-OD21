@@ -89,7 +89,7 @@ python manage.py migrate
 Create a superuser account to access the admin panel:
 
 ```sh
-python manage.py createsuperuser
+~~
 ```
 Visit http://127.0.0.1:8000/ in your web browser to access the platform.
 

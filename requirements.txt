@@ -4,3 +4,4 @@ mysqlclient
 Pillow
 django-leaflet
 django-geojson
+setuptools
