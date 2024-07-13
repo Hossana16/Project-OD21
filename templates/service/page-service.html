@@ -2,6 +2,27 @@
 {% load static %}
 {% block menutype %}nav-innerpage-style main-menu{% endblock menutype %}
 {% block content %}
+<div class="search-modal">
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+              class="fal fa-xmark"></i></button>
+        </div>
+        <div class="modal-body">
+          <div class="popup-search-field search_area">
+            <input type="text" class="form-control border-0" placeholder="What service are you looking for today?">
+            <label><span class="far fa-magnifying-glass"></span></label>
+            <button class="ud-btn btn-thm" type="submit">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <section class="categories_list_section overflow-hidden">
     <div class="container">
@@ -71,109 +92,11 @@
           <div class="text-center text-sm-start">
             <div class="dropdown-lists">
               <ul class="p-0 mb-0 text-center text-sm-start">
-                <li class="list-inline-item">
-                  <!-- Advance Features modal trigger -->
-                  <button type="button" class="open-btn filter-btn-left mb10"> <img class="me-2" src="{% static 'assets/images/icon/all-filter-icon.svg' %}" alt=""> All Filter</button>
-                </li>
-                <li class="list-inline-item position-relative d-none d-xl-inline-block">
-                  <button class="open-btn mb10 dropdown-toggle" type="button" data-bs-toggle="dropdown">Delivery Time <i class="fa fa-angle-down ms-2"></i></button>
-                  <div class="dropdown-menu">
-                    <div class="widget-wrapper pb25 mb0">
-                      <div class="radio-element">
-                        <div class="form-check d-flex align-items-center mb10">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                          <label class="form-check-label" for="flexRadioDefault1">Express 24H</label>
-                        </div>
-                        <div class="form-check d-flex align-items-center mb10">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked="checked">
-                          <label class="form-check-label" for="flexRadioDefault2">Up to 3 days</label>
-                        </div>
-                        <div class="form-check d-flex align-items-center mb10">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                          <label class="form-check-label" for="flexRadioDefault3">Up to 7 days</label>
-                        </div>
-                        <div class="form-check d-flex align-items-center">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-                          <label class="form-check-label" for="flexRadioDefault4">Anytime</label>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="done-btn ud-btn btn-thm drop_btn">Apply<i class="fal fa-arrow-right-long"></i></button>
-                  </div>
-                </li>
-                <li class="list-inline-item position-relative d-none d-xl-inline-block">
-                  <button class="open-btn mb10 dropdown-toggle" type="button" data-bs-toggle="dropdown">Budget <i class="fa fa-angle-down ms-2"></i></button>
-                  <div class="dropdown-menu dd3">
-                    <div class="widget-wrapper pb25 mb0 pr20">
-                      <!-- Range Slider Desktop Version -->
-                      <div class="range-slider-style1">
-                        <div class="range-wrapper">
-                          <div class="slider-range mb20"></div>
-                          <div class="text-center">
-                            <input type="text" class="amount" placeholder="Tsh 20000"><span class="fa-sharp fa-solid fa-minus mx-1 dark-color"></span>
-                            <input type="text" class="amount2" placeholder="Tsh 70987">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="done-btn ud-btn btn-thm drop_btn3">Apply<i class="fal fa-arrow-right-long"></i></button>
-                  </div>
-                </li>
-                <li class="list-inline-item position-relative d-none d-xl-inline-block">
-                  <button class="open-btn mb10 dropdown-toggle" type="button" data-bs-toggle="dropdown">Level <i class="fa fa-angle-down ms-2"></i></button>
-                  <div class="dropdown-menu">
-                    <div class="widget-wrapper pb25 mb0">
-                      <div class="checkbox-style1">
-                        <label class="custom_checkbox">Top Rated Seller
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Level Two
-                          <input type="checkbox" checked="checked">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Level One
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">New Seller
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <button class="done-btn ud-btn btn-thm dropdown-toggle">Apply<i class="fal fa-arrow-right-long"></i></button>
-                  </div>
-                </li>
-                <li class="list-inline-item position-relative d-none d-xl-inline-block">
-                  <button class="open-btn mb10 dropdown-toggle" type="button" data-bs-toggle="dropdown">Location <i class="fa fa-angle-down ms-2"></i></button>
-                  <div class="dropdown-menu dd4 pb20">
-                    <div class="widget-wrapper pr20">
-                      <div class="checkbox-style1">
-                        <label class="custom_checkbox">Temeke
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Kigamboni
-                          <input type="checkbox" checked="checked">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Ilala
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Posta
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Mwenge
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <button class="done-btn ud-btn btn-thm drop_btn4">Apply<i class="fal fa-arrow-right-long"></i></button>
-                  </div>
+                <li class="list-inline-item position-relatived-none d-xl-inline-block">
+                  <form method="get" action="{% url 'marketplace:service_search' %}">
+                    {{ form.as_p }}
+                    <button class="open-btn mb10 dropdown-toggle" type="submit">Search</button>
+                  </form>
                 </li>
               </ul>
             </div>

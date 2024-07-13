@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% block menutype %}nav-innerpage-style main-menu{% endblock menutype %}
 {% block content %}
 
 
@@ -10,7 +11,7 @@
             <div class="listings_category_nav_list_menu">
               <ul class="mb0 d-flex ps-0">
                 <li><a href="#">All Categories</a></li>
-                <li><a href="#">Graphics & Design</a></li>
+                {% comment %} <li><a href="#">Graphics & Design</a></li>
                 <li><a class="active" href="#">Digital Marketing</a></li>
                 <li><a href="#">Writing & Translation</a></li>
                 <li><a href="#">Video & Animation</a></li>
@@ -18,7 +19,7 @@
                 <li><a href="#">Programming & Tech</a></li>
                 <li><a href="#">Business</a></li>
                 <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Trending</a></li>
+                <li><a href="#">Trending</a></li> {% endcomment %}
               </ul>
             </div>
           </div>
@@ -33,8 +34,7 @@
             <div class="breadcumb-style1 mb10-xs">
               <div class="breadcumb-list">
                 <a href="">Home</a>
-                <a href="">Services</a>
-                <a href="">Design & Creative</a>
+                <a href="{% url  'marketplace:jobs' %}">Jobs</a>
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@
               </div>
               <div class="main-title mb30">
                 <h2>Related Jobs</h2>
-                <p class="text">20234jobs live - 23 added today</p>
+                <p class="text">2024 jobs live - 23 added today</p>
               </div>
               <div class="row">
                 <div class="col-sm-6 col-xl-12">

@@ -18,9 +18,18 @@ from .forms import JobForm, JobApplicationForm, ServiceSearchForm, JobSearchForm
 
 
 # testzone
+def maptest(request):
+    template_name = 'test.html'
+    return render(request, template_name)
+
+# def mapview(request, iso_code):
+    # pass
+
+
 class ServiceSearchView(ListView):
     model = Service
-    template_name = 'service_search_results.html'
+    # template_name = 'service_search_results.html'
+    template_name = 'service/page-service.html'
     context_object_name = 'services'
 
     def get_queryset(self):
@@ -36,7 +45,8 @@ class ServiceSearchView(ListView):
 
 class JobSearchView(ListView):
     model = Job
-    template_name = 'job_search_results.html'
+    # template_name = 'job_search_results.html'
+    template_name = 'job/page-job-list.html'
     context_object_name = 'jobs'
 
     def get_queryset(self):

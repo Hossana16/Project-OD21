@@ -6,6 +6,7 @@ app_name ='marketplace'
 
 urlpatterns = [
     # test urls
+    path('maps/test/', views.maptest, name='maps'),
     path('search/services/', views.ServiceSearchView.as_view(), name='service_search'),
     path('search/jobs/', views.JobSearchView.as_view(), name='job_search'),
     # path('', core.home),

@@ -9,7 +9,7 @@
           <div class="listings_category_nav_list_menu">
             <ul class="mb0 d-flex ps-0">
               <li><a href="#">All Categories</a></li>
-              <li><a href="#">Graphics & Design</a></li>
+              {% comment %} <li><a href="#">Graphics & Design</a></li>
               <li><a class="active" href="#">Digital Marketing</a></li>
               <li><a href="#">Writing & Translation</a></li>
               <li><a href="#">Video & Animation</a></li>
@@ -17,7 +17,7 @@
               <li><a href="#">Programming & Tech</a></li>
               <li><a href="#">Business</a></li>
               <li><a href="#">Lifestyle</a></li>
-              <li><a href="#">Trending</a></li>
+              <li><a href="#">Trending</a></li> {% endcomment %}
             </ul>
           </div>
         </div>
@@ -32,8 +32,8 @@
           <div class="breadcumb-style1">
             <div class="breadcumb-list">
               <a href="">Home</a>
-              <a href="">Services</a>
-              <a href="">Design & Creative</a>
+              <a href="{% url 'marketplace:jobs'%}">Jobs</a>
+              {% comment %} <a href="">Design & Creative</a> {% endcomment %}
             </div>
           </div>
         </div>
@@ -53,75 +53,25 @@
               <h2>Job List</h2>
               <p class="text">All Jobs found in lite Exchange.</p>
             </div>
-            <div class="advance-search-tab bgc-white p10 bdrs4 mt30">
+            {% comment %} <div class="advance-search-tab bgc-white p10 bdrs4 mt30"> {% endcomment %}
               <div class="row">
                 <div class="col-md-5 col-lg-6 col-xl-6">
                   <div class="advance-search-field bdrr1 bdrn-sm">
-                    <form class="form-search position-relative">
+                    <form class="form-search position-relative" method="get" action="{% url 'marketplace:job_search' %}">
                       <div class="box-search bb1-sm">
                         <span class="icon far fa-magnifying-glass"></span>
-                        <input class="form-control" type="text" name="search" placeholder="What are you looking for?">
-                        <div class="search-suggestions">
-                          <h6 class="fz14 ml30 mt25 mb-3">Popular Search</h6>
-                          <div class="box-suggestions">
-                            <ul class="px-0 m-0 pb-4">
-                              <li>
-                                <div class="info-product">
-                                  <div class="item_title">mobile app development</div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="info-product">
-                                  <div class="item_title">mobile app builder</div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="info-product">
-                                  <div class="item_title">mobile legends</div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="info-product">
-                                  <div class="item_title">mobile app ui ux design</div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="info-product">
-                                  <div class="item_title">mobile game app development</div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="info-product">
-                                  <div class="item_title">mobile app design</div>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
+                        <input class="form-control" type="text" name="query" placeholder="What are you looking for?">
+                      </div>
+                      <div class="col-md-3 col-lg-2 col-xl-3">
+                      <div class="text-center text-xl-start">
+                      <button class="ud-btn btn-thm2 w-100 vam" type="submit">Search</button>
+                      </div>
                       </div>
                     </form>
                   </div>
                 </div>
-                <div class="col-md-4 col-lg-4 col-xl-3">
-                  <div class="bselect-style1">
-                    <select class="selectpicker" data-width="100%">
-                      <option>City, state, or zip</option>
-                      <option data-tokens="Graphics&Design">Graphics & Design</option>
-                      <option data-tokens="DigitlMarketing">Digital Marketing</option>
-                      <option data-tokens="Writing&Translation">Writing & Translation</option>
-                      <option data-tokens="Video&Animation">Video & Animation</option>
-                      <option data-tokens="Music&Audio">Music & Audio</option>
-                      <option data-tokens="Programming&Tech">Programming & Tech</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-3 col-lg-2 col-xl-3">
-                  <div class="text-center text-xl-start">
-                    <a class="ud-btn btn-thm2 w-100 vam" href="">Search</a>
-                  </div>
-                </div>
               </div>
-            </div>
+            {% comment %} </div> {% endcomment %}
           </div>
         </div>
       </div>
@@ -139,112 +89,6 @@
                 <li class="d-block d-xl-none mb-2">
                   <!-- Advance Features modal trigger -->
                   <button type="button" class="open-btn filter-btn-left"> <img class="me-2" src="{% static 'assets/images/icon/all-filter-icon.svg' %}" alt=""> All Filter</button>
-                </li>
-                <li class="list-inline-item position-relative d-none d-xl-inline-block">
-                  <button class="open-btn mb10 dropdown-toggle" type="button" data-bs-toggle="dropdown">Category <i class="fa fa-angle-down ms-2"></i></button>
-                  <div class="dropdown-menu dd4 pb20">
-                    <div class="widget-wrapper pr20">
-                      <div class="checkbox-style1">
-                        <label class="custom_checkbox">Designer
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Web Developers
-                          <input type="checkbox" checked="checked">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Illustrators
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Node.js
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Project Managers
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <button class="done-btn ud-btn btn-thm drop_btn4">Apply<i class="fal fa-arrow-right-long"></i></button>
-                  </div>
-                </li>
-                <li class="list-inline-item position-relative d-none d-xl-inline-block">
-                  <button class="open-btn mb10 dropdown-toggle" type="button" data-bs-toggle="dropdown">Salary <i class="fa fa-angle-down ms-2"></i></button>
-                  <div class="dropdown-menu dd3">
-                    <div class="widget-wrapper pb25 mb0 pr20">
-                      <!-- Range Slider Desktop Version -->
-                      <div class="range-slider-style1">
-                        <div class="range-wrapper">
-                          <div class="slider-range mb20"></div>
-                          <div class="text-center">
-                            <input type="text" class="amount" placeholder="$20"><span class="fa-sharp fa-solid fa-minus mx-1 dark-color"></span>
-                            <input type="text" class="amount2" placeholder="$70987">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="done-btn ud-btn btn-thm drop_btn3">Apply<i class="fal fa-arrow-right-long"></i></button>
-                  </div>
-                </li>
-                <li class="list-inline-item position-relative d-none d-xl-inline-block">
-                  <button class="open-btn mb10 dropdown-toggle" type="button" data-bs-toggle="dropdown">Job Type <i class="fa fa-angle-down ms-2"></i></button>
-                  <div class="dropdown-menu dd4 pb20">
-                    <div class="widget-wrapper pr20">
-                      <div class="switch-style1">
-                        <div class="form-check form-switch mb20">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault1">
-                          <label class="form-check-label" for="flexSwitchCheckDefault1">Freelance</label>
-                        </div>
-                      </div>
-                      <div class="switch-style1">
-                        <div class="form-check form-switch mb20">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault2" checked="checked">
-                          <label class="form-check-label" for="flexSwitchCheckDefault2">Full Time</label>
-                        </div>
-                      </div>
-                      <div class="switch-style1">
-                        <div class="form-check form-switch mb20">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault3">
-                          <label class="form-check-label" for="flexSwitchCheckDefault3">Part Time</label>
-                        </div>
-                      </div>
-                      <div class="switch-style1">
-                        <div class="form-check form-switch">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault4">
-                          <label class="form-check-label" for="flexSwitchCheckDefault4">Internship</label>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="done-btn ud-btn btn-thm drop_btn4">Apply<i class="fal fa-arrow-right-long"></i></button>
-                  </div>
-                </li>
-                <li class="list-inline-item position-relative d-none d-xl-inline-block">
-                  <button class="open-btn mb10 dropdown-toggle" type="button" data-bs-toggle="dropdown">Level <i class="fa fa-angle-down ms-2"></i></button>
-                  <div class="dropdown-menu">
-                    <div class="widget-wrapper pb25 mb0">
-                      <div class="checkbox-style1">
-                        <label class="custom_checkbox">All
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Internship
-                          <input type="checkbox" checked="checked">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Entery Level
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="custom_checkbox">Mid-Senior
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <button class="done-btn ud-btn btn-thm dropdown-toggle">Apply<i class="fal fa-arrow-right-long"></i></button>
-                  </div>
                 </li>
               </ul>
             </div>
