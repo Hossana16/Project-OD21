@@ -2,7 +2,7 @@ from allauth.account.forms import SignupForm, LoginForm
 from django import forms
 from .models import UserProfile, User
 from django.contrib.auth.forms import UserChangeForm
-from .models import User, UserProfile, SellerProfile, Education, WorkExperience, Award
+from .models import User, UserProfile, SellerProfile, Education, WorkExperience, Award, Skill
 from marketplace.models import Service
 
 class AccountSignUpForm(SignupForm):
@@ -49,6 +49,10 @@ class AwardForm(forms.ModelForm):
         model = Award
         fields = ['title', 'issuer', 'date_awarded', 'description']
 
+class SkillForm(forms.ModelForm):
+    class Meta:
+        model = Skill
+        fields = ['title']
 
 class ServiceForm(forms.ModelForm):
     class Meta:

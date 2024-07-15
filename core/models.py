@@ -26,7 +26,7 @@ class User(AbstractUser):
   
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    is_seller = models.BooleanField(default=True) 
+    is_seller = models.BooleanField(default=True)
     location = models.CharField(max_length=80)
     language = models.CharField(max_length=100, blank=True)
     language_level = models.CharField(max_length=100, blank=True)
@@ -81,3 +81,7 @@ class Award(models.Model):
 
     def __str__(self):
         return f'{self.title} from {self.issuer}'    
+
+class Skill(models.Model):
+    user_profile = models.ForeignKey(SellerProfile, on_delete=models.CASCADE, related_name='skills')
+    title = models.CharField(max_length=200, unique=True)

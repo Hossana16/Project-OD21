@@ -8,7 +8,7 @@ from django.contrib.auth import logout
 from allauth.account.views import SignupView, LoginView
 from allauth.account.decorators import login_required 
 from core.forms import AccountSignUpForm
-from core.models import UserProfile, Education, SellerProfile, WorkExperience, Award
+from core.models import UserProfile, Education, SellerProfile, WorkExperience, Award, Skill
 from .models import Service, Order, Review
 from django.utils import timezone
 from .forms import ReviewForm
@@ -148,12 +148,7 @@ class DashboardView(LoginRequiredMixin ,TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
-    
-    # def dispatch(self, request, *args, **kwargs):
-    #     if not hasattr(request.user, 'adminprofile'):
-    #         return redirect(reverse('inventory:sales-list'))
-        
-    #     return super().dispatch(request, *args, **kwargs)
+ 
 
 class ServiceView(TemplateView):
     template_name = 'service/page-service.html'
@@ -164,37 +159,6 @@ class ServiceView(TemplateView):
         services = Service.objects.all()
         context['services'] = services
         return context
-
-# class ServiceDetailsView(DetailView):
-#     model = Service
-#     template_name = 'page-service-details.html'
-
-#     def get_object(self):
-#         obj = super().get_object()
-#         obj.last_viewed = timezone.now()
-#         obj.save()
-#         return obj
-    
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         total_reviews = Review.objects.filter(self.object).all().count()
-#         context['reviews'] = self.object.reviews.all()
-#         context['form'] = ReviewForm()
-#         # context['total_reviews'] = total_reviews
-#         return context
-
-#     def post(self, request, *args, **kwargs):
-#         self.object = self.get_object()
-#         form = ReviewForm(request.POST)
-#         if form.is_valid():
-#             review = form.save(commit=False)
-#             review.service = self.object
-#             review.buyer = request.user
-#             review.save()
-#             return redirect('service_detail', pk=self.object.pk)
-#         context = self.get_context_data()
-#         context['form'] = form
-#         return self.render_to_response(context)
 
 
 class ServiceDetailsView(LoginRequiredMixin, DetailView):
@@ -233,6 +197,7 @@ class ServiceDetailsView(LoginRequiredMixin, DetailView):
         context['form'] = form
         return self.render_to_response(context)
 
+
 class SellersView(TemplateView):
     template_name = 'seller/page-sellers.html'
 
@@ -240,8 +205,22 @@ class SellersView(TemplateView):
         context = super().get_context_data(**kwargs)
         
         sellers = SellerProfile.objects.all()
-        context['sellers'] = sellers
+        sellers_data = []
+
+        for seller in sellers:
+            services = Service.objects.filter(seller_profile=seller)
+            reviews_count = Review.objects.filter(service__in=services).count()  # Get reviews count for services of the seller
+            skills = seller.skills.all()[:3]  # Get up to 3 skills
+
+            sellers_data.append({
+                'seller': seller,
+                'reviews_count': reviews_count,
+                'skills': skills,
+            })
+
+        context['sellers_data'] = sellers_data
         return context
+
 
 class SellersDetailsView(DetailView):
     model = SellerProfile
@@ -260,6 +239,7 @@ class SellersDetailsView(DetailView):
         context['user_education'] = Education.objects.filter(user_profile=self.object)
         context['work_experiences'] = WorkExperience.objects.filter(user_profile=self.object)
         context['user_awards'] = Award.objects.filter(user_profile=self.object)
+        context['skills'] = Skill.objects.filter(user_profile=self.object)
         services = Service.objects.filter(seller_profile=self.object)
         context['services'] = services
 
@@ -273,11 +253,6 @@ class JobListView(ListView):
     template_name = 'job/page-job-list.html'
     context_object_name = 'jobs'
 
-# def job_list(request):
-#     template_name = 'job/page-job-list.html'
-#     jobs = Job.objects.all()
-#     context = {"jobs":jobs}
-#     return render(request, template_name, context)
 
 class JobDetailView(DetailView):
     model = Job

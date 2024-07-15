@@ -74,6 +74,7 @@
               <ul class="dashboard_dd_menu_list d-flex align-items-center justify-content-center justify-content-sm-end mb-0 p-0">
                 <li class="d-none d-sm-block">
                   <a class="text-center mr5 text-thm2 dropdown-toggle fz20" type="button" data-bs-toggle="dropdown" href=""><span class="flaticon-notification"></span></a>
+                 
                   <div class="dropdown-menu">
                     <div class="dboard_notific_dd px30 pt10 pb15">
                       <div class="notif_list d-flex align-items-center bdrb1 pb15 mb10">
@@ -292,54 +293,41 @@
       </nav>
   </div>
 
-  <div class="dashboard_content_wrapper">
-    <div class="dashboard dashboard_wrapper pr30 pr0-xl">
-      <div class="dashboard__sidebar d-none d-lg-block">
-        <div class="dashboard_sidebar_list">
-          <p class="fz15 fw400 ff-heading pl30">Start</p>
-          <div class="sidebar_list_item">
-            <a href="{% url 'core:dashboard' %}" class="items-center -is-active"><i class="flaticon-home mr15"></i>Dashboard</a>
-          </div>
-          <!-- <div class="sidebar_list_item">
-            <a href="page-dashboard-proposal.html" class="items-center"><i class="flaticon-document mr15"></i>My Proposals</a>
-          </div>
-          <div class="sidebar_list_item">
-            <a href="page-dashboard-save.html" class="items-center"><i class="flaticon-like mr15"></i>Saved</a>
-          </div>
-          <div class="sidebar_list_item ">
-            <a href="page-dashboard-message.html" class="items-center"><i class="flaticon-chat mr15"></i>Message</a>
-          </div> -->
-          <div class="sidebar_list_item ">
-            <a href="{% url 'core:reviews' %}" class="items-center"><i class="flaticon-review-1 mr15"></i>Reviews</a>
-          </div>
-          <!-- <div class="sidebar_list_item">
-            <a href="page-dashboard-invoice.html" class="items-center"><i class="flaticon-receipt mr15"></i>Invoice</a>
-          </div>
-          <div class="sidebar_list_item">
-            <a href="page-dashboard-payouts.html" class="items-center"><i class="flaticon-dollar mr15"></i>Payouts</a>
-          </div>
-          <div class="sidebar_list_item">
-            <a href="page-dashboard-statement.html" class="items-center"><i class="flaticon-web mr15"></i>Statements</a>
-          </div> -->
-          <p class="fz15 fw400 ff-heading pl30 mt30">Organize and Manage</p>
-          <div class="sidebar_list_item ">
-            <a href="{% url 'core:manage-service' %}" class="items-center"><i class="flaticon-presentation mr15"></i>Manage Services</a>
-          </div>
-          <div class="sidebar_list_item ">
-            <a href="{% url 'core:manage-jobs' %}" class="items-center"><i class="flaticon-briefcase mr15"></i>Manage Jobs</a>
-          </div>
-          <div class="sidebar_list_item ">
-            <!-- <a href="{% url 'core:manage-projects' %}" class="items-center"><i class="flaticon-content mr15"></i>Manage Project</a> -->
-          </div>
-          <p class="fz15 fw400 ff-heading pl30 mt30">Account</p>
-          <div class="sidebar_list_item ">
-            <a href="{% url 'core:profile' %}" class="items-center"><i class="flaticon-photo mr15"></i>My Profile</a>
-          </div>
-          <div class="sidebar_list_item ">
-            <a href="{% url 'marketplace:logout' %}" class="items-center"><i class="flaticon-logout mr15"></i>Logout</a>
-          </div>
+
+<div class="dashboard_content_wrapper">
+  <div class="dashboard dashboard_wrapper pr30 pr0-xl">
+    <div class="dashboard__sidebar d-none d-lg-block">
+      <div class="dashboard_sidebar_list">
+        <p class="fz15 fw400 ff-heading pl30">Start</p>
+        <div class="sidebar_list_item">
+          <a href="{% url 'core:dashboard' %}" class="sidebar-item"><i class="flaticon-home mr15"></i>Dashboard</a>
+        </div>
+        <div class="sidebar_list_item">
+          <a href="{% url 'core:reviews' %}" class="sidebar-item"><i class="flaticon-review-1 mr15"></i>Reviews</a>
+        </div>
+        <p class="fz15 fw400 ff-heading pl30 mt30">Organize and Manage</p>
+        <div class="sidebar_list_item">
+          <a href="{% url 'core:manage-service' %}" class="sidebar-item"><i class="flaticon-presentation mr15"></i>Manage Services</a>
+        </div>
+        <div class="sidebar_list_item">
+          <a href="{% url 'core:manage-jobs' %}" class="sidebar-item"><i class="flaticon-briefcase mr15"></i>Manage Jobs</a>
+        </div>
+        <div class="sidebar_list_item">
+          <!-- <a href="{% url 'core:manage-projects' %}" class="sidebar-item"><i class="flaticon-content mr15"></i>Manage Project</a> -->
+        </div>
+        <p class="fz15 fw400 ff-heading pl30 mt30">Account</p>
+        <div class="sidebar_list_item">
+          <a href="{% url 'core:profile' %}" class="sidebar-item"><i class="flaticon-photo mr15"></i>My Profile</a>
+        </div>
+        <div class="sidebar_list_item">
+          <a href="{% url 'marketplace:logout' %}" class="sidebar-item"><i class="flaticon-logout mr15"></i>Logout</a>
         </div>
       </div>
+    </div>
+
+
+
+
       <div class="dashboard__main pl0-md">
         <div class="dashboard__content hover-bgc-color">
           <div class="row pb40">
@@ -350,17 +338,10 @@
                   <ul id="myDropdown" class="dropdown-content">
                     <li><p class="fz15 fw400 ff-heading mt30 pl30">Start</p></li>
                     <li class="active"><a href="{% url 'core:dashboard' %}"><i class="flaticon-home mr10"></i>Dashboard</a></li>
-                    <!-- <li><a href="page-dashboard-proposal.html"><i class="flaticon-document mr10"></i>My Proposals</a></li>
-                    <li><a href="page-dashboard-save.html"><i class="flaticon-like mr10"></i>Saved</a></li>
-                    <li><a href="page-dashboard-message.html"><i class="flaticon-chat mr10"></i>Message</a></li> -->
                     <li><a href="{% url 'core:reviews' %}"><i class="flaticon-review-1 mr10"></i>Reviews</a></li>
-                    <!-- <li><a href="page-dashboard-invoice.html"><i class="flaticon-receipt mr10"></i>Invoice</a></li>
-                    <li><a href="page-dashboard-payouts.html"><i class="flaticon-dollar mr10"></i>Payouts</a></li>
-                    <li><a href="page-dashboard-statement.html"><i class="flaticon-web mr10"></i>Statements</a></li> -->
                     <li><p class="fz15 fw400 ff-heading mt30 pl30">Organize and Manage</p></li>
                     <li><a href="{% url 'core:manage-service' %}"><i class="flaticon-presentation mr10"></i>Manage Services</a></li>
                     <li><a href="{% url 'core:manage-jobs' %}"><i class="flaticon-briefcase mr10"></i>Manage Jobs</a></li>
-                    <!-- <li><a href="{% url 'core:manage-projects' %}"><i class="flaticon-content mr10"></i>Manage Project</a></li> -->
                     <li><p class="fz15 fw400 ff-heading mt30 pl30">Account</p></li>
                     <li><a href="{% url 'core:profile' %}"><i class="flaticon-photo mr10"></i>My Profile</a></li>
                     <li><a href="page-login.html"><i class="flaticon-logout mr10"></i>Logout</a></li>
@@ -422,6 +403,7 @@
 <script src="{% static 'assets/js/chart-custome.js' %}"></script>
 <script src="{% static 'assets/js/jquery-scrolltofixed-min.js' %}"></script>
 <script src="{% static 'assets/js/dashboard-script.js' %}"></script>
+<script src="{% static 'assets/js/custom-status.js' %}"></script>
 <!-- Custom script for all pages --> 
 <script src="{% static 'assets/js/script.js' %}"></script>
 </body>

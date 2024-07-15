@@ -742,11 +742,11 @@ h2 {
   font-family: var(--title-font-family);
   font-weight: 500;
   padding: 14.5px 20px;
-  -webkit-transition: all 0.3s ease 0s ease;
-  -moz-transition: all 0.3s ease 0s ease;
-  -ms-transition: all 0.3s ease 0s ease;
-  -o-transition: all 0.3s ease 0s ease;
-  transition: all 0.3s ease 0s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .dashboard_sidebar_list .sidebar_list_item a i {
@@ -11478,3 +11478,9 @@ hr {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.sidebar-item.active a {
+  color: #007bff; /* Example color for active state */
+  font-weight: bold; /* Example styling for active state */
+}

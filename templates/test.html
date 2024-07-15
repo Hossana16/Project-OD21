@@ -9,6 +9,12 @@
     <title>Document</title>
 </head>
 <body>
-    {% leaflet_map "yourmap" %}    
+    {% leaflet_map "yourmap" %}  
+    {% comment %} <script type="text/javascript">
+        function map_init(map, options) {
+            var area = L.geoJson({{ country.geom|geojsonfeatures|safe}}).addTo(map);
+            map.gitBounds(area.getBounds());
+        }
+    </script>   {% endcomment %}
 </body>
 </html>

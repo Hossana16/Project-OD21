@@ -37,54 +37,17 @@
                     <div class="row">
                       <div class="col-md-5 col-lg-6 col-xl-6">
                         <div class="advance-search-field mb10-sm bdrr1 bdrn-sm">
-                          <form class="form-search position-relative">
+                          <form class="form-search position-relative" method="get" action="{% url 'marketplace:service_search' %}">
                             <div class="box-search">
                               <span class="icon far fa-magnifying-glass"></span>
-                              <input class="form-control" type="text" name="search"
+                              <input class="form-control" type="text" name="query"
                                 placeholder="What are you looking for?">
-                              <div class="search-suggestions">
-                                <h6 class="fz14 ml30 mt25 mb-3">Popular Search</h6>
-                                <div class="box-suggestions">
-                                  <ul class="px-0 m-0 pb-4">
-                                    <li>
-                                      <div class="info-product">
-                                        <div class="item_title">mobile app development</div>
-                                      </div>
-                                    </li>
-                                    <li>
-                                      <div class="info-product">
-                                        <div class="item_title">mobile app builder</div>
-                                      </div>
-                                    </li>
-                                    <li>
-                                      <div class="info-product">
-                                        <div class="item_title">mobile legends</div>
-                                      </div>
-                                    </li>
-                                    <li>
-                                      <div class="info-product">
-                                        <div class="item_title">mobile app ui ux design</div>
-                                      </div>
-                                    </li>
-                                    <li>
-                                      <div class="info-product">
-                                        <div class="item_title">mobile game app development</div>
-                                      </div>
-                                    </li>
-                                    <li>
-                                      <div class="info-product">
-                                        <div class="item_title">mobile app design</div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
                             </div>
                           </form>
                         </div>
                       </div>
                       <div class="col-md-4 col-lg-4 col-xl-4 d-none d-md-block">
-                        <div class="bselect-style1">
+                        {% comment %} <div class="bselect-style1">
                           <select class="selectpicker" data-width="100%">
                             <option>Select Role</option>
                             <option data-tokens="Graphics&Design">Graphics & Design</option>
@@ -94,11 +57,11 @@
                             <option data-tokens="Music&Audio">Music & Audio</option>
                             <option data-tokens="Programming&Tech">Programming & Tech</option>
                           </select>
-                        </div>
+                        </div> {% endcomment %}
                       </div>
                       <div class="col-md-3 col-lg-2 col-xl-2 ps-md-0">
                         <div class="text-center text-xl-end">
-                          <button class="ud-btn btn-thm w-100 px-4" type="button">Search</button>
+                          <button class="ud-btn btn-thm w-100 px-4" type="submit">Search</button>
                         </div>
                       </div>
                     </div>

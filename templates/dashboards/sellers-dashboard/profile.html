@@ -205,8 +205,10 @@
               <div class="d-flex">
                 <a href="{% url 'core:edit-workexperience' work_experience.pk %}" class="icon me-2" data-bs-toggle="tooltip" data-bs-placement="top" title=""
                   data-bs-original-title="Edit" aria-label="Edit"><span class="flaticon-pencil"></span></a>
-                <a href="" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                <a href="{% url 'core:delete-workexperience' work_experience.pk %}" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title=""
                   data-bs-original-title="Delete" aria-label="Delete"><span class="flaticon-delete"></span></a>
+                {% comment %} <a href="" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                  data-bs-original-title="Delete" aria-label="Delete"><span class="flaticon-delete"></span></a> {% endcomment %}
               </div>
             </div>
             <span class="tag">{{work_experience.start_date}} - {{work_experience.end_date}}</span>
@@ -243,7 +245,7 @@
               <div class="d-flex">
                 <a href="{% url 'core:edit-awards' user_award.pk %}" class="icon me-2" data-bs-toggle="tooltip" data-bs-placement="top" title=""
                   data-bs-original-title="Edit" aria-label="Edit"><span class="flaticon-pencil"></span></a>
-                <a href="" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                <a href="{% url 'core:delete-award' user_award.pk %}" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title=""
                   data-bs-original-title="Delete" aria-label="Delete"><span class="flaticon-delete"></span></a>
               </div>
             </div>
@@ -262,13 +264,44 @@
           </div>
         </div>
         {% endif %}
+        </div>
+      </div>        
         
-        <!-- <div class="text-start">
-          <a class="ud-btn btn-thm" href="">Save<i class="fal fa-arrow-right-long"></i></a>
-        </div> -->
+  <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+      <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+        <h5 class="list-title">Skills</h5>
+        <a href="{% url 'core:add-skills' %}" class="add-more-btn text-thm"><i class="icon far fa-plus mr10"></i>Add Skills</a>
+      </div>
+      <div class="position-relative">
+        {% if skills %}
+        {% for skill in skills %}
+        <div class="educational-quality ps-0">
+          <div class="wrapper mb40 position-relative">
+            <div class="del-edit">
+              <div class="d-flex">
+                <a href="{% url 'core:edit-skills' skill.pk %}" class="icon me-2" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                  data-bs-original-title="Edit" aria-label="Edit"><span class="flaticon-pencil"></span></a>
+                <a href="{% url 'core:delete-skill' skill.pk %}" class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                  data-bs-original-title="Delete" aria-label="Delete"><span class="flaticon-delete"></span></a>
+              </div>
+            </div>
+            <span class="tag">{{skill.title}}</span>
+            
+          </div>
+        </div>
+        {% endfor %}
+        {% else %}  
+        <div class="educational-quality">
+          <div class="wrapper mb40 position-relative">
+            <h5 class="mt15">You can now add any Awards Would you like to add one here! ☝️</h5>
+          </div>
+        </div>
+        {% endif %}
+        
+
       </div>
     </div>
-    <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+    {% comment %} <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
       <div class="bdrb1 pb15 mb25">
         <h5 class="list-title">Change password</h5>
       </div>
@@ -306,8 +339,9 @@
           </form>
         </div>
       </div>
-    </div>
-    <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+    </div> {% endcomment %}
+    
+    {% comment %} <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
       <div class="col-lg-7">
         <div class="row">
           <div class="bdrb1 pb15 mb25">
@@ -334,7 +368,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> {% endcomment %}
   </div>
 </div>
 </div>

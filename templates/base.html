@@ -615,14 +615,13 @@
           <li><a href="{% url 'core:home' %}">Home</a></li>
           <li><span>Browse </span>
             <ul>
-                <li><a href="{% url 'marketplace:services-main' %}">service marketplace</a></li>
+                <li><a href="{% url 'marketplace:services-main' %}">service</a></li>
                 <li><a href="#">projects</a></li>
                 <li><a href="{% url 'marketplace:jobs' %}">Jobs</a></li>
             </ul>
           </li>
           <li><a href="{% url 'marketplace:sellers' %}">Freelance</a></li>
           <li><a href="{% url 'marketplace:contact' %}">contact</a></li>
-
           {% if user.is_authenticated %}
           <li><a href="{% url 'marketplace:dashboard' %}">Dashboard</a></li>
           <li><a href="{% url 'marketplace:logout' %}">logout</a></li>

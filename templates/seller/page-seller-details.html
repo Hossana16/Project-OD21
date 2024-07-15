@@ -9,8 +9,8 @@
           <div class="col-lg-12">
             <div class="listings_category_nav_list_menu">
               <ul class="mb0 d-flex ps-0">
-                <li><a href="#">All Categories</a></li>
-                <li><a href="#">Graphics & Design</a></li>
+                <li><a class='active' href="#">All Categories</a></li>
+                {% comment %} <li><a href="#">Graphics & Design</a></li>
                 <li><a class="active" href="#">Digital Marketing</a></li>
                 <li><a href="#">Writing & Translation</a></li>
                 <li><a href="#">Video & Animation</a></li>
@@ -18,7 +18,7 @@
                 <li><a href="#">Programming & Tech</a></li>
                 <li><a href="#">Business</a></li>
                 <li><a href="#">Lifestyle</a></li>
-                <li><a href="#">Trending</a></li>
+                <li><a href="#">Trending</a></li> {% endcomment %}
               </ul>
             </div>
           </div>
@@ -32,9 +32,9 @@
           <div class="col-sm-8 col-lg-10">
             <div class="breadcumb-style1 mb10-xs">
               <div class="breadcumb-list">
-                <a href="">Home</a>
-                <a href="">Services</a>
-                <a href="">Design & Creative</a>
+                <a href="{% url 'core:home' %}">Home</a>
+                <a href="{% url 'marketplace:sellers' %}">Sellers</a>
+                <a href="">Seller</a>
               </div>
             </div>
           </div>
@@ -254,13 +254,10 @@
               <div class="sidebar-widget mb30 pb20 bdrs8">
                 <h4 class="widget-title">My Skills</h4>
                 <div class="tag-list mt30">
-                  <a href="">Figma</a>
-                  <a href="">Sketch</a>
-                  <a href="">HTML5</a>
-                  <a href="">Software Design</a>
-                  <a href="">Prototyping</a>
-                  <a href="">SaaS</a>
-                  <a href="">Design Writing</a>
+                  {% for skill in skills %}
+                  <a href="">{{ skill.title }}</a>
+                  {% endfor %}
+                  
                 </div>
               </div>
             </div>

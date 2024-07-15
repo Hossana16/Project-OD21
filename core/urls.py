@@ -18,6 +18,7 @@ urlpatterns = [
     path('users/education/', views.CreateEducation.as_view(), name='add-education'),
     path('users/workexperience/', views.CreateWorkExperience.as_view(), name='add-workexperience'),
     path('users/award/', views.CreateAward.as_view(), name='add-awards'),
+    path('users/skill/', views.CreateSkill.as_view(), name='add-skills'),
 
     #reviews,  manage-job & manage-projects
     path('reviews/', views.ReviewsView.as_view(), name='reviews'),
@@ -34,5 +35,11 @@ urlpatterns = [
     path('delete/education/<int:pk>/', views.EducationDeleteView.as_view(), name='delete-education'),
     path('edit/workexperience/<int:pk>', views.WorkExperienceUpdateView.as_view(), name='edit-workexperience'),
     path('edit/award/<int:pk>/', views.AwardUpdateView.as_view(), name='edit-awards'),
+    path('edit/skill/<int:pk>/', views.SkillUpdateView.as_view(), name='edit-skills'),
     
+    # delete
+    path('delete/workexperience/<int:pk>/', views.WorkExperienceDeleteView.as_view(), name='delete-workexperience'),
+    path('delete/award/<int:pk>/', views.AwardDeleteView.as_view(), name='delete-award'),
+    path('delete/skill/<int:pk>/', views.SkillDeleteView.as_view(), name='delete-skill'),
+
 ]

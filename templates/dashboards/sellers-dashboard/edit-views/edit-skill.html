@@ -1,0 +1,18 @@
+{% extends "dashboards/sellers-dashboard/base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-xl-12">
+      <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+            <form method="post" enctype="multipart/form-data" class="form-style1">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="col-md-12">
+                <div class="text-start">
+                    <button class="ud-btn btn-thm" type="submit">Update Skill <i class="fal fa-arrow-right-long"></i></button>
+                </div>
+            </div>
+            </form>
+      </div>
+    </div>
+</div>
+{% endblock content %}

@@ -9,15 +9,6 @@
           <div class="listings_category_nav_list_menu">
             <ul class="mb0 d-flex ps-0">
               <li><a href="#">All Categories</a></li>
-              {% comment %} <li><a href="#">Graphics & Design</a></li>
-              <li><a class="active" href="#">Digital Marketing</a></li>
-              <li><a href="#">Writing & Translation</a></li>
-              <li><a href="#">Video & Animation</a></li>
-              <li><a href="#">Music & Audio</a></li>
-              <li><a href="#">Programming & Tech</a></li>
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Lifestyle</a></li>
-              <li><a href="#">Trending</a></li> {% endcomment %}
             </ul>
           </div>
         </div>
@@ -53,9 +44,7 @@
               <h2>Job List</h2>
               <p class="text">All Jobs found in lite Exchange.</p>
             </div>
-            {% comment %} <div class="advance-search-tab bgc-white p10 bdrs4 mt30"> {% endcomment %}
               <div class="row">
-                <div class="col-md-5 col-lg-6 col-xl-6">
                   <div class="advance-search-field bdrr1 bdrn-sm">
                     <form class="form-search position-relative" method="get" action="{% url 'marketplace:job_search' %}">
                       <div class="box-search bb1-sm">
@@ -69,9 +58,7 @@
                       </div>
                     </form>
                   </div>
-                </div>
               </div>
-            {% comment %} </div> {% endcomment %}
           </div>
         </div>
       </div>
@@ -94,7 +81,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3">
+        {% comment %} <div class="col-sm-6 col-lg-3">
           <div class="page_control_shorting mb10 d-flex align-items-center justify-content-center justify-content-sm-end">
             <div class="pcs_dropdown dark-color pr10"><span>Sort by</span>
               <select class="selectpicker show-tick">
@@ -104,7 +91,7 @@
               </select>
             </div>
           </div>
-        </div>
+        </div> {% endcomment %}
       </div>
       <div class="row">
         
@@ -122,7 +109,7 @@
               <p class="list-inline-item mb-3 bdrl1 pl15">1-5 months</p>
               <p class="list-inline-item mb-0 bdrl1 pl15">{{job.job_type}}</p>
               {% comment %} <p class="list-inline-item mb-0 bdrl1 pl15">Remote</p> {% endcomment %}
-            </div>
+            </div>@
           </div>
         </div>
         {% endfor %}

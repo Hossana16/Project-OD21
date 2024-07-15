@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from .models import UserProfile, Education, WorkExperience, Award
-from .forms import UserForm, UserProfileForm, SellerProfileForm, EducationForm, WorkExperienceForm, AwardForm, ServiceForm
+from .models import UserProfile, Education, WorkExperience, Award, Skill
+from .forms import UserForm, UserProfileForm, SellerProfileForm, EducationForm, WorkExperienceForm, AwardForm, ServiceForm, SkillForm
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView, ListView, CreateView, DetailView
@@ -10,7 +10,6 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib import messages
 from django.db.models import Sum, Count
 from django.contrib.auth import logout
-from allauth.account.views import SignupView, LoginView
 from allauth.account.decorators import login_required 
 from core.forms import AccountSignUpForm
 from core.models import UserProfile, SellerProfile
@@ -81,12 +80,14 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
         user_education = Education.objects.filter(user_profile=seller_profile)
         user_workexperience = WorkExperience.objects.filter(user_profile=seller_profile)
         user_awards = Award.objects.filter(user_profile=seller_profile)
+        skills = Skill.objects.filter(user_profile=seller_profile)
         context['user_form'] = UserForm(instance=self.request.user)
         context['sellerprofile_form'] = SellerProfileForm(instance=self.request.user)
         context['profile_form'] = self.get_form()
         context['user_education'] = user_education  
         context['work_experiences'] = user_workexperience  
         context['user_awards'] = user_awards
+        context['skills'] = skills
         return context
 
     def post(self, request, *args, **kwargs):
@@ -237,16 +238,6 @@ class ServiceUpdateView(LoginRequiredMixin, UpdateView):
         context =  super().get_context_data(**kwargs)
         return context    
 
-
-class ServiceDeleteView(LoginRequiredMixin, DeleteView):
-    model = Service
-    success_url = reverse_lazy('core:manage-service')
-    template_name = 'dashboards/sellers-dashboard/manage-service/confirm-delete-service.html'
-
-    def get_object(self, queryset=None):
-        obj = get_object_or_404(Service, pk=self.kwargs['pk'])
-        return obj
-
 # creating and editing profile 
 class CreateEducation(LoginRequiredMixin, CreateView):
     model = Education
@@ -308,11 +299,25 @@ class CreateAward(LoginRequiredMixin, CreateView):
         return response
     
 
+class CreateSkill(LoginRequiredMixin, CreateView):
+    model = Skill
+    form_class = SkillForm
+    template_name = 'dashboards/sellers-dashboard/add-skill.html'
+    success_url = reverse_lazy('core:profile')
+    
+    def form_valid(self, form):
+        user_profile = self.request.user.userprofile.sellerprofile
+        form.instance.user_profile = user_profile
+        response =  super().form_valid(form)
+            
+        messages.success(self.request, 'Skill Was Added successfully!')
+        return response
+    
 # editing
 class EducationUpdateView(LoginRequiredMixin, UpdateView):
     model = Education
     fields = ['start_year', 'end_year', 'title', 'school_name', 'description']
-    template_name = 'dashboards/sellers-dashboard/edit/edit-education.html'
+    template_name = 'dashboards/sellers-dashboard/edit-views/edit-education.html'
     success_url = reverse_lazy('core:profile')
     context_object_name = 'education'
 
@@ -323,7 +328,7 @@ class EducationUpdateView(LoginRequiredMixin, UpdateView):
 class WorkExperienceUpdateView(LoginRequiredMixin, UpdateView):
     model = WorkExperience
     fields = ['job_title', 'start_date', 'end_date', 'company_name', 'description']
-    template_name = 'dashboards/sellers-dashboard/edit/edit-workexperience.html'
+    template_name = 'dashboards/sellers-dashboard/edit-views/edit-workexperience.html'
     success_url = reverse_lazy('core:profile')
     context_object_name = 'workexperience'
 
@@ -334,7 +339,7 @@ class WorkExperienceUpdateView(LoginRequiredMixin, UpdateView):
 class AwardUpdateView(LoginRequiredMixin, UpdateView):
     model = Award
     fields = ['title', 'date_awarded', 'issuer', 'description',]
-    template_name = 'dashboards/sellers-dashboard/edit/edit-award.html'
+    template_name = 'dashboards/sellers-dashboard/edit-views/edit-award.html'
     success_url = reverse_lazy('core:profile')
     context_object_name = 'award'
 
@@ -343,6 +348,55 @@ class AwardUpdateView(LoginRequiredMixin, UpdateView):
         return context     
 
 
+class SkillUpdateView(LoginRequiredMixin, UpdateView):
+    model = Skill
+    fields = ['title']
+    template_name = 'dashboards/sellers-dashboard/edit-views/edit-skill.html'
+    success_url = reverse_lazy('core:profile')
+    context_object_name = 'skill'
+
+    def get_context_data(self, **kwargs):
+        context =  super().get_context_data(**kwargs)
+        return context    
+    
+
+# Delete 
+class ServiceDeleteView(LoginRequiredMixin, DeleteView):
+    model = Service
+    success_url = reverse_lazy('core:profile')
+    template_name = 'dashboards/sellers-dashboard/confirm-delete.html'
+
+    def get_object(self, queryset=None):
+        obj = get_object_or_404(Service, pk=self.kwargs['pk'])
+        return obj
+
+class SkillDeleteView(LoginRequiredMixin, DeleteView):
+    model = Skill
+    success_url = reverse_lazy('core:profile')
+    template_name = 'dashboards/sellers-dashboard/confirm-delete.html'
+
+    def get_object(self, queryset=None):
+        obj = get_object_or_404(Skill, pk=self.kwargs['pk'])
+        return obj       
+
+
+class WorkExperienceDeleteView(LoginRequiredMixin, DeleteView):
+    model = WorkExperience
+    success_url = reverse_lazy('core:profile')
+    template_name = 'dashboards/sellers-dashboard/confirm-delete.html'
+
+    def get_object(self, queryset=None):
+        obj = get_object_or_404(WorkExperience, pk=self.kwargs['pk'])
+        return obj      
+    
+class AwardDeleteView(LoginRequiredMixin, DeleteView):
+    model = Award
+    success_url = reverse_lazy('core:profile')
+    template_name = 'dashboards/sellers-dashboard/confirm-delete.html'
+
+    def get_object(self, queryset=None):
+        obj = get_object_or_404(Award, pk=self.kwargs['pk'])
+        return obj
 
 @login_required
 def Custom_logout(request):
