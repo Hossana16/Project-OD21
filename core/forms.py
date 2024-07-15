@@ -57,5 +57,10 @@ class SkillForm(forms.ModelForm):
 class ServiceForm(forms.ModelForm):
     class Meta:
         model = Service
-        fields = ['title', 'category', 'image', 'description', 'price', 'status', 'delivery_time']
+        fields = ['title', 'service_location', 'category', 'image', 'description', 'price', 'status', 'delivery_time']
+        widgets = {
+            'latitude': forms.HiddenInput(),
+            'longitude': forms.HiddenInput(),
+            'seller_profile': forms.HiddenInput(),
+        }
 

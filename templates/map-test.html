@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<form method="post" action="{% url 'marketplace:maps' %}" id="serviceForm">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="hidden" name="latitude" id="id_latitude">
+  <input type="hidden" name="longitude" id="id_longitude">
+  <button type="submit">Save Service</button>
+</form>
+
+<script>
+  document.getElementById('serviceForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    var serviceLocation = document.getElementById('id_service_location').value;
+    var geocodeUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(serviceLocation)}&format=json&limit=1`;
+
+    fetch(geocodeUrl)
+      .then(response => response.json())
+      .then(data => {
+        if (data.length > 0) {
+          var lat = data[0].lat;
+          var lon = data[0].lon;
+
+          document.getElementById('id_latitude').value = lat;
+          document.getElementById('id_longitude').value = lon;
+
+          document.getElementById('serviceForm').submit(); // Now submit the form
+        } else {
+          alert('Location not found');
+        }
+      })
+      .catch(error => console.error('Error:', error));
+  });
+</script>
+
+</body>
+</html>

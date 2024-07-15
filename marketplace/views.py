@@ -15,15 +15,48 @@ from .forms import ReviewForm
 from django.shortcuts import get_object_or_404, redirect
 from .models import Job, JobApplication
 from .forms import JobForm, JobApplicationForm, ServiceSearchForm, JobSearchForm
+from core.forms import ServiceForm
 
 
 # testzone
 def maptest(request):
-    template_name = 'test.html'
-    return render(request, template_name)
+    template_name = 'map-test.html'
+    if request.method == 'POST':
+        form = ServiceForm(request.POST)
+        if form.is_valid():
+            service = form.save(commit=False)
+            service.latitude = request.POST.get('latitude')
+            service.longitude = request.POST.get('longitude')
+            
+            # Get the seller profile of the logged-in user
+            try:
+                user_profile = request.user.userprofile.sellerprofile
+                service.seller_profile = user_profile
+            except Exception as e:
+                messages.error(request, 'Error retrieving seller profile: ' + str(e))
+                return render(request, template_name, {'form': form})
+            
+            service.save()
+            messages.success(request, 'Service added successfully!')
+            return redirect('marketplace-maps-view')
+    else:
+        form = ServiceForm()
+    
+    return render(request, template_name, {'form': form})
 
-# def mapview(request, iso_code):
-    # pass
+def service_map_view(request):
+    services = Service.objects.all()
+    service_data = [{
+        'title': service.title,
+        'description': service.description,
+        'latitude': service.latitude,
+        'longitude': service.longitude
+    } for service in services]
+
+    context = {
+        'services': service_data
+    }
+    return render(request, 'map-view-test.html', context)
 
 
 class ServiceSearchView(ListView):
