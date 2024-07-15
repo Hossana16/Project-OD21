@@ -1,0 +1,57 @@
+version: '3.12'
+
+services:
+  django:
+    image: Project-OD21:0.0.1
+    build: .
+    ports:
+      - "8000:8000" 
+
+
+
+
+#   db:
+#     image: postgres:13
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+#     environment:
+#       POSTGRES_DB: mydatabase
+#       POSTGRES_USER: myuser
+#       POSTGRES_PASSWORD: mypassword
+
+#   web:
+#     build: .
+#     command: python manage.py runserver 0.0.0.0:8000
+#     volumes:
+#       - .:/app
+#     ports:
+#       - "8000:8000"
+#     depends_on:
+#       - db
+#     environment:
+#       # Database settings for Django
+#       DATABASE_ENGINE: django.db.backends.mysql
+#       DATABASE_NAME: lite_exchange
+#       DATABASE_USER: root
+#       DATABASE_PASSWORD: 
+#       DATABASE_HOST: db  # Use the service name 'db' defined above
+#       DATABASE_PORT: 3306
+#       # Other environment variables from Django settings
+#       GDAL_LIBRARY_PATH: /usr/lib/libgdal.so.34
+#       SECRET_KEY: 'django-insecure-z8@zn-f7_p(eryj68eyolv0iaj3@v=@bw8nrh-6)pk68jdt=f)'
+#       DEBUG: 'True'  # Set to 'False' in production
+#       ALLOWED_HOSTS: 'hossana.kijanicart.com,127.0.0.1'
+#       EMAIL_BACKEND: django.core.mail.backends.smtp.EmailBackend
+#       EMAIL_HOST: smtp.zoho.com
+#       EMAIL_FROM: 'info@kijanicart.com'
+#       EMAIL_HOST_USER: 'info@kijanicart.com'
+#       EMAIL_HOST_PASSWORD: '#Devops1@'
+#       EMAIL_PORT: 587
+#       EMAIL_USE_TLS: 'True'
+#       DEFAULT_FROM_EMAIL: 'Kijanicart <info@kijanicart.com>'
+#       SERVER_EMAIL: 'info@kijanicart.com'
+#       PASSWORD_RESET_TIMEOUT: 14400
+#       TIME_ZONE: Africa/Dar_es_Salaam
+
+# volumes:
+#   postgres_data:

@@ -34,6 +34,25 @@
   <link href="{% static 'assets/images/apple-touch-icon-72x72.png' %}" sizes="72x72" rel="apple-touch-icon">
   <link href="{% static 'assets/images/apple-touch-icon-114x114.png' %}" sizes="114x114" rel="apple-touch-icon">
   <link href="{% static 'assets/images/apple-touch-icon-180x180.png' %}" sizes="180x180" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+        .map-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 20px; /* Adjust the border-radius as needed */
+            margin: 40px; /* Add margin for spacing */
+
+            /* Optional: Add box-shadow for a subtle effect */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

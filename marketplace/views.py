@@ -16,9 +16,19 @@ from django.shortcuts import get_object_or_404, redirect
 from .models import Job, JobApplication
 from .forms import JobForm, JobApplicationForm, ServiceSearchForm, JobSearchForm
 from core.forms import ServiceForm
+import json
+from decimal import Decimal  # Import Decimal if not already imported
+from django.core.serializers.json import DjangoJSONEncoder  # Import Django's JSON encoder
 
 
-# testzone
+def service_map_view(request):
+    services = Service.objects.exclude(latitude=None).exclude(longitude=None)
+    
+    # Convert Decimal fields to float for JSON serialization
+    services_data = json.dumps(list(services.values('title', 'description', 'latitude', 'longitude')), cls=DjangoJSONEncoder)
+    
+    return render(request, 'map-view-test.html', {'services': services_data})
+
 def maptest(request):
     template_name = 'map-test.html'
     if request.method == 'POST':
@@ -38,25 +48,25 @@ def maptest(request):
             
             service.save()
             messages.success(request, 'Service added successfully!')
-            return redirect('marketplace-maps-view')
+            return redirect('marketplace:maps-view')
     else:
         form = ServiceForm()
     
     return render(request, template_name, {'form': form})
 
-def service_map_view(request):
-    services = Service.objects.all()
-    service_data = [{
-        'title': service.title,
-        'description': service.description,
-        'latitude': service.latitude,
-        'longitude': service.longitude
-    } for service in services]
+# def service_map_view(request):
+#     services = Service.objects.all()
+#     service_data = [{
+#         'title': service.title,
+#         'description': service.description,
+#         'latitude': service.latitude,
+#         'longitude': service.longitude
+#     } for service in services]
 
-    context = {
-        'services': service_data
-    }
-    return render(request, 'map-view-test.html', context)
+#     context = {
+#         'services': service_data
+#     }
+#     return render(request, 'map-view-test.html', context)
 
 
 class ServiceSearchView(ListView):
@@ -190,7 +200,12 @@ class ServiceView(TemplateView):
         context = super().get_context_data(**kwargs)
         
         services = Service.objects.all()
-        context['services'] = services
+        map_services = Service.objects.exclude(latitude=None).exclude(longitude=None)
+        # Convert Decimal fields to float for JSON serialization
+        services_data = json.dumps(list(map_services.values('title', 'description', 'latitude', 'longitude')), cls=DjangoJSONEncoder)
+    
+        context['services'] = services_data
+        context['service'] = services
         return context
 
 
