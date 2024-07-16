@@ -48,7 +48,7 @@ def maptest(request):
             
             service.save()
             messages.success(request, 'Service added successfully!')
-            return redirect('marketplace:maps-view')
+            return redirect('core:manage-service')
     else:
         form = ServiceForm()
     
