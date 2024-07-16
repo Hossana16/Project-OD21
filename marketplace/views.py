@@ -16,9 +16,21 @@ from django.shortcuts import get_object_or_404, redirect
 from .models import Job, JobApplication
 from .forms import JobForm, JobApplicationForm, ServiceSearchForm, JobSearchForm
 from core.forms import ServiceForm
+# from decimal import Decimal  # Import Decimal if not already imported
 import json
-from decimal import Decimal  # Import Decimal if not already imported
-from django.core.serializers.json import DjangoJSONEncoder  # Import Django's JSON encoder
+from django.shortcuts import render
+from django.core.serializers.json import DjangoJSONEncoder
+from .models import Service  # Adjust import according to your models file
+
+
+
+# def service_map_view(request):
+#     services = Service.objects.exclude(latitude=None).exclude(longitude=None)
+    
+#     # Convert Decimal fields to float for JSON serialization
+#     services_data = json.dumps(list(services.values('title', 'description', 'latitude', 'longitude')), cls=DjangoJSONEncoder)
+    
+#     return render(request, 'map-view-test.html', {'services': services_data})
 
 
 def service_map_view(request):
@@ -28,6 +40,7 @@ def service_map_view(request):
     services_data = json.dumps(list(services.values('title', 'description', 'latitude', 'longitude')), cls=DjangoJSONEncoder)
     
     return render(request, 'map-view-test.html', {'services': services_data})
+
 
 def maptest(request):
     template_name = 'map-test.html'
@@ -200,9 +213,13 @@ class ServiceView(TemplateView):
         context = super().get_context_data(**kwargs)
         
         services = Service.objects.all()
+        # map_services = Service.objects.exclude(latitude=None).exclude(longitude=None)
         map_services = Service.objects.exclude(latitude=None).exclude(longitude=None)
+    
         # Convert Decimal fields to float for JSON serialization
         services_data = json.dumps(list(map_services.values('title', 'description', 'latitude', 'longitude')), cls=DjangoJSONEncoder)
+     
+        # services_data = json.dumps(list(map_services.values('title', 'description', 'latitude', 'longitude')), cls=DjangoJSONEncoder)
     
         context['services'] = services_data
         context['service'] = services

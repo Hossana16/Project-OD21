@@ -89,23 +89,29 @@
   <!-- Listings All Lists -->
   <section class="pt30 pb90">
     <div class="container">
-      <div class="map_container">
-        <h1>Services Locations</h1>
+      <div class="map_container">       
+        <h1>Service Locations</h1>
         <div id="map"></div>
 
         <script>
             // Initialize the map
-            var map = L.map('map').setView([0, 0], 2); // Default view (latitude, longitude, zoom)
+            var map = L.map('map').setView([-6.1629, 35.7516], 6); // Default view centered on Dodoma
 
             // Add a tile layer (this is a free layer from OpenStreetMap)
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap contributors'
             }).addTo(map);
 
+            // Parse the JSON data passed from the Django view
+            var services = JSON.parse('{{ services|escapejs }}');
+
+            // Log the services data to verify it's correctly passed and parsed
+            console.log(services);
+
             // Add markers for each service location
-            var services = {{ services|safe }};
             services.forEach(function(service) {
-                L.marker([service.latitude, service.longitude]).addTo(map)
+                console.log(service.title, service.description);  // Add this line to check values
+                L.marker([parseFloat(service.latitude), parseFloat(service.longitude)]).addTo(map)
                     .bindPopup('<b>' + service.title + '</b><br>' + service.description);
             });
         </script>
